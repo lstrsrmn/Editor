@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lstrsrmn/CLionProjects/game-engine/include/graphics/lighting/PointLight.h
+
+/home/lstrsrmn/CLionProjects/game-engine/src/graphics/lighting/PointLight.cpp
+../../../include/graphics/lighting/PointLight.h
+/home/lstrsrmn/CLionProjects/game-engine/include/graphics/lighting/PointLight.h
+

@@ -1,0 +1,8 @@
+/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/rebuild_cache.dir
+/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/edit_cache.dir
+/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor.dir
+/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor_autogen.dir
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/rebuild_cache.dir
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/edit_cache.dir
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir

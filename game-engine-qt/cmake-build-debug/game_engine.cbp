@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="game_engine"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="game_engine">
+				<Option output="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/game_engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lstrsrmn/CLionProjects/game-engine/game_engine"/>
+					<Add directory="/home/lstrsrmn/CLionProjects/game-engine/glm"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 game_engine"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="game_engine/fast">
+				<Option output="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/game_engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lstrsrmn/CLionProjects/game-engine/game_engine"/>
+					<Add directory="/home/lstrsrmn/CLionProjects/game-engine/glm"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 game_engine/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/lstrsrmn/CLionProjects/game-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/components/Component.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/components/MeshRenderer.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/components/Renderer.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/game/Game.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/game/GameObject.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/game/Scene.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/game/Transform.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/Camera.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/Display.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/Material.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/Mesh.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/ModelImporter.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/Shader.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/Texture.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/lighting/DirectionalLight.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/include/graphics/lighting/PointLight.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/main.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/components/Component.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/components/MeshRenderer.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/components/Renderer.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/game/Game.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/game/GameObject.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/game/Scene.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/Display.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/Material.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/Mesh.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/ModelImporter.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/Shader.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/Texture.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/lighting/DirectionalLight.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/src/graphics/lighting/PointLight.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/assimp-5.0/assimp-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/assimp-5.0/assimp-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/assimp-5.0/assimpTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/game-engine/../../../../usr/lib/x86_64-linux-gnu/cmake/assimp-5.0/assimpTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

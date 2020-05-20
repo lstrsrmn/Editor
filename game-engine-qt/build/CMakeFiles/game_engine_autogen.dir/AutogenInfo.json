@@ -1,0 +1,238 @@
+{
+	"BUILD_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen",
+	"CMAKE_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt",
+	"CMAKE_EXECUTABLE" : "/snap/clion/112/bin/cmake/linux/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
+	"HEADERS" : 
+	[
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/Core.h",
+			"MU",
+			"2Y22T7UW2T/moc_Core.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/Objects.h",
+			"MU",
+			"2Y22T7UW2T/moc_Objects.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h",
+			"MU",
+			"BZCVBLLHZA/moc_Component.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h",
+			"MU",
+			"BZCVBLLHZA/moc_MeshRenderer.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h",
+			"MU",
+			"BZCVBLLHZA/moc_Renderer.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h",
+			"MU",
+			"NX25NZMGXW/moc_ContextController.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h",
+			"MU",
+			"NX25NZMGXW/moc_Game.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h",
+			"MU",
+			"NX25NZMGXW/moc_GameObject.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h",
+			"MU",
+			"NX25NZMGXW/moc_Scene.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h",
+			"MU",
+			"NX25NZMGXW/moc_SceneView.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h",
+			"MU",
+			"NX25NZMGXW/moc_Transform.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h",
+			"MU",
+			"IQXIP6DULK/moc_Camera.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h",
+			"MU",
+			"IQXIP6DULK/moc_Display.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h",
+			"MU",
+			"IQXIP6DULK/moc_Material.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h",
+			"MU",
+			"IQXIP6DULK/moc_Mesh.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h",
+			"MU",
+			"IQXIP6DULK/moc_ModelImporter.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h",
+			"MU",
+			"IQXIP6DULK/moc_Shader.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h",
+			"MU",
+			"IQXIP6DULK/moc_Texture.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h",
+			"MU",
+			"BG2UN4PQMD/moc_DirectionalLight.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h",
+			"MU",
+			"BG2UN4PQMD/moc_PointLight.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_OPENGL_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/game_engine",
+		"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/glm",
+		"/usr/include/opencv4",
+		"/home/lstrsrmn/Qt/5.14.2/gcc_64/include",
+		"/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL",
+		"/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets",
+		"/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui",
+		"/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore",
+		"/home/lstrsrmn/Qt/5.14.2/gcc_64/mkspecs/linux-g++",
+		"/usr/include",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/snap/clion/112/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/lstrsrmn/Qt/5.14.2/gcc_64/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/home/lstrsrmn/Qt/5.14.2/gcc_64/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Component.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/MeshRenderer.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Game.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/GameObject.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Scene.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Mesh.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/ModelImporter.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Shader.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Texture.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/lighting/DirectionalLight.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/lighting/PointLight.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
