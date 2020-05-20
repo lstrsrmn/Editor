@@ -25,11 +25,19 @@ void Camera::clear(float r, float g, float b, float a) {
 }
 
 void Camera::rotateBy(float x, float y, float z) {
-    glm::mat4 rotXMatrix = glm::rotate(x, glm::vec3(1, 0, 0));
-    glm::mat4 rotYMatrix = glm::rotate(y, glm::vec3(0, 1, 0));
-    glm::mat4 rotZMatrix = glm::rotate(z, glm::vec3(0, 0, 1));
+//    glm::mat4 rotXMatrix = glm::rotate(x, glm::vec3(1, 0, 0));
+//    glm::mat4 rotYMatrix = glm::rotate(y, glm::vec3(0, 1, 0));
+//    glm::mat4 rotZMatrix = glm::rotate(z, glm::vec3(0, 0, 1));
+//
+//    glm::mat4 rotMatrix = rotZMatrix * rotXMatrix * rotYMatrix;
 
-    glm::mat4 rotMatrix = rotZMatrix * rotXMatrix * rotYMatrix;
+//    _up = rotMatrix * glm::vec4(_up, 1);
+//    _forward = rotMatrix * glm::vec4(_forward, 1);
+
+    glm::vec3 eulerAngles(x, y, z);
+    glm::quat myQuaternion;
+    myQuaternion = glm::quat(eulerAngles);
+    glm::mat4 rotMatrix = glm::toMat4(myQuaternion);
 
     _up = rotMatrix * glm::vec4(_up, 1);
     _forward = rotMatrix * glm::vec4(_forward, 1);

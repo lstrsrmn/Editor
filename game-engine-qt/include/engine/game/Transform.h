@@ -4,6 +4,8 @@
 #define GLM_ENABLE_EXPERIMENTAL
 
 #include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 #include <glm/gtx/transform.hpp>
 
 class Transform {
@@ -20,6 +22,10 @@ public:
         glm::mat4 rotYMatrix = glm::rotate(_rot.y, glm::vec3(0, 1, 0));
         glm::mat4 rotZMatrix = glm::rotate(_rot.z, glm::vec3(0, 0, 1));
         glm::mat4 scaleMatrix = glm::scale(_scale);
+//        glm::vec3 eulerAngles(_pos);
+//        glm::quat myQuaternion;
+//        myQuaternion = glm::quat(eulerAngles);
+//        glm::mat4 rotMatrix = glm::toMat4(myQuaternion);
 
         glm::mat4 rotMatrix = rotZMatrix * rotYMatrix * rotXMatrix;
 
