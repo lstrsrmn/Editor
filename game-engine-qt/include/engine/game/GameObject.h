@@ -19,7 +19,7 @@ public:
     void setScene(Scene*);
     Scene* getScene() const;
     Transform& getTransform();
-
+    const std::vector<Component*> getComponents() const;
     const QString &getName() const;
 
     void setName(const QString &name);

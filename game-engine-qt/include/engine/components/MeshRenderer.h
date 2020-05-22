@@ -11,6 +11,7 @@
 
 
 class MeshRenderer : public Renderer {
+    SUBSCRIBE_COMPONENT(MeshRenderer)
 public:
     MeshRenderer(Material*, ModelMeshData);
     void render(const Camera&, const DirectionalLight&) override;
@@ -20,5 +21,5 @@ private:
     ModelMeshData _meshes{};
 };
 
-
+ENGINE_COMPONENT(MeshRenderer)
 #endif //GAME_ENGINE_MESHRENDERER_H

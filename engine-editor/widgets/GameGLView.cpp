@@ -12,7 +12,7 @@ void GameGLView::initializeGL() {
     makeCurrent();
     QOpenGLFunctions* f = context()->functions();
     f->initializeOpenGLFunctions();
-    ContextController::instance()->setGameGLFunctions(f);
+    ContextController::instance()->setGameGLFunctions(f, this);
 
     _game = Game::instance();
     _game->setGlFunctions(f);

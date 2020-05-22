@@ -21,14 +21,17 @@ void ContextController::setCurrent(int current) {
     _current = current;
 }
 
-void ContextController::setSceneGLFunctions(QOpenGLFunctions* f) {
+void ContextController::setSceneGLFunctions(QOpenGLFunctions* f, SceneGLView* scene) {
     _GLFunctions[0] = f;
+    _GLWidgets[0] = (QOpenGLWidget*)scene;
 }
 
-void ContextController::setGameGLFunctions(QOpenGLFunctions* f) {
+void ContextController::setGameGLFunctions(QOpenGLFunctions* f, GameGLView* game) {
     _GLFunctions[1] = f;
+    _GLWidgets[1] = (QOpenGLWidget*)game;
 }
 
 QOpenGLFunctions* ContextController::getCurrentContext() {
+    _GLWidgets[_current]->makeCurrent();
     return _GLFunctions[_current];
 }

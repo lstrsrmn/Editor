@@ -18,16 +18,15 @@ public:
 
     inline glm::mat4 getModel() const {
         glm::mat4 posMatrix = glm::translate(_pos);
-        glm::mat4 rotXMatrix = glm::rotate(_rot.x, glm::vec3(1, 0, 0));
-        glm::mat4 rotYMatrix = glm::rotate(_rot.y, glm::vec3(0, 1, 0));
-        glm::mat4 rotZMatrix = glm::rotate(_rot.z, glm::vec3(0, 0, 1));
+//        glm::mat4 rotXMatrix = glm::rotate(_rot.x, glm::vec3(1, 0, 0));
+//        glm::mat4 rotYMatrix = glm::rotate(_rot.y, glm::vec3(0, 1, 0));
+//        glm::mat4 rotZMatrix = glm::rotate(_rot.z, glm::vec3(0, 0, 1));
+//        glm::mat4 rotMatrix = rotZMatrix * rotYMatrix * rotXMatrix;
         glm::mat4 scaleMatrix = glm::scale(_scale);
-//        glm::vec3 eulerAngles(_pos);
-//        glm::quat myQuaternion;
-//        myQuaternion = glm::quat(eulerAngles);
-//        glm::mat4 rotMatrix = glm::toMat4(myQuaternion);
-
-        glm::mat4 rotMatrix = rotZMatrix * rotYMatrix * rotXMatrix;
+        glm::vec3 eulerAngles(_pos);
+        glm::quat myQuaternion;
+        myQuaternion = glm::quat(eulerAngles);
+        glm::mat4 rotMatrix = glm::toMat4(myQuaternion);
 
         return posMatrix * rotMatrix * scaleMatrix;
     }

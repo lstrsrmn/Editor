@@ -9,6 +9,8 @@
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 ../game/Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
+string
+-
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
 Renderer.h
@@ -77,11 +79,11 @@ Scene.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
 glm/glm.hpp
 -
-glm/gtx/transform.hpp
--
 glm/gtc/quaternion.hpp
 -
 glm/gtx/quaternion.hpp
+-
+glm/gtx/transform.hpp
 -
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
@@ -199,6 +201,8 @@ glm/glm.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
 ../../include/engine/game/Scene.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
+iostream
+-
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
 ../../include/engine/game/ContextController.h
@@ -217,6 +221,8 @@ QtCore/QString
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Scene.cpp
+iostream
+-
 ../../include/engine/game/Scene.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 

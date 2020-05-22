@@ -638,10 +638,14 @@ CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /usr/
 
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/components/Component.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/components/Renderer.h
+CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/game/Game.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/game/GameObject.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/game/Scene.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/game/Transform.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/graphics/Camera.h
+CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/graphics/Display.h
+CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/graphics/Mesh.h
+CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/graphics/ModelImporter.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../main.cpp
 CMakeFiles/engine_editor.dir/main.cpp.o: ../qtui/Editor.h
@@ -858,6 +862,7 @@ CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -1502,8 +1507,10 @@ CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QMenuBar
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QPushButton
+CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QScrollArea
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QScrollerProperties
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QTabWidget
+CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QToolBox
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QTreeWidget
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QVBoxLayout
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QWidget

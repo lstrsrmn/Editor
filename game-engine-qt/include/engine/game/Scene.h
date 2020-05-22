@@ -23,7 +23,7 @@ public:
 
     void setName(const QString &name);
 
-    std::vector<QString> getObjectNames();
+    std::vector<GameObject*> getObjects();
 
 private:
     QString _name;

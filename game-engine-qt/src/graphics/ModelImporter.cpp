@@ -1,9 +1,12 @@
 #include "../../include/engine/graphics/ModelImporter.h"
 
-ModelMeshData loadModel(const std::string& modelName,const std::string& modelPath, bool flipV) {
+ModelMeshData loadDefaultModel(const std::string& modelName,const std::string& modelPath, bool flipV) {
+    return loadModel(modelPath+modelName, flipV);
+}
+ModelMeshData loadModel(const std::string& modelName, bool flipV) {
     Assimp::Importer importer;
-    const aiScene* modelScene = importer.ReadFile(modelPath + modelName, aiProcess_Triangulate | aiProcess_GenNormals |
-    aiProcess_CalcTangentSpace | aiProcess_FixInfacingNormals | aiProcess_FindInvalidData | aiProcess_ValidateDataStructure);
+    const aiScene* modelScene = importer.ReadFile(modelName, aiProcess_Triangulate | aiProcess_GenNormals |
+                                                                         aiProcess_CalcTangentSpace | aiProcess_FixInfacingNormals | aiProcess_FindInvalidData | aiProcess_ValidateDataStructure);
 
     if (!modelScene) {
         return {};

@@ -8,11 +8,14 @@
 #include "Game.h"
 #include "SceneView.h"
 
+class SceneGLView;
+class GameGLView;
+
 class ContextController {
 public:
     static ContextController* instance();
-    void setSceneGLFunctions(QOpenGLFunctions*);
-    void setGameGLFunctions(QOpenGLFunctions*);
+    void setSceneGLFunctions(QOpenGLFunctions*, SceneGLView*);
+    void setGameGLFunctions(QOpenGLFunctions*, GameGLView*);
     void setCurrent(int current);
     QOpenGLFunctions* getCurrentContext();
 
@@ -20,6 +23,7 @@ private:
     ContextController();
     static ContextController* _instance;
     QOpenGLFunctions* _GLFunctions[2];
+    QOpenGLWidget* _GLWidgets[2];
     int _current = 0;
 };
 

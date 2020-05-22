@@ -100,14 +100,21 @@
     </property>
     <addaction name="actionRecently_Closed"/>
    </widget>
+   <widget class="QMenu" name="menuScene">
+    <property name="title">
+     <string>Scene</string>
+    </property>
+    <addaction name="actionNew_Object"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuWindows"/>
+   <addaction name="menuScene"/>
   </widget>
   <widget class="QDockWidget" name="inspector">
    <property name="minimumSize">
     <size>
      <width>166</width>
-     <height>35</height>
+     <height>167</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -134,7 +141,52 @@
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
-   <widget class="QWidget" name="inspectorContents"/>
+   <widget class="QWidget" name="inspectorContents">
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>146</width>
+          <height>419</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QToolBox" name="inspectorObjects">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="Transform">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>128</width>
+              <height>370</height>
+             </rect>
+            </property>
+            <attribute name="label">
+             <string>Transform</string>
+            </attribute>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QDockWidget" name="hierarchy">
    <property name="minimumSize">
@@ -164,9 +216,9 @@
    <widget class="QWidget" name="hierarchyContents">
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <widget class="QPushButton" name="loadButton">
+      <widget class="QPushButton" name="updateButton">
        <property name="text">
-        <string>Load Scene</string>
+        <string>update</string>
        </property>
       </widget>
      </item>
@@ -246,6 +298,31 @@
   <action name="actionRecently_Closed">
    <property name="text">
     <string>Recently Closed</string>
+   </property>
+  </action>
+  <action name="actionAdd_Object">
+   <property name="text">
+    <string>Add Object</string>
+   </property>
+  </action>
+  <action name="actionAdd_Shader">
+   <property name="text">
+    <string>Add Material</string>
+   </property>
+  </action>
+  <action name="actionAdd_Script">
+   <property name="text">
+    <string>Add Script</string>
+   </property>
+  </action>
+  <action name="actionAdd_Object_2">
+   <property name="text">
+    <string>Add Object</string>
+   </property>
+  </action>
+  <action name="actionNew_Object">
+   <property name="text">
+    <string>New Object</string>
    </property>
   </action>
  </widget>

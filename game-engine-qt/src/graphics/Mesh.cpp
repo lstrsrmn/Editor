@@ -15,6 +15,9 @@ Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, un
     vertexBufferObject->create();
     indexBufferObject->create();
 
+    vertexBufferObject->setUsagePattern(QOpenGLBuffer::StaticDraw);
+    indexBufferObject->setUsagePattern(QOpenGLBuffer::StaticDraw);
+
     vertexArrayObject->bind();
     vertexBufferObject->bind();
     indexBufferObject->bind();
@@ -26,7 +29,7 @@ Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, un
     f->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), nullptr);
     f->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
     f->glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(5 * sizeof(GLfloat)));
-    vertexBufferObject->release();
+    vertexArrayObject->release();
 //    vertexBufferObject->setUsagePattern(QOpenGLBuffer::StaticDraw);
 
 //    f->glGenBuffers(NUM_BUFFERS, _vertexArrayBuffers);

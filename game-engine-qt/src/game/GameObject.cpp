@@ -39,3 +39,7 @@ const QString &GameObject::getName() const {
 void GameObject::setName(const QString &name) {
     _name = name;
 }
+
+const std::vector<Component *> GameObject::getComponents() const{
+    return _components;
+}

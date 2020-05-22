@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Editor_t {
-    QByteArrayData data[5];
-    char stringdata0[51];
+    QByteArrayData data[8];
+    char stringdata0[88];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,13 +33,17 @@ struct qt_meta_stringdata_Editor_t {
 static const qt_meta_stringdata_Editor_t qt_meta_stringdata_Editor = {
     {
 QT_MOC_LITERAL(0, 0, 6), // "Editor"
-QT_MOC_LITERAL(1, 7, 15), // "viewPortChanged"
-QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 16), // "runButtonClicked"
-QT_MOC_LITERAL(4, 41, 9) // "loadScene"
+QT_MOC_LITERAL(1, 7, 14), // "objectSelected"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 16), // "QTreeWidgetItem*"
+QT_MOC_LITERAL(4, 40, 4), // "test"
+QT_MOC_LITERAL(5, 45, 15), // "viewPortChanged"
+QT_MOC_LITERAL(6, 61, 16), // "runButtonClicked"
+QT_MOC_LITERAL(7, 78, 9) // "loadScene"
 
     },
-    "Editor\0viewPortChanged\0\0runButtonClicked\0"
+    "Editor\0objectSelected\0\0QTreeWidgetItem*\0"
+    "test\0viewPortChanged\0runButtonClicked\0"
     "loadScene"
 };
 #undef QT_MOC_LITERAL
@@ -50,7 +54,7 @@ static const uint qt_meta_data_Editor[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,11 +62,15 @@ static const uint qt_meta_data_Editor[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x08 /* Private */,
-       3,    0,   32,    2, 0x08 /* Private */,
-       4,    0,   33,    2, 0x08 /* Private */,
+       1,    2,   39,    2, 0x08 /* Private */,
+       4,    1,   44,    2, 0x08 /* Private */,
+       5,    1,   47,    2, 0x08 /* Private */,
+       6,    0,   50,    2, 0x08 /* Private */,
+       7,    0,   51,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    2,    2,
+    QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
     QMetaType::Void,
@@ -76,9 +84,11 @@ void Editor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         auto *_t = static_cast<Editor *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->viewPortChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->runButtonClicked(); break;
-        case 2: _t->loadScene(); break;
+        case 0: _t->objectSelected((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 1: _t->test((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->viewPortChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->runButtonClicked(); break;
+        case 4: _t->loadScene(); break;
         default: ;
         }
     }
@@ -113,13 +123,13 @@ int Editor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }

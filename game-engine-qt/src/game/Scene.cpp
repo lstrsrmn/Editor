@@ -1,5 +1,5 @@
 
-
+#include <iostream>
 #include "../../include/engine/game/Scene.h"
 
 SceneManager *SceneManager::_instance = nullptr;
@@ -55,18 +55,14 @@ void Scene::draw() {
 }
 
 void Scene::draw(Camera* camera) {
-    _camera->clear(0.0f, 0.15f, 0.3f, 1.0f);
+    camera->clear(0.0f, 0.15f, 0.3f, 1.0f);
     for (Renderer *renderer : _renderers) {
         renderer->render(*camera, _directionalLight);
     }
 }
 
-std::vector<QString> Scene::getObjectNames() {
-    std::vector<QString> names;
-    for (GameObject* obj : _gameObjects) {
-        names.push_back(obj->getName());
-    }
-    return names;
+std::vector<GameObject*> Scene::getObjects() {
+    return _gameObjects;
 }
 
 SceneManager *SceneManager::instance() {

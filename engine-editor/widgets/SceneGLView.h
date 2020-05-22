@@ -24,6 +24,7 @@ public:
     void mousePressEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
     void mouseReleaseEvent(QMouseEvent*) override;
+    void test();
 signals:
 
 private slots:
@@ -35,6 +36,10 @@ protected:
 
 private:
     QPoint _mouseStartPos;
+    GameObject* mObj;
+    GameObject* pObj;
+//    MeshRenderer* mRenderer;
+    ModelMeshData monkey;
     bool _pan = false;
     bool _orbit = false;
     SceneView* _sceneView;

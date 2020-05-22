@@ -17,7 +17,7 @@ void SceneGLView::initializeGL() {
     makeCurrent();
     QOpenGLFunctions *f = context()->functions();
     f->initializeOpenGLFunctions();
-    ContextController::instance()->setSceneGLFunctions(f);
+    ContextController::instance()->setSceneGLFunctions(f, this);
 
 //    makeCurrent();
 
@@ -32,11 +32,6 @@ void SceneGLView::initializeGL() {
     f->glFrontFace(GL_CCW);
     f->glCullFace(GL_BACK);
 
-    Texture *texture = new Texture("monkeyDiffuse2.jpg");
-    Shader *shader = new Shader("basicShader");
-
-    _material = new Material(shader, texture);
-
     DirectionalLight *light = new DirectionalLight(glm::vec3(0, -1, 0), glm::vec3(1, 1, 1));
 
     _sceneView->getCamera()->moveTo({0, 1, -10});
@@ -44,23 +39,27 @@ void SceneGLView::initializeGL() {
     _scene->setName("Test Scene");
     _sceneView->addScene(_scene);
     _sceneView->setActive(_scene->getId());
-    ModelMeshData monkey = loadModel("Monkey.fbx");
-    ModelMeshData plane = loadModel("Plane.fbx");
 
-    MeshRenderer *mRenderer = new MeshRenderer(_material, monkey);
-    MeshRenderer* pRenderer = new MeshRenderer(_material, plane);
-
-    GameObject *mObj = _scene->createGameObject();
-    GameObject *pObj = _scene->createGameObject();
-    mObj->setName("Monkey");
-    pObj->setName("Plane");
-
-    mObj->addComponent(mRenderer);
-    pObj->addComponent(pRenderer);
-
-    mObj->getTransform().setRot(glm::vec3(3.1415 / 2, 0, 3.1415));
-    mObj->getTransform().setPos({0, 1, 0});
-    pObj->getTransform().setRot(glm::vec3(3.1415 / 2, 0, 3.1415));
+//    Texture *texture = new Texture("monkeyDiffuse2.jpg");
+//    Shader *shader = new Shader("basicShader");
+//
+//    _material = new Material(shader, texture);
+//
+//    monkey = loadModel("Monkey.fbx");
+//    ModelMeshData plane = loadModel("Plane.fbx");
+//
+//    MeshRenderer *mRenderer = new MeshRenderer(_material, monkey);
+//    MeshRenderer* pRenderer = new MeshRenderer(_material, plane);
+//
+//    mObj = _scene->createGameObject();
+//    pObj = _scene->createGameObject();
+//    mObj->setName("Monkey");
+//    pObj->setName("Plane");
+//
+//    mObj->addComponent(mRenderer);
+//    pObj->addComponent(pRenderer);
+//    mObj->getTransform().setPos({0, 1, 0});
+//    mObj->addComponent(new Component());
 }
 
 void SceneGLView::paintGL() {
@@ -111,9 +110,9 @@ void SceneGLView::mouseReleaseEvent(QMouseEvent *event) {
     QWidget::mouseReleaseEvent(event);
     switch (event->button()) {
         case Qt::LeftButton:
-            unsetCursor();
             break;
         case Qt::RightButton:
+            unsetCursor();
             _orbit = false;
             break;
         case Qt::MiddleButton:
@@ -122,5 +121,8 @@ void SceneGLView::mouseReleaseEvent(QMouseEvent *event) {
             break;
         case Qt::ExtraButton1:
             break;
+        default:
+            break;
     }
 }
+
