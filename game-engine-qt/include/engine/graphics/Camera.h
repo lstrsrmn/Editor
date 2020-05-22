@@ -22,6 +22,8 @@ public:
 
     const glm::vec3 &getForward() const;
 
+    void lookAt(glm::vec3);
+
     void setForward(const glm::vec3 &forward);
 
     const glm::vec3 &getUp() const;

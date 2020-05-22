@@ -18,7 +18,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolBox>
@@ -56,7 +55,6 @@ public:
     GameGLView *gameGLWidget;
     QMenuBar *menubar;
     QMenu *menuFile;
-    QMenu *menuWindows;
     QMenu *menuScene;
     QDockWidget *inspector;
     QWidget *inspectorContents;
@@ -69,7 +67,6 @@ public:
     QDockWidget *hierarchy;
     QWidget *hierarchyContents;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *updateButton;
     QTreeWidget *hierarchyTree;
     QDockWidget *Project;
     QWidget *dockWidgetContents;
@@ -148,8 +145,6 @@ public:
         menubar->setGeometry(QRect(0, 0, 800, 22));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
-        menuWindows = new QMenu(menubar);
-        menuWindows->setObjectName(QString::fromUtf8("menuWindows"));
         menuScene = new QMenu(menubar);
         menuScene->setObjectName(QString::fromUtf8("menuScene"));
         Editor->setMenuBar(menubar);
@@ -199,11 +194,6 @@ public:
         hierarchyContents->setObjectName(QString::fromUtf8("hierarchyContents"));
         verticalLayout_4 = new QVBoxLayout(hierarchyContents);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        updateButton = new QPushButton(hierarchyContents);
-        updateButton->setObjectName(QString::fromUtf8("updateButton"));
-
-        verticalLayout_4->addWidget(updateButton);
-
         hierarchyTree = new QTreeWidget(hierarchyContents);
         hierarchyTree->setObjectName(QString::fromUtf8("hierarchyTree"));
         hierarchyTree->setMinimumSize(QSize(123, 0));
@@ -225,7 +215,6 @@ public:
         Editor->addDockWidget(Qt::BottomDockWidgetArea, Project);
 
         menubar->addAction(menuFile->menuAction());
-        menubar->addAction(menuWindows->menuAction());
         menubar->addAction(menuScene->menuAction());
         menuFile->addAction(actionNew_Project);
         menuFile->addAction(actionOpen_Project);
@@ -234,7 +223,6 @@ public:
         menuFile->addAction(actionOpen_Scene);
         menuFile->addSeparator();
         menuFile->addAction(actionClose);
-        menuWindows->addAction(actionRecently_Closed);
         menuScene->addAction(actionNew_Object);
 
         retranslateUi(Editor);
@@ -270,12 +258,10 @@ public:
 #endif // QT_CONFIG(tooltip)
         ViewPort->setTabText(ViewPort->indexOf(Game), QCoreApplication::translate("Editor", "Game", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Editor", "File", nullptr));
-        menuWindows->setTitle(QCoreApplication::translate("Editor", "Windows", nullptr));
         menuScene->setTitle(QCoreApplication::translate("Editor", "Scene", nullptr));
         inspector->setWindowTitle(QCoreApplication::translate("Editor", "Inspector", nullptr));
         inspectorObjects->setItemText(inspectorObjects->indexOf(Transform), QCoreApplication::translate("Editor", "Transform", nullptr));
         hierarchy->setWindowTitle(QCoreApplication::translate("Editor", "Hierarchy", nullptr));
-        updateButton->setText(QCoreApplication::translate("Editor", "update", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = hierarchyTree->headerItem();
         ___qtreewidgetitem->setText(0, QCoreApplication::translate("Editor", "Scene", nullptr));
         Project->setWindowTitle(QCoreApplication::translate("Editor", "Project", nullptr));

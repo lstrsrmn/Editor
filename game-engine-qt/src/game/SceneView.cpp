@@ -62,27 +62,29 @@ void SceneView::pan(glm::vec2 delta) {
     const glm::vec2 factor = {0.005, 0.005};
     glm::vec3 movement = _sceneCamera->getRight() * delta.x * factor.x + _sceneCamera->getUp() * delta.y * factor.y;
     _focus += movement;
-    _sceneCamera->moveBy(-movement);
+    _sceneCamera->moveBy(movement);
 }
 
 void SceneView::orbit(glm::vec2 delta) {
+    _sceneCamera->moveBy(-_focus);
+    glm::vec3 _pos = _sceneCamera->getPosition();
+    float r = glm::length(_pos);
     const glm::vec2 factor = {0.005, 0.005};
-    float phi = delta.x * factor.x;
-    float theta = delta.y * factor.y;
+    float phi = delta.x * factor.x + atan2(_pos.z, _pos.x);
+    float theta = clamp(-delta.y * factor.y + acos(_pos.y / r), 0.01f, M_PIf32 - 0.01f);
     float cosPhi = cos(phi);
     float sinPhi = sin(phi);
-    glm::vec3 _pos = _sceneCamera->getPosition() - _focus;
-    float radius = _pos.length();
-    glm::vec3 previousPos = _pos;
-    _pos.x = previousPos.x * cosPhi - previousPos.z * sinPhi;
-    _pos.z = previousPos.x * sinPhi + previousPos.z * cosPhi;
-    _sceneCamera->moveTo(_pos + _focus);
-    _sceneCamera->rotateBy(0, -phi, 0);
+    float cosTheta = cos(theta);
+    float sinTheta = sin(theta);
+    _sceneCamera->moveTo({r * sinTheta * cosPhi, r * cosTheta, r * sinTheta * sinPhi});
+    _sceneCamera->moveBy(_focus);
+    _sceneCamera->lookAt(_focus);
+}
 
-    glm::vec3 previousUp = _sceneCamera->getUp();
-    _sceneCamera->rotateBy(-theta, 0, 0);
-    glm::vec3 movementDirection = (previousUp + _sceneCamera->getUp());
-    float movementAmount = 2 * radius * sin(theta/2) / movementDirection.length();
-    _sceneCamera->moveBy(movementDirection * movementAmount);
+void SceneView::zoom(float zoomAmount) {
+    glm::vec3 pos = _sceneCamera->getPosition() - _focus;
+    const float factor = 0.1;
+    pos = pos * (exp(zoomAmount * factor));
+    _sceneCamera->moveTo(pos + _focus);
 }
 

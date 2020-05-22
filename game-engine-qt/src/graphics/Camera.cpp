@@ -1,5 +1,6 @@
 #include "../../include/engine/graphics/Camera.h"
 #include "../../include/engine/game/ContextController.h"
+#include <iostream>
 Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar) {
     _position = pos;
     _fov = fov;
@@ -33,14 +34,21 @@ void Camera::rotateBy(float x, float y, float z) {
 
 //    _up = rotMatrix * glm::vec4(_up, 1);
 //    _forward = rotMatrix * glm::vec4(_forward, 1);
+    glm::quat qx(cos(x / 2), getRight() * sin(x / 2));
+    glm::quat qy(cos(y / 2), getUp() * sin(y / 2));
+    glm::quat qz(cos(z / 2), getForward() * sin(z / 2));
 
-    glm::vec3 eulerAngles(x, y, z);
-    glm::quat myQuaternion;
-    myQuaternion = glm::quat(eulerAngles);
-    glm::mat4 rotMatrix = glm::toMat4(myQuaternion);
+    glm::mat4 rotMatrix = glm::toMat4(qz * qx * qy);
 
     _up = rotMatrix * glm::vec4(_up, 1);
     _forward = rotMatrix * glm::vec4(_forward, 1);
+}
+
+void Camera::lookAt(glm::vec3 target) {
+    _forward = glm::normalize(target - _position);
+    glm::vec3 _right = glm::normalize(glm::vec3(_forward.z, 0, -_forward.x));
+    _up = glm::cross(_forward, _right);
+//    _up = glm::normalize(glm::vec3(_forward.x, (pow(_forward.x, 2) + pow(_forward.z, 2)) / _forward.y, _forward.z));
 }
 
 void Camera::moveTo(glm::vec3 pos){

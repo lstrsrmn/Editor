@@ -57,6 +57,6 @@ int main(int argc, char* argv[]) {
 
     Editor* editor = new Editor();
     editor->setMinimumSize(QSize(800, 600));
-    editor->show();
+    editor->showMaximized();
     return QApplication::exec();
 }

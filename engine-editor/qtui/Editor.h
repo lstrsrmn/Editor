@@ -22,11 +22,15 @@ public:
     virtual ~Editor();
 
 private:
+    GameObject* _selectedObject;
+    QLineEdit* _textEdits[3];
+    QWidget* transform;
     Ui::Editor *ui;
     bool _gameRunning = false;
     std::map<QTreeWidgetItem*, GameObject*> _treeObjectDir;
 
 private slots:
+    void updateTransform();
     void objectSelected(QTreeWidgetItem*, int);
     void test(bool);
     void viewPortChanged(int);

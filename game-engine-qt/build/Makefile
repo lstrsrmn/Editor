@@ -248,6 +248,33 @@ src/components/Renderer.cpp.s:
 	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/Renderer.cpp.s
 .PHONY : src/components/Renderer.cpp.s
 
+src/core/Utils.o: src/core/Utils.cpp.o
+
+.PHONY : src/core/Utils.o
+
+# target to build an object file
+src/core/Utils.cpp.o:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o
+.PHONY : src/core/Utils.cpp.o
+
+src/core/Utils.i: src/core/Utils.cpp.i
+
+.PHONY : src/core/Utils.i
+
+# target to preprocess a source file
+src/core/Utils.cpp.i:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.i
+.PHONY : src/core/Utils.cpp.i
+
+src/core/Utils.s: src/core/Utils.cpp.s
+
+.PHONY : src/core/Utils.s
+
+# target to generate assembly for a file
+src/core/Utils.cpp.s:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.s
+.PHONY : src/core/Utils.cpp.s
+
 src/game/ContextController.o: src/game/ContextController.cpp.o
 
 .PHONY : src/game/ContextController.o
@@ -648,6 +675,9 @@ help:
 	@echo "... src/components/Renderer.o"
 	@echo "... src/components/Renderer.i"
 	@echo "... src/components/Renderer.s"
+	@echo "... src/core/Utils.o"
+	@echo "... src/core/Utils.i"
+	@echo "... src/core/Utils.s"
 	@echo "... src/game/ContextController.o"
 	@echo "... src/game/ContextController.i"
 	@echo "... src/game/ContextController.s"

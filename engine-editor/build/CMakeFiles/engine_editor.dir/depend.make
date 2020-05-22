@@ -6,6 +6,7 @@ CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../..
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/components/Component.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/components/MeshRenderer.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/components/Renderer.h
+CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/core/Utils.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/game/ContextController.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/game/Game.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: ../../game-engine-qt/include/engine/game/GameObject.h
@@ -1134,6 +1135,7 @@ CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/eng
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/components/Component.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/components/MeshRenderer.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/components/Renderer.h
+CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/core/Utils.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/game/ContextController.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/game/Game.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/game/GameObject.h
@@ -1506,7 +1508,6 @@ CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QMainWindow
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QMenuBar
-CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QScrollArea
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QScrollerProperties
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QTabWidget
@@ -1780,6 +1781,7 @@ CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/incl
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/components/Component.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/components/MeshRenderer.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/components/Renderer.h
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/core/Utils.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/game/ContextController.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/game/Game.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/game/GameObject.h
@@ -2410,6 +2412,7 @@ CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/inc
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/components/Component.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/components/MeshRenderer.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/components/Renderer.h
+CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/core/Utils.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/game/ContextController.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/game/Game.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../../game-engine-qt/include/engine/game/GameObject.h

@@ -94,12 +94,6 @@
     <addaction name="separator"/>
     <addaction name="actionClose"/>
    </widget>
-   <widget class="QMenu" name="menuWindows">
-    <property name="title">
-     <string>Windows</string>
-    </property>
-    <addaction name="actionRecently_Closed"/>
-   </widget>
    <widget class="QMenu" name="menuScene">
     <property name="title">
      <string>Scene</string>
@@ -107,7 +101,6 @@
     <addaction name="actionNew_Object"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuWindows"/>
    <addaction name="menuScene"/>
   </widget>
   <widget class="QDockWidget" name="inspector">
@@ -215,13 +208,6 @@
    </attribute>
    <widget class="QWidget" name="hierarchyContents">
     <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QPushButton" name="updateButton">
-       <property name="text">
-        <string>update</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QTreeWidget" name="hierarchyTree">
        <property name="minimumSize">

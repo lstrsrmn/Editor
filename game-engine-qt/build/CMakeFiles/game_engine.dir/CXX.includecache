@@ -12,14 +12,6 @@
 string
 -
 
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
-Renderer.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
-../graphics/Material.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
-../graphics/Mesh.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
-
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
 Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
@@ -27,6 +19,8 @@ Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
 ../graphics/lighting/DirectionalLight.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
 Game.h
@@ -75,8 +69,12 @@ map
 -
 Scene.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
+../core/Utils.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
+math.h
+-
 glm/glm.hpp
 -
 glm/gtc/quaternion.hpp
@@ -108,18 +106,6 @@ QtOpenGL
 cstdio
 -
 
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
-Shader.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
-Texture.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
-Camera.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
-../game/Transform.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
-lighting/DirectionalLight.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
-
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
 glm/glm.hpp
 -
@@ -132,18 +118,6 @@ assimp/Importer.hpp
 ../game/Game.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 QOpenGLVertexArrayObject
--
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
-Mesh.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
-assimp/Importer.hpp
--
-assimp/scene.h
--
-assimp/postprocess.h
--
-vector
 -
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
@@ -184,47 +158,9 @@ glm/glm.hpp
 glm/glm.hpp
 -
 
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Component.cpp
-../../include/engine/components/Component.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/MeshRenderer.cpp
-../../include/engine/components/MeshRenderer.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
-../../include/engine/game/GameObject.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp
-../../include/engine/components/Renderer.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
-../../include/engine/game/GameObject.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-../../include/engine/game/Scene.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
-iostream
--
-
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
 ../../include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Game.cpp
-cstdio
--
-../../include/engine/game/Game.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/GameObject.cpp
-QtCore/QString
--
-../../include/engine/game/GameObject.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Scene.cpp
-iostream
--
-../../include/engine/game/Scene.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp
 ../../include/engine/game/SceneView.h
@@ -235,10 +171,8 @@ iostream
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
 ../../include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp
-../../include/engine/graphics/Material.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+iostream
+-
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Mesh.cpp
 vector
@@ -247,10 +181,6 @@ vector
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
 ../../include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/ModelImporter.cpp
-../../include/engine/graphics/ModelImporter.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Shader.cpp
 fstream
@@ -315,10 +245,6 @@ qsize.h
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QSizeF
 qsize.h
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qsize.h
-
-/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QString
-qstring.h
-/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qstring.h
 
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QStringList
 qstringlist.h

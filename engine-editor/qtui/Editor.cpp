@@ -1,15 +1,6 @@
 #include "Editor.h"
 #include "../build/ui_Editor.h"
 #include <cstdio>
-class myWidget: public QWidget {
-signals:
-    void sizeChange(const QSize &size) {emit size;};
-
-    inline void resizeEvent(QResizeEvent* event) override {
-        QWidget::resizeEvent(event);
-        emit sizeChange(event->size());
-    }
-};
 
 Editor::Editor(QWidget *parent) :
     QMainWindow(parent),
@@ -19,7 +10,6 @@ Editor::Editor(QWidget *parent) :
     connect(ui->runStopButton, SIGNAL(clicked()), this, SLOT(runButtonClicked()));
     connect(ui->ViewPort, SIGNAL(currentChanged(int)), this, SLOT(viewPortChanged(int)));
     connect(ui->actionNew_Object, SIGNAL(triggered(bool)), this, SLOT(test(bool)));
-    connect(ui->updateButton, SIGNAL(clicked()), this, SLOT(loadScene()));
     connect(ui->hierarchyTree, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(objectSelected(QTreeWidgetItem*, int)));
     //TODO: make scene display stuff and move around easily, then make loading models, then make game run scene, then make scenes savable
 
@@ -83,35 +73,39 @@ void Editor::test(bool t) {
 }
 
 void Editor::objectSelected(QTreeWidgetItem *selectedWidget, int column) {
-    GameObject* selectedObject = _treeObjectDir[selectedWidget];
+    _selectedObject = _treeObjectDir[selectedWidget];
     ui->inspectorObjects->setEnabled(true);
 
 
 
     for (int i = 0; i < ui->inspectorObjects->count() - 1; i++)
         ui->inspectorObjects->removeItem(1);
-    for (Component* component: selectedObject->getComponents()) {
+    for (Component* component: _selectedObject->getComponents()) {
         QWidget* node = new QWidget();
         ui->inspectorObjects->addItem(node, component->componentName().c_str());
     }
-    QWidget* transform = ui->inspectorObjects->widget(0);
-//    transform = (myWidget*)transform;
-    QScrollArea* frame = new QScrollArea(transform);
-//    connect(transform, SIGNAL(sizeChange(const QSize)), frame, SLOT(resizeEvent(const QSize)));
-    QVBoxLayout* layout = new QVBoxLayout;
-    QTextBrowser* browser = new QTextBrowser();
-    browser->setText("Current x, y, z positions");
-    selectedObject->getTransform().setPos({1, 2, 3});
-    QLCDNumber* xVal = new QLCDNumber();
-    xVal->display(selectedObject->getTransform().getPos().x);
-    QLCDNumber* yVal = new QLCDNumber();
-    yVal->display(selectedObject->getTransform().getPos().y);
-    QLCDNumber* zVal = new QLCDNumber();
-    zVal->display(selectedObject->getTransform().getPos().z);
-    layout->addWidget(browser);
-    layout->addWidget(xVal);
-    layout->addWidget(yVal);
-    layout->addWidget(zVal);
+    transform = ui->inspectorObjects->widget(0);
+    QFrame* frame = new QFrame(transform);
+    QFormLayout* layout = new QFormLayout;
+    QLabel* label = new QLabel;
+    QValidator *v = new QDoubleValidator(-std::numeric_limits<double>::max(), std::numeric_limits<double>::max(), 4);
+    for (int i = 0; i < 3; i++) {
+        _textEdits[i] = new QLineEdit();
+        _textEdits[i]->setValidator(v);
+    }
+    QPushButton* inputButton = new QPushButton();
+    label->setText("Update x, y and z coords between -999 and 999: ");
+    inputButton->setText("Update");
+    layout->addRow(label);
+    layout->addRow(tr("x"), _textEdits[0]);
+    layout->addRow(tr("y"), _textEdits[1]);
+    layout->addRow(tr("z"), _textEdits[2]);
+    layout->addRow(inputButton);
     frame->setLayout(layout);
     frame->show();
+    connect(inputButton, SIGNAL(clicked()), this, SLOT(updateTransform()));
+}
+
+void Editor::updateTransform() {
+    _selectedObject->getTransform().setPos({_textEdits[0]->text().toFloat(), _textEdits[1]->text().toFloat(), _textEdits[2]->text().toFloat()});
 }

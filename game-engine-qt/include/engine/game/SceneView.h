@@ -8,6 +8,7 @@
 #include <vector>
 #include <map>
 #include "Scene.h"
+#include "../core/Utils.h"
 
 class SceneView {
 public:
@@ -22,6 +23,7 @@ public:
     void setAR(float ar);
     void pan(glm::vec2);
     void orbit(glm::vec2);
+    void zoom(float);
     QOpenGLFunctions *getGlFunctions() const;
 
     void setGlFunctions(QOpenGLFunctions *glFunctions);

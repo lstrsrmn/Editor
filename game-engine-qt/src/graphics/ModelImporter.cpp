@@ -25,9 +25,9 @@ Mesh* getMeshData(const aiMesh* mesh, bool flipV) {
     unsigned int* indices = new unsigned int [mesh->mNumFaces * 3];
 
     for (unsigned int i = 0; i < mesh->mNumVertices; i++) {
-        glm::vec3 pos(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z);
+        glm::vec3 pos(-mesh->mVertices[i].x, mesh->mVertices[i].z, mesh->mVertices[i].y);
         glm::vec2 tex;
-        glm::vec3 normal(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
+        glm::vec3 normal(-mesh->mNormals[i].x, mesh->mNormals[i].z, mesh->mNormals[i].y);
         if (mesh->HasTextureCoords(0)) {
             tex.x = mesh->mTextureCoords[0][i].x;
             tex.y = flipV ? 1 - mesh->mTextureCoords[0][i].y : mesh->mTextureCoords[0][i].y;

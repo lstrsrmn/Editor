@@ -3,6 +3,7 @@
 
 #define GLM_ENABLE_EXPERIMENTAL
 
+#include <math.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -23,10 +24,7 @@ public:
 //        glm::mat4 rotZMatrix = glm::rotate(_rot.z, glm::vec3(0, 0, 1));
 //        glm::mat4 rotMatrix = rotZMatrix * rotYMatrix * rotXMatrix;
         glm::mat4 scaleMatrix = glm::scale(_scale);
-        glm::vec3 eulerAngles(_pos);
-        glm::quat myQuaternion;
-        myQuaternion = glm::quat(eulerAngles);
-        glm::mat4 rotMatrix = glm::toMat4(myQuaternion);
+        glm::mat4 rotMatrix = glm::toMat4(glm::quat(_rot * (M_PIf32 / 180.0f)));
 
         return posMatrix * rotMatrix * scaleMatrix;
     }

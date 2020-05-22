@@ -1114,8 +1114,12 @@
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/Renderer.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/Renderer.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
 
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp
+
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
@@ -2614,6 +2618,7 @@
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h
@@ -3100,6 +3105,7 @@
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
@@ -4687,6 +4693,7 @@
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
@@ -5668,6 +5675,7 @@
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
@@ -6159,6 +6167,7 @@
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
