@@ -24,7 +24,8 @@ public:
     void mousePressEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
     void mouseReleaseEvent(QMouseEvent*) override;
-    void test();
+    void wheelEvent(QWheelEvent*) override;
+    void setFocus(glm::vec3);
 signals:
 
 private slots:

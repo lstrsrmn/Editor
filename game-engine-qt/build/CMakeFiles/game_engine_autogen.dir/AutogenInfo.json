@@ -38,6 +38,16 @@
 			"E4O6YDJD7V/moc_Utils.cpp"
 		],
 		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h",
+			"MU",
+			"FJDYMCWYW7/moc_EditorView.cpp"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h",
+			"MU",
+			"FJDYMCWYW7/moc_EventHandler.cpp"
+		],
+		[
 			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h",
 			"MU",
 			"NX25NZMGXW/moc_ContextController.cpp"
@@ -180,6 +190,14 @@
 		],
 		[
 			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp",
 			"MU"
 		],
 		[

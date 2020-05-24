@@ -12,3 +12,7 @@ GameObject *Component::getGameObject() {
 std::string Component::componentName() {
     return "Component";
 }
+
+Component::~Component() {
+
+}

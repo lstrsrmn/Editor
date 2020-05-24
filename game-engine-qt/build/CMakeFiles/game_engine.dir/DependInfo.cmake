@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/MeshRenderer.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/MeshRenderer.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/Renderer.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o"
+  "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o"
+  "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Game.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/Game.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/GameObject.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/GameObject.cpp.o"

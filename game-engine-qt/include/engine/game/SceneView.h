@@ -27,6 +27,7 @@ public:
     QOpenGLFunctions *getGlFunctions() const;
 
     void setGlFunctions(QOpenGLFunctions *glFunctions);
+    void setFocus(glm::vec3);
 
 private:
     glm::vec3 _focus{0, 0, 0};

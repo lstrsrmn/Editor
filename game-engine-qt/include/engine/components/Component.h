@@ -32,6 +32,8 @@ public:
 
     virtual std::string componentName();
 
+    virtual ~Component();
+
 protected:
     GameObject* _gameObject;
 private:

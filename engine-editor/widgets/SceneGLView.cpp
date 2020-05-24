@@ -13,13 +13,10 @@ SceneGLView::~SceneGLView() {
 }
 
 void SceneGLView::initializeGL() {
-//    QOpenGLWidget::initializeGL();
     makeCurrent();
     QOpenGLFunctions *f = context()->functions();
     f->initializeOpenGLFunctions();
     ContextController::instance()->setSceneGLFunctions(f, this);
-
-//    makeCurrent();
 
     _sceneView = SceneView::instance();
     _sceneView->setGlFunctions(f);
@@ -39,27 +36,6 @@ void SceneGLView::initializeGL() {
     _scene->setName("Test Scene");
     _sceneView->addScene(_scene);
     _sceneView->setActive(_scene->getId());
-
-//    Texture *texture = new Texture("monkeyDiffuse2.jpg");
-//    Shader *shader = new Shader("basicShader");
-//
-//    _material = new Material(shader, texture);
-//
-//    monkey = loadModel("Monkey.fbx");
-//    ModelMeshData plane = loadModel("Plane.fbx");
-//
-//    MeshRenderer *mRenderer = new MeshRenderer(_material, monkey);
-//    MeshRenderer* pRenderer = new MeshRenderer(_material, plane);
-//
-//    mObj = _scene->createGameObject();
-//    pObj = _scene->createGameObject();
-//    mObj->setName("Monkey");
-//    pObj->setName("Plane");
-//
-//    mObj->addComponent(mRenderer);
-//    pObj->addComponent(pRenderer);
-//    mObj->getTransform().setPos({0, 1, 0});
-//    mObj->addComponent(new Component());
 }
 
 void SceneGLView::paintGL() {
@@ -126,3 +102,12 @@ void SceneGLView::mouseReleaseEvent(QMouseEvent *event) {
     }
 }
 
+void SceneGLView::wheelEvent(QWheelEvent *event) {
+    QWidget::wheelEvent(event);
+    float delta = event->angleDelta().y();
+    _sceneView->zoom(-delta/120);
+}
+
+void SceneGLView::setFocus(glm::vec3 pos) {
+    _sceneView->setFocus(pos);
+}

@@ -24,7 +24,7 @@ void GameGLView::initializeGL() {
     f->glFrontFace(GL_CCW);
     f->glCullFace(GL_BACK);
 
-    Texture* texture = new Texture("monkeyDiffuse2.jpg");
+    Texture* texture = Texture::createTexture("monkeyDiffuse2.jpg");
     Shader* shader = new Shader("basicShader");
 
     _material = new Material(shader, texture);
@@ -50,8 +50,6 @@ void GameGLView::initializeGL() {
     mObj->setName("Monkey");
     pObj->setName("Plane");
 
-    mObj->getTransform().setRot(glm::vec3(3.1415 / 2, 0, 3.1415));
-    pObj->getTransform().setRot(glm::vec3(3.1415 / 2, 0, 3.1415));
     _initialised = true;
 }
 

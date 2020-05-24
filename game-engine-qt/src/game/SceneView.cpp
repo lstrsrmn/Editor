@@ -88,3 +88,8 @@ void SceneView::zoom(float zoomAmount) {
     _sceneCamera->moveTo(pos + _focus);
 }
 
+void SceneView::setFocus(glm::vec3 pos) {
+    _focus = pos;
+    orbit({0, 0});
+}
+

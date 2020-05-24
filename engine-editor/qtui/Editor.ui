@@ -147,7 +147,7 @@
           <x>0</x>
           <y>0</y>
           <width>146</width>
-          <height>419</height>
+          <height>261</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -165,7 +165,7 @@
               <x>0</x>
               <y>0</y>
               <width>128</width>
-              <height>370</height>
+              <height>212</height>
              </rect>
             </property>
             <attribute name="label">
@@ -185,7 +185,7 @@
    <property name="minimumSize">
     <size>
      <width>141</width>
-     <height>138</height>
+     <height>183</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -209,18 +209,37 @@
    <widget class="QWidget" name="hierarchyContents">
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <widget class="QTreeWidget" name="hierarchyTree">
-       <property name="minimumSize">
-        <size>
-         <width>123</width>
-         <height>0</height>
-        </size>
+      <widget class="QScrollArea" name="scrollArea_2">
+       <property name="widgetResizable">
+        <bool>true</bool>
        </property>
-       <column>
-        <property name="text">
-         <string>Scene</string>
+       <widget class="QWidget" name="scrollAreaWidgetContents_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>274</width>
+          <height>261</height>
+         </rect>
         </property>
-       </column>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QTreeWidget" name="hierarchyTree">
+           <property name="minimumSize">
+            <size>
+             <width>123</width>
+             <height>0</height>
+            </size>
+           </property>
+           <column>
+            <property name="text">
+             <string>Scene</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -229,8 +248,8 @@
   <widget class="QDockWidget" name="Project">
    <property name="minimumSize">
     <size>
-     <width>58</width>
-     <height>83</height>
+     <width>240</width>
+     <height>107</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -254,7 +273,85 @@
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents"/>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QScrollArea" name="scrollArea_4">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>386</width>
+          <height>202</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QTreeWidget" name="projectTree">
+           <column>
+            <property name="text">
+             <string notr="true">1</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="scrollArea_3">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>386</width>
+          <height>202</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QTableWidget" name="folderContents">
+           <property name="showGrid">
+            <bool>false</bool>
+           </property>
+           <property name="rowCount">
+            <number>0</number>
+           </property>
+           <property name="columnCount">
+            <number>3</number>
+           </property>
+           <attribute name="horizontalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <column/>
+           <column/>
+           <column/>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <action name="actionNew_Scene">
    <property name="text">

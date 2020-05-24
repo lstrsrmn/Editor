@@ -14,6 +14,7 @@ class Renderer : public Component {
 public:
     virtual void render(const Camera&, const DirectionalLight&) = 0;
     void setGameObject(GameObject *gameObject) override;
+    virtual ~Renderer() override;
 private:
 };
 

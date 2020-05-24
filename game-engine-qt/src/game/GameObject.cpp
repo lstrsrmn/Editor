@@ -3,7 +3,11 @@
 //
 
 #include <QtCore/QString>
+#include <iostream>
 #include "../../include/engine/game/GameObject.h"
+#include "../../include/engine/game/Scene.h"
+
+class Scene;
 
 GameObject::GameObject() {
     _transform = Transform();
@@ -42,4 +46,13 @@ void GameObject::setName(const QString &name) {
 
 const std::vector<Component *> GameObject::getComponents() const{
     return _components;
+}
+
+GameObject::~GameObject() {
+    _scene->deleteObject(this);
+    while (!_components.empty()) {
+        Component* component = _components[0];
+        _components.erase(_components.begin());
+        delete component;
+    }
 }

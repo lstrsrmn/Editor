@@ -14,4 +14,3 @@ void MeshRenderer::render(const Camera& camera, const DirectionalLight& directio
         _meshes.meshes[i]->draw();
     }
 }
-

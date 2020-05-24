@@ -14,12 +14,14 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QDockWidget>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBox>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -67,9 +69,21 @@ public:
     QDockWidget *hierarchy;
     QWidget *hierarchyContents;
     QVBoxLayout *verticalLayout_4;
+    QScrollArea *scrollArea_2;
+    QWidget *scrollAreaWidgetContents_2;
+    QVBoxLayout *verticalLayout_7;
     QTreeWidget *hierarchyTree;
     QDockWidget *Project;
     QWidget *dockWidgetContents;
+    QHBoxLayout *horizontalLayout;
+    QScrollArea *scrollArea_4;
+    QWidget *scrollAreaWidgetContents_4;
+    QVBoxLayout *verticalLayout_8;
+    QTreeWidget *projectTree;
+    QScrollArea *scrollArea_3;
+    QWidget *scrollAreaWidgetContents_3;
+    QHBoxLayout *horizontalLayout_2;
+    QTableWidget *folderContents;
 
     void setupUi(QMainWindow *Editor)
     {
@@ -165,7 +179,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 146, 419));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 146, 261));
         verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         inspectorObjects = new QToolBox(scrollAreaWidgetContents);
@@ -173,7 +187,7 @@ public:
         inspectorObjects->setEnabled(false);
         Transform = new QWidget();
         Transform->setObjectName(QString::fromUtf8("Transform"));
-        Transform->setGeometry(QRect(0, 0, 128, 370));
+        Transform->setGeometry(QRect(0, 0, 128, 212));
         inspectorObjects->addItem(Transform, QString::fromUtf8("Transform"));
 
         verticalLayout_6->addWidget(inspectorObjects);
@@ -186,7 +200,7 @@ public:
         Editor->addDockWidget(Qt::RightDockWidgetArea, inspector);
         hierarchy = new QDockWidget(Editor);
         hierarchy->setObjectName(QString::fromUtf8("hierarchy"));
-        hierarchy->setMinimumSize(QSize(141, 138));
+        hierarchy->setMinimumSize(QSize(141, 183));
         hierarchy->setMaximumSize(QSize(384, 524287));
         hierarchy->setStyleSheet(QString::fromUtf8("background-color: rgb(223, 223, 223);"));
         hierarchy->setFeatures(QDockWidget::NoDockWidgetFeatures);
@@ -194,23 +208,83 @@ public:
         hierarchyContents->setObjectName(QString::fromUtf8("hierarchyContents"));
         verticalLayout_4 = new QVBoxLayout(hierarchyContents);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        hierarchyTree = new QTreeWidget(hierarchyContents);
+        scrollArea_2 = new QScrollArea(hierarchyContents);
+        scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
+        scrollArea_2->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 274, 261));
+        verticalLayout_7 = new QVBoxLayout(scrollAreaWidgetContents_2);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        hierarchyTree = new QTreeWidget(scrollAreaWidgetContents_2);
         hierarchyTree->setObjectName(QString::fromUtf8("hierarchyTree"));
         hierarchyTree->setMinimumSize(QSize(123, 0));
 
-        verticalLayout_4->addWidget(hierarchyTree);
+        verticalLayout_7->addWidget(hierarchyTree);
+
+        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
+
+        verticalLayout_4->addWidget(scrollArea_2);
 
         hierarchy->setWidget(hierarchyContents);
         Editor->addDockWidget(Qt::LeftDockWidgetArea, hierarchy);
         Project = new QDockWidget(Editor);
         Project->setObjectName(QString::fromUtf8("Project"));
-        Project->setMinimumSize(QSize(58, 83));
+        Project->setMinimumSize(QSize(240, 107));
         Project->setMaximumSize(QSize(524287, 241));
         Project->setStyleSheet(QString::fromUtf8("background-color: rgb(223, 223, 223);"));
         Project->setFeatures(QDockWidget::NoDockWidgetFeatures);
         Project->setAllowedAreas(Qt::BottomDockWidgetArea);
         dockWidgetContents = new QWidget();
         dockWidgetContents->setObjectName(QString::fromUtf8("dockWidgetContents"));
+        horizontalLayout = new QHBoxLayout(dockWidgetContents);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        scrollArea_4 = new QScrollArea(dockWidgetContents);
+        scrollArea_4->setObjectName(QString::fromUtf8("scrollArea_4"));
+        scrollArea_4->setWidgetResizable(true);
+        scrollAreaWidgetContents_4 = new QWidget();
+        scrollAreaWidgetContents_4->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_4"));
+        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 386, 202));
+        verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents_4);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        projectTree = new QTreeWidget(scrollAreaWidgetContents_4);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QString::fromUtf8("1"));
+        projectTree->setHeaderItem(__qtreewidgetitem);
+        projectTree->setObjectName(QString::fromUtf8("projectTree"));
+
+        verticalLayout_8->addWidget(projectTree);
+
+        scrollArea_4->setWidget(scrollAreaWidgetContents_4);
+
+        horizontalLayout->addWidget(scrollArea_4);
+
+        scrollArea_3 = new QScrollArea(dockWidgetContents);
+        scrollArea_3->setObjectName(QString::fromUtf8("scrollArea_3"));
+        scrollArea_3->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 386, 202));
+        horizontalLayout_2 = new QHBoxLayout(scrollAreaWidgetContents_3);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        folderContents = new QTableWidget(scrollAreaWidgetContents_3);
+        if (folderContents->columnCount() < 3)
+            folderContents->setColumnCount(3);
+        folderContents->setObjectName(QString::fromUtf8("folderContents"));
+        folderContents->setShowGrid(false);
+        folderContents->setRowCount(0);
+        folderContents->setColumnCount(3);
+        folderContents->horizontalHeader()->setVisible(false);
+        folderContents->horizontalHeader()->setHighlightSections(false);
+        folderContents->verticalHeader()->setVisible(false);
+        folderContents->verticalHeader()->setHighlightSections(false);
+
+        horizontalLayout_2->addWidget(folderContents);
+
+        scrollArea_3->setWidget(scrollAreaWidgetContents_3);
+
+        horizontalLayout->addWidget(scrollArea_3);
+
         Project->setWidget(dockWidgetContents);
         Editor->addDockWidget(Qt::BottomDockWidgetArea, Project);
 

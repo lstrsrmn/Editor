@@ -252,6 +252,12 @@
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h">
 			<Option target="game_engine"/>
 		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h">
+			<Option target="game_engine"/>
+		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h">
 			<Option target="game_engine"/>
 		</Unit>
@@ -307,6 +313,12 @@
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp">
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp">

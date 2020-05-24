@@ -275,6 +275,60 @@ src/core/Utils.cpp.s:
 	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.s
 .PHONY : src/core/Utils.cpp.s
 
+src/editor/EditorView.o: src/editor/EditorView.cpp.o
+
+.PHONY : src/editor/EditorView.o
+
+# target to build an object file
+src/editor/EditorView.cpp.o:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o
+.PHONY : src/editor/EditorView.cpp.o
+
+src/editor/EditorView.i: src/editor/EditorView.cpp.i
+
+.PHONY : src/editor/EditorView.i
+
+# target to preprocess a source file
+src/editor/EditorView.cpp.i:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.i
+.PHONY : src/editor/EditorView.cpp.i
+
+src/editor/EditorView.s: src/editor/EditorView.cpp.s
+
+.PHONY : src/editor/EditorView.s
+
+# target to generate assembly for a file
+src/editor/EditorView.cpp.s:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.s
+.PHONY : src/editor/EditorView.cpp.s
+
+src/editor/EventHandler.o: src/editor/EventHandler.cpp.o
+
+.PHONY : src/editor/EventHandler.o
+
+# target to build an object file
+src/editor/EventHandler.cpp.o:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o
+.PHONY : src/editor/EventHandler.cpp.o
+
+src/editor/EventHandler.i: src/editor/EventHandler.cpp.i
+
+.PHONY : src/editor/EventHandler.i
+
+# target to preprocess a source file
+src/editor/EventHandler.cpp.i:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.i
+.PHONY : src/editor/EventHandler.cpp.i
+
+src/editor/EventHandler.s: src/editor/EventHandler.cpp.s
+
+.PHONY : src/editor/EventHandler.s
+
+# target to generate assembly for a file
+src/editor/EventHandler.cpp.s:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.s
+.PHONY : src/editor/EventHandler.cpp.s
+
 src/game/ContextController.o: src/game/ContextController.cpp.o
 
 .PHONY : src/game/ContextController.o
@@ -678,6 +732,12 @@ help:
 	@echo "... src/core/Utils.o"
 	@echo "... src/core/Utils.i"
 	@echo "... src/core/Utils.s"
+	@echo "... src/editor/EditorView.o"
+	@echo "... src/editor/EditorView.i"
+	@echo "... src/editor/EditorView.s"
+	@echo "... src/editor/EventHandler.o"
+	@echo "... src/editor/EventHandler.i"
+	@echo "... src/editor/EventHandler.s"
 	@echo "... src/game/ContextController.o"
 	@echo "... src/game/ContextController.i"
 	@echo "... src/game/ContextController.s"

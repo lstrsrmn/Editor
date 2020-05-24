@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(engine_editor)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_PREFIX_PATH "~/Qt/5.14.2/gcc_64/lib/cmake")
 
 find_package(OpenCV REQUIRED)
@@ -10,10 +10,6 @@ find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets OpenGL)
 
 set(PROJECT_UI qtui/Editor.ui qtui/Editor.cpp qtui/Editor.h)
 set(WIDGETS widgets/GameGLView.h widgets/GameGLView.cpp widgets/SceneGLView.h widgets/SceneGLView.cpp)
-#set(PROJECT_UI_H qtui/Editor.h qtui/GameGLView.h)
-#set(PROJECT_UI_SRC qtui/Editor.cpp qtui/GameGLView.cpp)
-#qt5_wrap_ui(PROJECT_HEADERS_WRAPPED ${PROJECT_UI})
-#qt5_wrap_cpp(PROJECT_SOURCES_MOC ${PROJECT_UI_SRC})
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)

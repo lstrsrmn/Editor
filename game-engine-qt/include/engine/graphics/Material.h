@@ -10,12 +10,13 @@
 class Material {
 public:
     Material(Shader* shader, Texture* texture);
-
     void bind(const Transform&, const Camera&, DirectionalLight light);
+    Texture* _texture;
+    QString* filePath;
 private:
     Shader* _shader;
     //TODO: make multiple textures applicable
-    Texture* _texture;
+
 };
 
 

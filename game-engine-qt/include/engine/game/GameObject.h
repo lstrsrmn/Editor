@@ -24,6 +24,8 @@ public:
 
     void setName(const QString &name);
 
+    ~GameObject();
+
 private:
     QString _name;
     std::vector<Component*> _components;

@@ -65,6 +65,22 @@ std::vector<GameObject*> Scene::getObjects() {
     return _gameObjects;
 }
 
+void Scene::deleteObject(GameObject* object) {
+    for (unsigned int i = 0; i < _gameObjects.size(); i++) {
+        if (_gameObjects[i] == object) {
+            _gameObjects.erase(_gameObjects.begin() + i);
+        }
+    }
+}
+
+void Scene::deleteRenderer(Renderer* renderer) {
+    for (unsigned int i = 0; i < _renderers.size(); i++) {
+        if (_renderers[i] == renderer) {
+            _renderers.erase(_renderers.begin() + i);
+        }
+    }
+}
+
 SceneManager *SceneManager::instance() {
     if (_instance == nullptr) {
         _instance = new SceneManager();
