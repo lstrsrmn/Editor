@@ -100,8 +100,17 @@
     </property>
     <addaction name="actionNew_Object"/>
    </widget>
+   <widget class="QMenu" name="menuAssets">
+    <property name="title">
+     <string>Assets</string>
+    </property>
+    <addaction name="actionMaterials"/>
+    <addaction name="actionTextures"/>
+    <addaction name="actionShaders"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuScene"/>
+   <addaction name="menuAssets"/>
   </widget>
   <widget class="QDockWidget" name="inspector">
    <property name="minimumSize">
@@ -406,6 +415,21 @@
   <action name="actionNew_Object">
    <property name="text">
     <string>New Object</string>
+   </property>
+  </action>
+  <action name="actionMaterials">
+   <property name="text">
+    <string>Materials</string>
+   </property>
+  </action>
+  <action name="actionTextures">
+   <property name="text">
+    <string>Textures</string>
+   </property>
+  </action>
+  <action name="actionShaders">
+   <property name="text">
+    <string>Shaders</string>
    </property>
   </action>
  </widget>

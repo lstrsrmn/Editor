@@ -45,6 +45,9 @@ public:
     QAction *actionAdd_Script;
     QAction *actionAdd_Object_2;
     QAction *actionNew_Object;
+    QAction *actionMaterials;
+    QAction *actionTextures;
+    QAction *actionShaders;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QCommandLinkButton *runStopButton;
@@ -58,6 +61,7 @@ public:
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuScene;
+    QMenu *menuAssets;
     QDockWidget *inspector;
     QWidget *inspectorContents;
     QVBoxLayout *verticalLayout_5;
@@ -112,6 +116,12 @@ public:
         actionAdd_Object_2->setObjectName(QString::fromUtf8("actionAdd_Object_2"));
         actionNew_Object = new QAction(Editor);
         actionNew_Object->setObjectName(QString::fromUtf8("actionNew_Object"));
+        actionMaterials = new QAction(Editor);
+        actionMaterials->setObjectName(QString::fromUtf8("actionMaterials"));
+        actionTextures = new QAction(Editor);
+        actionTextures->setObjectName(QString::fromUtf8("actionTextures"));
+        actionShaders = new QAction(Editor);
+        actionShaders->setObjectName(QString::fromUtf8("actionShaders"));
         centralwidget = new QWidget(Editor);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -161,6 +171,8 @@ public:
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuScene = new QMenu(menubar);
         menuScene->setObjectName(QString::fromUtf8("menuScene"));
+        menuAssets = new QMenu(menubar);
+        menuAssets->setObjectName(QString::fromUtf8("menuAssets"));
         Editor->setMenuBar(menubar);
         inspector = new QDockWidget(Editor);
         inspector->setObjectName(QString::fromUtf8("inspector"));
@@ -290,6 +302,7 @@ public:
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuScene->menuAction());
+        menubar->addAction(menuAssets->menuAction());
         menuFile->addAction(actionNew_Project);
         menuFile->addAction(actionOpen_Project);
         menuFile->addSeparator();
@@ -298,6 +311,9 @@ public:
         menuFile->addSeparator();
         menuFile->addAction(actionClose);
         menuScene->addAction(actionNew_Object);
+        menuAssets->addAction(actionMaterials);
+        menuAssets->addAction(actionTextures);
+        menuAssets->addAction(actionShaders);
 
         retranslateUi(Editor);
 
@@ -322,6 +338,9 @@ public:
         actionAdd_Script->setText(QCoreApplication::translate("Editor", "Add Script", nullptr));
         actionAdd_Object_2->setText(QCoreApplication::translate("Editor", "Add Object", nullptr));
         actionNew_Object->setText(QCoreApplication::translate("Editor", "New Object", nullptr));
+        actionMaterials->setText(QCoreApplication::translate("Editor", "Materials", nullptr));
+        actionTextures->setText(QCoreApplication::translate("Editor", "Textures", nullptr));
+        actionShaders->setText(QCoreApplication::translate("Editor", "Shaders", nullptr));
         runStopButton->setText(QCoreApplication::translate("Editor", "Run", nullptr));
         ViewPort->setTabText(ViewPort->indexOf(Scene), QCoreApplication::translate("Editor", "Scene", nullptr));
 #if QT_CONFIG(tooltip)
@@ -333,6 +352,7 @@ public:
         ViewPort->setTabText(ViewPort->indexOf(Game), QCoreApplication::translate("Editor", "Game", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Editor", "File", nullptr));
         menuScene->setTitle(QCoreApplication::translate("Editor", "Scene", nullptr));
+        menuAssets->setTitle(QCoreApplication::translate("Editor", "Assets", nullptr));
         inspector->setWindowTitle(QCoreApplication::translate("Editor", "Inspector", nullptr));
         inspectorObjects->setItemText(inspectorObjects->indexOf(Transform), QCoreApplication::translate("Editor", "Transform", nullptr));
         hierarchy->setWindowTitle(QCoreApplication::translate("Editor", "Hierarchy", nullptr));

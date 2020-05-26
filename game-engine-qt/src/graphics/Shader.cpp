@@ -5,15 +5,15 @@
 
 static void checkShaderError (GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage);
 static std::string loadShader(const std::string& fileName);
-static GLuint createShader (const std::string& text, GLenum shaderType);
+static GLuint createGLSLShader (const std::string& text, GLenum shaderType);
 
-Shader::Shader(const std::string& shaderName, const std::string& shaderFolder) {
+Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderName, id) {
     QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
 
     _program = f->glCreateProgram();
 
-    _shaders[0] = createShader(loadShader(shaderFolder + shaderName + "/" + shaderName + ".vs"), GL_VERTEX_SHADER);
-    _shaders[1] = createShader(loadShader(shaderFolder + shaderName + "/" + shaderName + ".fs"), GL_FRAGMENT_SHADER);
+    _shaders[0] = createGLSLShader(loadShader(shaderName + ".vs"), GL_VERTEX_SHADER);
+    _shaders[1] = createGLSLShader(loadShader(shaderName + ".fs"), GL_FRAGMENT_SHADER);
 
     for (unsigned int _shader : _shaders)
         f->glAttachShader(_program, _shader);
@@ -65,35 +65,9 @@ void Shader::update(const Transform &transform, const Camera& camera, Directiona
     f->glUniform4f(_uniforms[DIRECTIONAL_LIGHT_COLOUR_U], colour.x, colour.y, colour.z, 1.0f);
 }
 
-static GLuint createShader (const std::string& text, GLenum shaderType) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
-
-    GLuint shader = f->glCreateShader(shaderType);
-
-    if (shader == 0)
-        std::cerr << "Error: Shader creation failed!" << std::endl;
-
-    const GLchar* shaderSourceStrings[1];
-    GLint shaderSourceStringLengths[1];
-
-    shaderSourceStrings[0] = text.c_str();
-    shaderSourceStringLengths[0] = text.length();
-
-    f->glShaderSource(shader, 1, shaderSourceStrings, shaderSourceStringLengths);
-    f->glCompileShader(shader);
-
-    checkShaderError(shader, GL_COMPILE_STATUS, false, "Error: Shader compilation failed: ");
-
-    return shader;
+Shader *Shader::createShader(const std::string &name, const std::string &fileName, const std::string &filePath) {
+    return AssetManager<Shader>::createAsset(name, filePath + fileName + "/" + fileName);
 }
-
-
-
-
-
-
-
-
 
 
 static std::string loadShader(const std::string& fileName) {
@@ -134,4 +108,26 @@ static void checkShaderError(GLuint shader, GLuint flag, bool isProgram, const s
 
         std::cerr << errorMessage << ": '" << error << "'" << std::endl;
     }
+}
+
+static GLuint createGLSLShader (const std::string& text, GLenum shaderType) {
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+
+    GLuint shader = f->glCreateShader(shaderType);
+
+    if (shader == 0)
+        std::cerr << "Error: Shader creation failed!" << std::endl;
+
+    const GLchar* shaderSourceStrings[1];
+    GLint shaderSourceStringLengths[1];
+
+    shaderSourceStrings[0] = text.c_str();
+    shaderSourceStringLengths[0] = text.length();
+
+    f->glShaderSource(shader, 1, shaderSourceStrings, shaderSourceStringLengths);
+    f->glCompileShader(shader);
+
+    checkShaderError(shader, GL_COMPILE_STATUS, false, "Error: Shader compilation failed: ");
+
+    return shader;
 }

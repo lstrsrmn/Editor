@@ -6,29 +6,22 @@
 #include <QtOpenGL>
 #include <opencv2/opencv.hpp>
 #include <map>
+#include <nlohmann/json.hpp>
 #include "../game/Game.h"
+#include "../core/Asset.h"
+#include "../core/AssetManager.h"
 
-class Texture {
+class Texture: public Asset {
+    ASSET(Texture)
 public:
-    static Texture* createTexture(const std::string&);
-
+    static Texture* createTexture(const std::string&, const std::string&);
     void bind(unsigned int) const;
     virtual ~Texture();
-    std::string name;
 private:
-    Texture(const std::string&);
-    Texture(const Texture& other) = default;
-    unsigned int _id;
+    Texture(const std::string&, unsigned int);
     GLuint _texture;
 };
 
-class TextureManager {
-public:
-    static bool requestTextureID(const std::string&, unsigned int&);
-    static void addTexture(Texture*, unsigned int);
-    static Texture* getTexture(unsigned int);
-private:
-    static std::map<unsigned int, Texture*> _loadedTextures;
-};
+//ASSET_MAP(Texture)
 
 #endif //GAME_ENGINE_TEXTURE_H

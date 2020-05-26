@@ -97,6 +97,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules.cmake"
+  "/usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake"
+  "/usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake"
+  "/usr/local/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake"
   )
 
 # The corresponding makefile is:

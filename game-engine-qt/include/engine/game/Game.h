@@ -15,7 +15,6 @@ enum GameErrorCode {
 class Game {
 public:
     static Game* instance();
-    void makeDisplay(int, int, const std::string&);
     GameErrorCode run();
     void update();
     void addScene(Scene*);
@@ -31,11 +30,10 @@ public:
 private:
     QOpenGLFunctions* _glFunctions;
     Game();
-    Display* _display;
     static Game* _instance;
     std::map<unsigned int, Scene*> _scenes;
-//    std::vector<Scene*> _scenes;
     unsigned int _activeScene;
+    float _AR;
 };
 
 

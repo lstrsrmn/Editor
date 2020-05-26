@@ -25,12 +25,8 @@ Scene *Game::activeScene() {
     return _scenes[_activeScene];
 }
 
-void Game::makeDisplay(int width, int height, const std::string &name) {
-    _display = new Display(width, height, name);
-}
-
 float Game::getAR() const {
-    return _display->getAR();
+    return _AR;
 }
 
 GameErrorCode Game::run() {
@@ -56,4 +52,5 @@ void Game::setGlFunctions(QOpenGLFunctions *glFunctions) {
 
 void Game::setAR(float AR) {
     _scenes[_activeScene]->setAR(AR);
+    _AR = AR;
 }

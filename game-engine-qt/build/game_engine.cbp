@@ -5,7 +5,7 @@
 		<Option title="game_engine"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\;CMake Files\..\..\..\Qt\;CMake Files\..\..\..\Qt\5.14.2\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5OpenGL\;CMake Files\..\game-engine-qt\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\usr\local\lib\cmake\nlohmann_json\;CMake Files\..\..\..\Qt\;CMake Files\..\..\..\Qt\5.14.2\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5OpenGL\;CMake Files\..\game-engine-qt\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build"/>
@@ -118,6 +118,12 @@
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h">
 			<Option target="game_engine"/>
 		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h">
+			<Option target="game_engine"/>
+		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h">
 			<Option target="game_engine"/>
 		</Unit>
@@ -179,6 +185,9 @@
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp">
+			<Option target="game_engine"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Asset.cpp">
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp">
@@ -258,6 +267,15 @@
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/../../../../../usr/lib/x86_64-linux-gnu/cmake/assimp-5.0/assimpTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\assimp-5.0\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/../../../../../usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/../../../../../usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/../../../../../usr/local/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\cmake\nlohmann_json\"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/../../../Qt/5.14.2/gcc_64/lib/cmake/Qt5/Qt5Config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\Qt\5.14.2\gcc_64\lib\cmake\Qt5\"/>

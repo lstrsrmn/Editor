@@ -36,6 +36,15 @@ void SceneGLView::initializeGL() {
     _scene->setName("Test Scene");
     _sceneView->addScene(_scene);
     _sceneView->setActive(_scene->getId());
+
+//    GameObject* cameraObject = _scene->createGameObject();
+//    cameraObject->setName("cameraObject");
+//    ModelMeshData camera = loadDefaultModel("Camera.fbx");
+//    Texture* texture = Texture::createTexture("/home/lstrsrmn/CLionProjects/Editor/engine-editor/res/textures/defaultDiffuse.jpg");
+//    Shader* shader = new Shader("/home/lstrsrmn/CLionProjects/Editor/engine-editor/res/shaders/basicShader");
+//    Material* material = new Material(shader, texture);
+//    MeshRenderer* cameraRenderer = new MeshRenderer(material, camera);
+//    cameraObject->addComponent(cameraRenderer);
 }
 
 void SceneGLView::paintGL() {

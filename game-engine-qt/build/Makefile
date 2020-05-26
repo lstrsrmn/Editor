@@ -248,6 +248,33 @@ src/components/Renderer.cpp.s:
 	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/Renderer.cpp.s
 .PHONY : src/components/Renderer.cpp.s
 
+src/core/Asset.o: src/core/Asset.cpp.o
+
+.PHONY : src/core/Asset.o
+
+# target to build an object file
+src/core/Asset.cpp.o:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o
+.PHONY : src/core/Asset.cpp.o
+
+src/core/Asset.i: src/core/Asset.cpp.i
+
+.PHONY : src/core/Asset.i
+
+# target to preprocess a source file
+src/core/Asset.cpp.i:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.i
+.PHONY : src/core/Asset.cpp.i
+
+src/core/Asset.s: src/core/Asset.cpp.s
+
+.PHONY : src/core/Asset.s
+
+# target to generate assembly for a file
+src/core/Asset.cpp.s:
+	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.s
+.PHONY : src/core/Asset.cpp.s
+
 src/core/Utils.o: src/core/Utils.cpp.o
 
 .PHONY : src/core/Utils.o
@@ -729,6 +756,9 @@ help:
 	@echo "... src/components/Renderer.o"
 	@echo "... src/components/Renderer.i"
 	@echo "... src/components/Renderer.s"
+	@echo "... src/core/Asset.o"
+	@echo "... src/core/Asset.i"
+	@echo "... src/core/Asset.s"
 	@echo "... src/core/Utils.o"
 	@echo "... src/core/Utils.i"
 	@echo "... src/core/Utils.s"

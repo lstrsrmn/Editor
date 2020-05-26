@@ -4,9 +4,7 @@
 #include "../../include/engine/graphics/Texture.h"
 #include "../../include/engine/game/ContextController.h"
 
-std::map<unsigned int, Texture*> TextureManager::_loadedTextures;
-
-Texture::Texture(const std::string& texturePath) {
+Texture::Texture(const std::string& texturePath, unsigned int id) : Asset(texturePath, id){
     QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
     cv::Mat img = cv::imread(texturePath, cv::IMREAD_COLOR);
     cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
@@ -42,28 +40,6 @@ void Texture::bind(unsigned int unit) const{
     f->glBindTexture(GL_TEXTURE_2D, _texture);
 }
 
-Texture *Texture::createTexture(const std::string &filePath) {
-    unsigned int id;
-    if (TextureManager::requestTextureID(filePath, id)) {
-        Texture* newTexture = new Texture(filePath);
-        TextureManager::addTexture(newTexture, id);
-        return newTexture;
-    }
-    return TextureManager::getTexture(id);
-}
-
-void TextureManager::addTexture(Texture *texture, unsigned int id) {
-    _loadedTextures[id] = texture;
-}
-
-bool TextureManager::requestTextureID(const std::string &filePath, unsigned int& id) {
-    id = std::hash<std::string>()(filePath);
-    if (_loadedTextures.find(id) == _loadedTextures.end()) {
-        return true;
-    }
-    return false;
-}
-
-Texture *TextureManager::getTexture(unsigned int id) {
-    return _loadedTextures[id];
+Texture *Texture::createTexture(const std::string &name, const std::string &filePath) {
+    return AssetManager<Texture>::createAsset(name, filePath);
 }

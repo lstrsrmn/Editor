@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/game_engine.dir/src/components/Component.cpp.o"
   "CMakeFiles/game_engine.dir/src/components/MeshRenderer.cpp.o"
   "CMakeFiles/game_engine.dir/src/components/Renderer.cpp.o"
+  "CMakeFiles/game_engine.dir/src/core/Asset.cpp.o"
   "CMakeFiles/game_engine.dir/src/core/Utils.cpp.o"
   "CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o"
   "CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o"
