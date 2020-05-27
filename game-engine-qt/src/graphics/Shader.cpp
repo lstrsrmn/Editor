@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+
 #include "../../include/engine/graphics/Shader.h"
 #include "../../include/engine/game/ContextController.h"
 
@@ -10,10 +11,12 @@ static GLuint createGLSLShader (const std::string& text, GLenum shaderType);
 Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderName, id) {
     QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
 
+    std::filesystem::path path = std::filesystem::path(filePath);
+    std::string fullPath = filePath + "/" + path.filename().string();
     _program = f->glCreateProgram();
 
-    _shaders[0] = createGLSLShader(loadShader(shaderName + ".vs"), GL_VERTEX_SHADER);
-    _shaders[1] = createGLSLShader(loadShader(shaderName + ".fs"), GL_FRAGMENT_SHADER);
+    _shaders[0] = createGLSLShader(loadShader(fullPath + ".vs"), GL_VERTEX_SHADER);
+    _shaders[1] = createGLSLShader(loadShader(fullPath + ".fs"), GL_FRAGMENT_SHADER);
 
     for (unsigned int _shader : _shaders)
         f->glAttachShader(_program, _shader);

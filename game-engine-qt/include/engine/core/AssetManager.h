@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <fstream>
+#include <nlohmann/json.hpp>
 #include "Asset.h"
 
 

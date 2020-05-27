@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lstrsrmn/CLionProjects/Editor/engine-editor/main.cpp" "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor.dir/main.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/engine-editor/qtui/Editor.cpp" "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp" "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o"
+  "/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp" "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp" "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

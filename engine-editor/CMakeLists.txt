@@ -10,7 +10,7 @@ find_package(nlohmann_json REQUIRED)
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets OpenGL)
 
 set(PROJECT_UI qtui/Editor.ui qtui/Editor.cpp qtui/Editor.h)
-set(WIDGETS widgets/GameGLView.h widgets/GameGLView.cpp widgets/SceneGLView.h widgets/SceneGLView.cpp)
+set(WIDGETS widgets/GameGLView.h widgets/GameGLView.cpp widgets/SceneGLView.h widgets/SceneGLView.cpp widgets/ListDialog.cpp widgets/ListDialog.h)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)

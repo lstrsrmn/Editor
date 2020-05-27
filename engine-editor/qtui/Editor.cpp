@@ -1,6 +1,8 @@
 #include "Editor.h"
 #include "../build/ui_Editor.h"
 
+std::string projectDir = "/home/lstrsrmn/Game-Engine-Projects/Test-Project";
+
 Editor::Editor(QWidget *parent) :
         QMainWindow(parent),
         ui(new Ui::Editor) {
@@ -22,13 +24,43 @@ Editor::Editor(QWidget *parent) :
     connect(ui->actionOpen_Project, SIGNAL(triggered(bool)), this, SLOT(loadProject(bool)));
     connect(ui->actionTextures, SIGNAL(triggered(bool)), this, SLOT(textureManager(bool)));
     connect(ui->actionMaterials, SIGNAL(triggered(bool)), this, SLOT(materialManager(bool)));
-    //TODO: make scene display stuff and move around easily, then make loading models, then make game run scene, then make scenes savable
-    updateProject();
-
+    connect(ui->actionShaders, SIGNAL(triggered(bool)), this, SLOT(shaderManager(bool)));
+    //TODO: then make game run scene, then make scenes savable
 }
 
 Editor::~Editor() {
     delete ui;
+}
+
+void Editor::startup() {
+    QWidget *window = new QWidget;
+    window->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, window->size(),
+                                            QGuiApplication::screens()[0]->geometry()));
+    window->setAttribute(Qt::WA_DeleteOnClose, true);
+    QVBoxLayout *layout = new QVBoxLayout;
+
+    QImageReader reader("res/titlePage.png");
+    QImage image = reader.read();
+    QLabel *imageLabel = new QLabel();
+    imageLabel->setPixmap(QPixmap::fromImage(image));
+    layout->addWidget(imageLabel);
+
+    QFrame *frame = new QFrame;
+    QHBoxLayout *frameLayout = new QHBoxLayout;
+    QPushButton *newButton = new QPushButton("New Project");
+    connect(newButton, SIGNAL(clicked()), this, SLOT(newProject()));
+    connect(newButton, SIGNAL(clicked()), window, SLOT(close()));
+    QPushButton *loadButton = new QPushButton("Load Projcet");
+    connect(loadButton, SIGNAL(clicked()), this, SLOT(loadProject()));
+    connect(loadButton, SIGNAL(clicked()), window, SLOT(close()));
+    frameLayout->addWidget(newButton);
+    frameLayout->addWidget(loadButton);
+    frame->setLayout(frameLayout);
+    layout->addWidget(frame);
+
+    window->setLayout(layout);
+    window->setWindowModality(Qt::ApplicationModal);
+    window->show();
 }
 
 void Editor::runButtonClicked() {
@@ -65,7 +97,11 @@ void Editor::viewPortChanged(int newViewPort) {
 }
 
 void Editor::loadObject(bool) {
-    QString filePath = QFileDialog::getOpenFileName(this, "Open model", QApplication::applicationDirPath());
+    QFileDialog dialog;
+    dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    QString filePath = dialog.selectedFiles()[0];;
     ModelMeshData input = loadModel(filePath.toStdString());
     loadObject(filePath.toStdString());
 }
@@ -75,18 +111,18 @@ void Editor::loadObject(const std::string &filePath) {
     std::string fileName = removeExtension(path.filename().string());
     Scene *scene = SceneView::instance()->getCurrentScene();
     ModelMeshData input = loadModel(filePath);
-
-    Texture *texture = Texture::createTexture("DefaultDiffuse", "res/textures/defaultDiffuse.jpg");
-    Shader *shader = Shader::createShader("BasicShader", "basicShader");
-    Material *material = Material::createMaterial("DefaultMaterial", projectDir + "/Assets/Materials", shader, texture);
-
-    MeshRenderer *newRenderer = new MeshRenderer(material, input);
-    GameObject *newObj = scene->createGameObject();
-    newObj->setName(fileName.c_str());
-    newObj->addComponent(newRenderer);
+    Material *material = listSelectDialog<Material>();
+    if (material == nullptr)
+        return;
+    GameObject *newObject = scene->createGameObject();
+    QString name = QInputDialog::getText(this, "Object name", "Please input object name");
+    if (name.isEmpty())
+        newObject->setName("new Object");
+    else
+        newObject->setName(name);
+    MeshRenderer *renderer = new MeshRenderer(material, input);
+    newObject->addComponent(renderer);
     loadScene();
-    ui->sceneGLWidget->update();
-    newObj->getTransform().pos = {0, 0, 0};
 
     saveProjectMeta();
 }
@@ -108,13 +144,6 @@ void Editor::objectSelected(QTreeWidgetItem *selectedWidget, int column) {
     EditorView<Transform>::displayEditorView(&_selectedObject->getTransform(), tLayout);
     tFrame->setLayout(tLayout);
     tFrame->show();
-
-//    QWidget* meshRenderer = ui->inspectorObjects->widget(1);
-//    QFrame* mFrame = new QFrame(meshRenderer);
-//    QFormLayout* mLayout = new QFormLayout;
-//    EditorView<MeshRenderer>::displayEditorView((MeshRenderer*)_selectedObject->getComponents().front(), mLayout);
-//    mFrame->setLayout(mLayout);
-//    mFrame->show();
 
 }
 
@@ -177,7 +206,8 @@ void Editor::loadTableItem(QTableWidgetItem *item) {
     } else if (ext == ".jpg" || ext == ".png") {
         QString name = QInputDialog::getText(this, "New Texture", "Please name your new Texture.");
         if (!name.isEmpty())
-            createTexture(name.toStdString(), filePath);
+            std::cout << "Texture" << std::endl;
+//            createTexture(name.toStdString(), filePath);
     } else if (ext == ".fbx") {
         loadObject(filePath);
     } else if (ext == ".vs") {
@@ -236,7 +266,45 @@ void Editor::setSceneViewFocus(bool) {
 }
 
 void Editor::newProject(bool) {
-    saveProjectMeta();
+    QString filePath;
+    QString previousPath;
+    QFileDialog dialog;
+    dialog.setWindowTitle("New Project");
+    dialog.setFileMode(QFileDialog::Directory);
+    dialog.setOption(QFileDialog::ShowDirsOnly, true);
+    dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    filePath = dialog.selectedFiles()[0];
+    QString name = QInputDialog::getText(this, "New Project", "Please name the new Project");
+    if (name.isEmpty())
+        return;
+    std::string path = filePath.toStdString() + "/" +name.toStdString();
+    projectDir = path;
+    mkdir((projectDir).c_str(), 0777);
+    mkdir((projectDir + "/meta").c_str(), 0777);
+    mkdir((projectDir + "/assets").c_str(), 0777);
+    mkdir((projectDir + "/assets/Textures").c_str(), 0777);
+    copyFile("res/textures/defaultDiffuse.jpg", projectDir + "/assets/Textures/default");
+    mkdir((projectDir + "/assets/Shaders").c_str(), 0777);
+    mkdir((projectDir + "/assets/Shaders/basicShader").c_str(), 0777);
+    copyFile("res/shaders/basicShader/basicShader.vs", projectDir + "/assets/Shaders/basicShader/basicShader.vs");
+    copyFile("res/shaders/basicShader/basicShader.fs", projectDir + "/assets/Shaders/basicShader/basicShader.fs");
+    mkdir((projectDir + "/assets/Materials").c_str(), 0777);
+    mkdir((projectDir + "/assets/Models").c_str(), 0777);
+    mkdir((projectDir + "/assets/Scripts").c_str(), 0777);
+    std::ofstream project(path + "meta/project.meta"), textures(path + "meta/textures.meta"),
+    shaders(path + "meta/shaders.meta"), materials(path + "meta/materials.meta");
+    //TODO: get these files to create and set up defaults
+//    project << "" << std::endl;
+//    project.close();
+//    textures << "" << std::endl;
+//    textures.close();
+//    shaders << "" << std::endl;
+//    shaders.close();
+//    materials << "" << std::endl;
+//    materials.close();
+
 }
 
 void Editor::saveProjectMeta() {
@@ -253,6 +321,27 @@ void Editor::saveProjectMeta() {
 }
 
 void Editor::loadProject(bool) {
+    QString filePath;
+    QFileDialog dialog;
+    dialog.setWindowTitle("Load Project");
+    dialog.setFileMode(QFileDialog::Directory);
+    dialog.setOption(QFileDialog::ShowDirsOnly, true);
+        dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    filePath = dialog.selectedFiles()[0];
+    std::filesystem::path path = std::filesystem::path(filePath.toStdString() + "/meta");
+    if (!std::filesystem::exists(path)) {
+        std::cout << filePath.toStdString() << std::endl;
+        QMessageBox error;
+        error.setWindowTitle("Invalid path");
+        error.setText(
+                "The selected path doesn't meet requirements to be a project");
+        error.exec();
+        return;
+    }
+
+    projectDir = filePath.toStdString();
     const std::string projectMetaDir = projectDir + "/meta/";
     std::ifstream projectMeta(projectMetaDir + "project.meta");
     nlohmann::json project;
@@ -261,179 +350,264 @@ void Editor::loadProject(bool) {
     AssetManager<Texture>::readAssetMeta(projectMetaDir + "textures.meta");
     AssetManager<Shader>::readAssetMeta(projectMetaDir + "shaders.meta");
     AssetManager<Material>::readAssetMeta(projectMetaDir + "materials.meta");
+    updateProject();
 }
 
 void Editor::textureManager(bool) {
-    QWidget* manager = new QWidget();
+    QWidget *manager = new QWidget();
     manager->setAttribute(Qt::WA_DeleteOnClose, true);
-    QHBoxLayout* managerLayout = new QHBoxLayout();
-    manager->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, manager->size(), QGuiApplication::screens()[0]->geometry()));
+    QHBoxLayout *managerLayout = new QHBoxLayout();
+    manager->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, manager->size(),
+                                             QGuiApplication::screens()[0]->geometry()));
     manager->setWindowTitle("Texture Manager");
     texturesList = new QListWidget;
     texturesList->setAttribute(Qt::WA_DeleteOnClose, false);
-//    texturesList->setSelectionBehavior( QAbstractItemView::SelectItems );
-//    texturesList->setSelectionMode( QAbstractItemView::SingleSelection );
-    connect(texturesList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(textureSelected(QListWidgetItem*)));
+    connect(texturesList, SIGNAL(itemDoubleClicked(QListWidgetItem * )), this,
+            SLOT(textureSelected(QListWidgetItem * )));
     updateTextureManager();
     managerLayout->addWidget(texturesList);
     texturesList->setParent(manager);
 
-    QFrame* newTextures = new QFrame();
-    QFormLayout* newTexturesLayout = new QFormLayout();
-    QPushButton* loadProject = new QPushButton("Load Project Textures");
-    QPushButton* newTexture = new QPushButton("Create new Texture");
-    connect(loadProject, SIGNAL(clicked(bool)), this, SLOT(loadProject(bool)));
-    connect(loadProject, SIGNAL(clicked()), this, SLOT(updateTextureManager()));
+    QFrame *newTextures = new QFrame();
+    QFormLayout *newTexturesLayout = new QFormLayout();
+    QPushButton *newTexture = new QPushButton("Create new Texture");
     connect(newTexture, SIGNAL(clicked()), this, SLOT(createTextureFromFile()));
-    newTexturesLayout->addRow(loadProject);
     newTexturesLayout->addRow(newTexture);
-
 
     newTextures->setLayout(newTexturesLayout);
     managerLayout->addWidget(newTextures);
     manager->setLayout(managerLayout);
+    manager->setWindowModality(Qt::ApplicationModal);
     manager->show();
 }
 
 void Editor::updateTextureManager() {
     texturesList->clear();
     std::map<unsigned int, Texture *> loadedTextures = AssetManager<Texture>::getLoadedAssets();
-    for (std::pair<unsigned int, Texture*> texturePair: loadedTextures) {
-        QListWidgetItem* item = new QListWidgetItem(texturePair.second->name.c_str());
+    for (std::pair<unsigned int, Texture *> texturePair: loadedTextures) {
+        QListWidgetItem *item = new QListWidgetItem(texturePair.second->name.c_str());
         _listTextureDir[item] = texturePair.second;
         texturesList->addItem(item);
     }
 }
 
+
 void Editor::createTextureFromFile() {
-    QString filePath = QFileDialog::getOpenFileName(this, "Open Texture", QString(projectDir.c_str()));
-    QString name = QInputDialog::getText(this, "New Texture", "Please name your new Texture.");
-    if (!filePath.isEmpty() && !name.isEmpty())
-        createTexture(name.toStdString(), filePath.toStdString());
+    QFileDialog dialog;
+    dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    QString filePath = dialog.selectedFiles()[0];
+    if (!filePath.isEmpty()) {
+        QString name = QInputDialog::getText(this, "Create Texture", "Please input Texture name.");
+        if (!name.isEmpty()) {
+            Texture::createTexture(name.toStdString(), filePath.toStdString());
+            saveProjectMeta();
+            updateTextureManager();
+        }
+    }
 }
 
-void Editor::createTexture(const std::string &name, const std::string &filePath) {
-    AssetManager<Texture>::createAsset(name, filePath);
-    updateTextureManager();
-    saveProjectMeta();
-}
-
-void Editor::deleteTexture() {
-    //TODO: impliment deleting
-}
-
-void Editor::textureSelected(QListWidgetItem* item) {
+void Editor::textureSelected(QListWidgetItem *item) {
     _selectedTexture = _listTextureDir[item];
-    QString filePath(_selectedTexture->getFilePath().c_str());
-    QWidget* imageWindow = new QWidget();
-    QVBoxLayout* layout = new QVBoxLayout();
+    QWidget *window = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout();
 
-    QLabel* imageLabel = new QLabel(imageWindow);
-    QImageReader reader(filePath);
-    reader.setAutoTransform(true);
-    const QImage image = reader.read();
+    QImageReader *reader = new QImageReader(_selectedTexture->getFilePath().c_str());
+    const QImage image = reader->read();
+    QLabel *imageLabel = new QLabel();
     imageLabel->setPixmap(QPixmap::fromImage(image.scaled(512, 512)));
     layout->addWidget(imageLabel);
 
-    QPushButton* deleteButton = new QPushButton("Delete");
-    connect(deleteButton, SIGNAL(clicked()), this, SLOT(deleteTexture()));
-    layout->addWidget(deleteButton);
+    QFrame *buttons = new QFrame;
+    QHBoxLayout *buttonsLayout = new QHBoxLayout;
+    QPushButton *nameButton = new QPushButton("Change Name");
+    connect(nameButton, SIGNAL(clicked()), this, SLOT(changeTextureName()));
+    QPushButton *deleteButton = new QPushButton("Delete");
+    buttonsLayout->addWidget(nameButton);
+    buttonsLayout->addWidget(deleteButton);
+    buttons->setLayout(buttonsLayout);
+    layout->addWidget(buttons);
 
-    imageWindow->setLayout(layout);
-    imageWindow->show();
-}
-
-void Editor::materialManager(bool) {
-    QWidget* window = new QWidget();
-
-    window->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, window->size(), QGuiApplication::screens()[0]->geometry()));
-    window->setWindowTitle("Material Manager");
-
-    QHBoxLayout* layout = new QHBoxLayout();
-
-    materialsList = new QListWidget();
-    updateMaterialManager();
-    connect(materialsList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(materialSelected(QListWidgetItem*)));
-    layout->addWidget(materialsList);
-
-    QFrame* frame = new QFrame();
-    QFormLayout* frameLayout = new QFormLayout();
-    QPushButton* loadMaterial = new QPushButton("Load Project Materials");
-    connect(loadMaterial, SIGNAL(clicked(bool)), this, SLOT(loadProject(bool)));
-    connect(loadMaterial, SIGNAL(clicked()), this, SLOT(updateMaterialManager()));
-    QPushButton* newMaterial = new QPushButton("Create new Material");
-    connect(newMaterial, SIGNAL(clicked()), this, SLOT(createMaterial()));
-    frameLayout->addRow(loadMaterial);
-    frameLayout->addRow(newMaterial);
-    frame->setLayout(frameLayout);
-    layout->addWidget(frame);
     window->setLayout(layout);
+    window->setWindowModality(Qt::ApplicationModal);
     window->show();
 }
 
-void Editor::createMaterial() {
-    QWidget* widget = new QWidget();
-    widget->setWindowTitle("Choose Texture");
-    QVBoxLayout* layout = new QVBoxLayout();
-
-    newMaterialList = new QListWidget();
-    newMaterialList->clear();
-    std::map<unsigned int, Texture *> loadedTextures = AssetManager<Texture>::getLoadedAssets();
-    for (std::pair<unsigned int, Texture*> texturePair: loadedTextures) {
-        QListWidgetItem* item = new QListWidgetItem(texturePair.second->name.c_str());
-        _listForNewMaterialDir[item] = texturePair.second;
-        newMaterialList->addItem(item);
-    }
-    layout->addWidget(newMaterialList);
-
-    QFrame* frame = new QFrame();
-    QHBoxLayout* frameLayout = new QHBoxLayout();
-    QPushButton* selectButton = new QPushButton("Select");
-    connect(selectButton, SIGNAL(clicked()), this, SLOT(textureForNewMaterial()));
-    connect(selectButton, SIGNAL(clicked(bool)), widget, SLOT(close()));
-    QPushButton* cancelButton = new QPushButton("Cancel");
-    connect(cancelButton, SIGNAL(clicked()), widget, SLOT(close()));
-    frameLayout->addWidget(selectButton);
-    frameLayout->addWidget(cancelButton);
-
-    frame->setLayout(frameLayout);
-    layout->addWidget(frame);
-
-    widget->setLayout(layout);
-    widget->show();
+void Editor::changeTextureName() {
+    QString newName = QInputDialog::getText(this, "Texture Name", "input new Texture name");
+    _selectedTexture->name = newName.toStdString();
+    saveProjectMeta();
+    updateTextureManager();
 }
 
-void Editor::textureForNewMaterial() {
-    Texture* selectedTexture = _listForNewMaterialDir[newMaterialList->selectedItems()[0]];
-    //TODO: add shader too
-    QString name = QInputDialog::getText(this, "Material Name", "Please name the new Material");
+void Editor::shaderManager(bool) {
+    QWidget *window = new QWidget();
+    window->setAttribute(Qt::WA_DeleteOnClose, true);
+    QHBoxLayout *managerLayout = new QHBoxLayout();
+    window->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, window->size(),
+                                            QGuiApplication::screens()[0]->geometry()));
+    window->setWindowTitle("Shader Manager");
+    shadersList = new QListWidget;
+    shadersList->setContextMenuPolicy(Qt::CustomContextMenu);
+    shadersList->setAttribute(Qt::WA_DeleteOnClose, false);
+    connect(shadersList, SIGNAL(customContextMenuRequested(const QPoint&)), this,
+            SLOT(shaderMenu(const QPoint&)));
+    updateShaderManager();
+    managerLayout->addWidget(shadersList);
+    shadersList->setParent(window);
+
+    QFrame *newShaders = new QFrame();
+    QFormLayout *newShadersLayout = new QFormLayout();
+    QPushButton *newShader = new QPushButton("Create new Shader");
+    connect(newShader, SIGNAL(clicked()), this, SLOT(createShaderFromFile()));
+    newShadersLayout->addRow(newShader);
+
+    newShaders->setLayout(newShadersLayout);
+    managerLayout->addWidget(newShaders);
+    window->setLayout(managerLayout);
+    window->setWindowModality(Qt::ApplicationModal);
+    window->show();
+}
+
+void Editor::updateShaderManager() {
+    shadersList->clear();
+    std::map<unsigned int, Shader *> loadedShaders = AssetManager<Shader>::getLoadedAssets();
+    for (std::pair<unsigned int, Shader *> pair: loadedShaders) {
+        QListWidgetItem *item = new QListWidgetItem(pair.second->name.c_str());
+        _listShaderDir[item] = pair.second;
+        shadersList->addItem(item);
+    }
+}
+
+void Editor::createShaderFromFile() {
     QFileDialog dialog;
     dialog.setFileMode(QFileDialog::Directory);
     dialog.setOption(QFileDialog::ShowDirsOnly, true);
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString path = dialog.selectedFiles()[0];
-    Shader* basicShader = Shader::createShader("basic shader", "basicShader");
-    if (!name.isEmpty() && !path.isEmpty()) {
-        Material::createMaterial(name.toStdString(), path.toStdString(), basicShader, selectedTexture);
-        saveProjectMeta();
+    QString filePath = dialog.selectedFiles()[0];
+    if (!filePath.isEmpty()) {
+        QString name = QInputDialog::getText(this, "Create Shader", "Please input Shader name.");
+        if (!name.isEmpty()) {
+            AssetManager<Shader>::createAsset(name.toStdString(), filePath.toStdString());
+            saveProjectMeta();
+            updateShaderManager();
+        }
     }
+}
+
+void Editor::shaderMenu(const QPoint &point) {
+    QListWidgetItem *clicked = shadersList->itemAt(point);
+    if (clicked != nullptr) {
+        shadersList->clearSelection();
+        clicked->setSelected(true);
+        QMenu *menu = new QMenu("menu");
+
+        // Rename
+        QAction *renamed = new QAction();
+        renamed->setText("Rename");
+        menu->addAction(renamed);
+        connect(renamed, SIGNAL(triggered(bool)), this, SLOT(renameShader(bool)));
+        menu->popup(QCursor::pos());
+
+        // Delete
+        QAction *deleteObject = new QAction();
+        deleteObject->setText("Delete");
+        menu->addAction(deleteObject);
+        connect(deleteObject, SIGNAL(triggered(bool)), this, SLOT(deleteShader(bool)));
+    }
+}
+
+void Editor::deleteShader(bool) {
+    QListWidgetItem *item = shadersList->selectedItems()[0];
+
+}
+
+void Editor::renameShader(bool) {
+    QListWidgetItem *item = shadersList->selectedItems()[0];
+    Shader *shader = _listShaderDir[item];
+    QString name = QInputDialog::getText(this, "Shader Name", "Input Shader name");
+    if (!name.isEmpty()) {
+        shader->name = name.toStdString();
+        saveProjectMeta();
+        updateShaderManager();
+    }
+}
+
+void Editor::materialManager(bool) {
+    QWidget *window = new QWidget();
+    window->setAttribute(Qt::WA_DeleteOnClose, true);
+    QHBoxLayout *managerLayout = new QHBoxLayout();
+    window->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, window->size(),
+                                            QGuiApplication::screens()[0]->geometry()));
+    window->setWindowTitle("Material Manager");
+    materialsList = new QListWidget;
+    materialsList->setAttribute(Qt::WA_DeleteOnClose, false);
+    connect(materialsList, SIGNAL(itemDoubleClicked(QListWidgetItem * )), this,
+            SLOT(materialSelected(QListWidgetItem * )));
+    updateMaterialManager();
+    managerLayout->addWidget(materialsList);
+    materialsList->setParent(window);
+
+    QFrame *newMaterials = new QFrame();
+    QFormLayout *newMaterialsLayout = new QFormLayout();
+    QPushButton *newMaterial = new QPushButton("Create new Material");
+    connect(newMaterial, SIGNAL(clicked()), this, SLOT(createMaterial()));
+    newMaterialsLayout->addRow(newMaterial);
+
+    newMaterials->setLayout(newMaterialsLayout);
+    managerLayout->addWidget(newMaterials);
+    window->setLayout(managerLayout);
+    window->setWindowModality(Qt::ApplicationModal);
+    window->show();
 }
 
 void Editor::updateMaterialManager() {
     materialsList->clear();
     std::map<unsigned int, Material *> loadedMaterials = AssetManager<Material>::getLoadedAssets();
-    for (std::pair<unsigned int, Material*> materialPair: loadedMaterials) {
-        QListWidgetItem* item = new QListWidgetItem(materialPair.second->name.c_str());
-        _listMaterialDir[item] = materialPair.second;
+    for (std::pair<unsigned int, Material *> pair: loadedMaterials) {
+        QListWidgetItem *item = new QListWidgetItem(pair.second->name.c_str());
+        _listMaterialDir[item] = pair.second;
         materialsList->addItem(item);
     }
 }
 
-void Editor::materialSelected(QListWidgetItem *item) {
-    std::cout << item->text().toStdString() << std::endl;
+void Editor::createMaterial() {
+    Texture *texture = listSelectDialog<Texture>();
+    if (texture == nullptr)
+        return;
+    Shader *shader = listSelectDialog<Shader>();
+    if (shader == nullptr)
+        return;
+    QFileDialog dialog;
+    dialog.setFileMode(QFileDialog::Directory);
+    dialog.setOption(QFileDialog::ShowDirsOnly, true);
+    dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    QString filePath = dialog.selectedFiles()[0];
+    if (filePath.isEmpty())
+        return;
+    QString name = QInputDialog::getText(this, "Material Name", "Choose new Material's name");
+    if (name.isEmpty())
+        return;
+    Material::createMaterial(name.toStdString(), filePath.toStdString(), shader, texture);
+    saveProjectMeta();
+    updateMaterialManager();
 }
+
+void Editor::materialSelected(QListWidgetItem *) {
+
+}
+
+void copyFile(const std::string& source, const std::string &destination) {
+    std::ifstream src(source.c_str());
+    std::ofstream dest(destination.c_str());
+    dest << src.rdbuf();
+}
+
 
 std::string removeExtension(const std::string &filename) {
     size_t lastdot = filename.find_last_of(".");

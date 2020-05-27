@@ -15,12 +15,10 @@ public:
     static Material* createMaterial(const std::string&, const std::string&, Shader*, Texture*);
     static Material* loadMaterial(const std::string&);
     void bind(const Transform&, const Camera&, DirectionalLight light);
-    Texture* getTexture() const;
-    Shader* getShader() const;
-private:
-    Material(const std::string&, unsigned int);
     Texture* _texture;
     Shader* _shader;
+private:
+    Material(const std::string&, unsigned int);
     //TODO: make multiple textures applicable
 };
 

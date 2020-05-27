@@ -31,11 +31,3 @@ Material::Material(const std::string &filePath, unsigned int id) : Asset(filePat
 Material *Material::loadMaterial(const std::string &filePath) {
     return AssetManager<Material>::getAsset(std::hash<std::string>()(filePath));
 }
-
-Texture *Material::getTexture() const {
-    return _texture;
-}
-
-Shader *Material::getShader() const {
-    return _shader;
-}

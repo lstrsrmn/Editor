@@ -18,6 +18,11 @@
 			"IMAN36LHMA/moc_GameGLView.cpp"
 		],
 		[
+			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.h",
+			"MU",
+			"IMAN36LHMA/moc_ListDialog.cpp"
+		],
+		[
 			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.h",
 			"MU",
 			"IMAN36LHMA/moc_SceneGLView.cpp"
@@ -84,6 +89,10 @@
 		],
 		[
 			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp",
 			"MU"
 		],
 		[

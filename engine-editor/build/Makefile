@@ -270,6 +270,33 @@ widgets/GameGLView.cpp.s:
 	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.s
 .PHONY : widgets/GameGLView.cpp.s
 
+widgets/ListDialog.o: widgets/ListDialog.cpp.o
+
+.PHONY : widgets/ListDialog.o
+
+# target to build an object file
+widgets/ListDialog.cpp.o:
+	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o
+.PHONY : widgets/ListDialog.cpp.o
+
+widgets/ListDialog.i: widgets/ListDialog.cpp.i
+
+.PHONY : widgets/ListDialog.i
+
+# target to preprocess a source file
+widgets/ListDialog.cpp.i:
+	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.i
+.PHONY : widgets/ListDialog.cpp.i
+
+widgets/ListDialog.s: widgets/ListDialog.cpp.s
+
+.PHONY : widgets/ListDialog.s
+
+# target to generate assembly for a file
+widgets/ListDialog.cpp.s:
+	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.s
+.PHONY : widgets/ListDialog.cpp.s
+
 widgets/SceneGLView.o: widgets/SceneGLView.cpp.o
 
 .PHONY : widgets/SceneGLView.o
@@ -321,6 +348,9 @@ help:
 	@echo "... widgets/GameGLView.o"
 	@echo "... widgets/GameGLView.i"
 	@echo "... widgets/GameGLView.s"
+	@echo "... widgets/ListDialog.o"
+	@echo "... widgets/ListDialog.i"
+	@echo "... widgets/ListDialog.s"
 	@echo "... widgets/SceneGLView.o"
 	@echo "... widgets/SceneGLView.i"
 	@echo "... widgets/SceneGLView.s"

@@ -6,6 +6,7 @@
 #define ENGINE_EDITOR_ASSET_H
 
 #include <string>
+#include <nlohmann/json.hpp>
 
 class Asset {
 public:

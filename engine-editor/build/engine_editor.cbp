@@ -225,6 +225,12 @@
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.h">
 			<Option target="engine_editor"/>
 		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp">
+			<Option target="engine_editor"/>
+		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.h">
+			<Option target="engine_editor"/>
+		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp">
 			<Option target="engine_editor"/>
 		</Unit>

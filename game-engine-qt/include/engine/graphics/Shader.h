@@ -5,6 +5,7 @@
 #include <QtOpenGL>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <filesystem>
 #include "../game/Transform.h"
 #include "Camera.h"
 #include "lighting/DirectionalLight.h"
