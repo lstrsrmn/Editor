@@ -3,7 +3,11 @@
 
 #include <vector>
 #include <string>
-#include "../components/Renderer.h"
+#include <fstream>
+#include <filesystem>
+#include <nlohmann/json.hpp>
+#include "../core/Utils.h"
+#include "../components/MeshRenderer.h"
 #include "GameObject.h"
 #include "../graphics/lighting/DirectionalLight.h"
 
@@ -11,7 +15,7 @@ class SceneManager;
 
 class Scene {
 public:
-    Scene(Camera *camera, DirectionalLight);
+    Scene(Camera*, DirectionalLight);
 
     void update();
 
@@ -36,6 +40,18 @@ public:
     void deleteObject(GameObject*);
 
     void deleteRenderer(Renderer*);
+
+    void serializeToJSON();
+
+    static Scene* deserializeFromJSON(const std::string&);
+
+    std::string _fileLocation;
+
+    Camera *getCamera() const;
+
+    DirectionalLight getDirectionalLight() const;
+
+    void updateMaterials();
 
 private:
     QString _name;

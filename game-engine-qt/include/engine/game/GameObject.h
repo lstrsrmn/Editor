@@ -6,6 +6,8 @@
 #define GAME_ENGINE_GAMEOBJECT_H
 
 #include <vector>
+#include <nlohmann/json.hpp>
+//#include "../components/MeshRenderer.h"
 #include "../components/Component.h"
 #include "Transform.h"
 
@@ -21,7 +23,8 @@ public:
     Transform& getTransform();
     const std::vector<Component*> getComponents() const;
     const QString &getName() const;
-
+    void serializeToJSON(nlohmann::json&);
+    static GameObject* deserializeFromJSON(nlohmann::json&, const std::string&, Scene*);
     void setName(const QString &name);
 
     ~GameObject();

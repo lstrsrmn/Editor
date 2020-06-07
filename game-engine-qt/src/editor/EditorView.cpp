@@ -27,10 +27,10 @@ void EditorFunctions::floatInput(QFormLayout *layout, const QString &label, Floa
     QObject::connect(inputBox, SIGNAL(textChanged(const QString&)), handler, SLOT(changed(const QString&)));
 }
 
-void EditorFunctions::buttonInput(QFormLayout *layout, const QString &label, ButtonEventHandler* handler) {
+void EditorFunctions::buttonInput(QFormLayout *layout, const QString &label, ButtonCallbackHandler* listener) {
     QPushButton* button = new QPushButton(label);
     layout->addRow(button);
-    QObject::connect(button, SIGNAL(clicked()), handler, SLOT(clicked()));
+    QObject::connect(button, SIGNAL(clicked()), listener, SLOT(clicked()));
 }
 
 void EditorFunctions::filePathInput(QFormLayout *layout, const QString &label, FileEventHandler* handler) {
@@ -38,4 +38,5 @@ void EditorFunctions::filePathInput(QFormLayout *layout, const QString &label, F
     layout->addRow(button);
     QObject::connect(button, SIGNAL(clicked()), handler, SLOT(openFileDialog()));
 }
+
 

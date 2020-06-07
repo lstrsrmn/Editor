@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <iostream>
 #include "../../include/engine/game/Game.h"
 
 Game *Game::_instance = nullptr;
@@ -11,7 +12,10 @@ Game *Game::instance() {
 }
 
 void Game::addScene(Scene *scene) {
-    if (_scenes[scene->getId()] == nullptr)
+    // random segault here for no apparent reason
+    if (_scenes.empty())
+        _scenes[scene->getId()] = scene;
+    else if (_scenes[scene->getId()] == nullptr)
         _scenes[scene->getId()] = scene;
 }
 
@@ -51,6 +55,7 @@ void Game::setGlFunctions(QOpenGLFunctions *glFunctions) {
 }
 
 void Game::setAR(float AR) {
-    _scenes[_activeScene]->setAR(AR);
+    if (_scenes[_activeScene] != nullptr)
+        _scenes[_activeScene]->setAR(AR);
     _AR = AR;
 }

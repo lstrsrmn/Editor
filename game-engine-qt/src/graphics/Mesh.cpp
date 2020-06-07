@@ -1,88 +1,91 @@
 
 #include <vector>
+#include <iostream>
 #include "../../include/engine/graphics/Mesh.h"
 #include "../../include/engine/game/ContextController.h"
 
-Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices, bool sceneMode) {
     _drawCount = numIndices;
+//    if (sceneMode) {
+        ContextController::instance()->setCurrent(0);
+        QOpenGLFunctions *sceneF = ContextController::instance()->getCurrentFunctions();
 
-    vertexArrayObject = new QOpenGLVertexArrayObject();
-    vertexBufferObject = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
-    indexBufferObject = new QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
+        sVAO = new QOpenGLVertexArrayObject();
+        sVBO = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+        sIBO = new QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
 
-    vertexArrayObject->create();
-    vertexBufferObject->create();
-    indexBufferObject->create();
+        sVAO->create();
+        sVBO->create();
+        sIBO->create();
 
-    vertexBufferObject->setUsagePattern(QOpenGLBuffer::StaticDraw);
-    indexBufferObject->setUsagePattern(QOpenGLBuffer::StaticDraw);
+        sVBO->setUsagePattern(QOpenGLBuffer::StaticDraw);
+        sIBO->setUsagePattern(QOpenGLBuffer::StaticDraw);
 
-    vertexArrayObject->bind();
-    vertexBufferObject->bind();
-    indexBufferObject->bind();
-    indexBufferObject->allocate(indices, numIndices * sizeof(unsigned int));
-    vertexBufferObject->allocate(vertices, numVertices * sizeof(Vertex));
-    f->glEnableVertexAttribArray(0);
-    f->glEnableVertexAttribArray(1);
-    f->glEnableVertexAttribArray(2);
-    f->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), nullptr);
-    f->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
-    f->glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(5 * sizeof(GLfloat)));
-    vertexArrayObject->release();
-//    vertexBufferObject->setUsagePattern(QOpenGLBuffer::StaticDraw);
-
-//    f->glGenBuffers(NUM_BUFFERS, _vertexArrayBuffers);
-//    f->glGenVertexArrays(1, &_vertexArrayObject);
-//    f->glBindVertexArray(_vertexArrayObject);
-
-//    std::vector<glm::vec3> positions;
-//    std::vector<glm::vec2> texCoords;
-//    std::vector<glm::vec3> normals;
-
-//    positions.reserve(numVertices);
-//    texCoords.reserve(numVertices);
-//    normals.reserve(numVertices);
-
-//    for (unsigned int i = 0; i < numVertices; i++) {
-//        positions.push_back(vertices[i].pos);
-//        texCoords.push_back(vertices[i].texCoord);
-//        normals.push_back(vertices[i].normal);
+        sVAO->bind();
+        sVBO->bind();
+        sIBO->bind();
+        sIBO->allocate(indices, numIndices * sizeof(unsigned int));
+        sVBO->allocate(vertices, numVertices * sizeof(Vertex));
+        sceneF->glEnableVertexAttribArray(0);
+        sceneF->glEnableVertexAttribArray(1);
+        sceneF->glEnableVertexAttribArray(2);
+        sceneF->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), nullptr);
+        sceneF->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void *) (3 * sizeof(GLfloat)));
+        sceneF->glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void *) (5 * sizeof(GLfloat)));
+        sVAO->release();
 //    }
+//    ContextController::instance()->setCurrent(1);
+//    QOpenGLFunctions* gameF = ContextController::instance()->getCurrentFunctions();
 //
-//    f->glBindBuffer(GL_ARRAY_BUFFER, _vertexArrayBuffers[POSITION_VB]);
-//    f->glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(glm::vec3), &positions[0], GL_STATIC_DRAW);
+//    gVAO = new QOpenGLVertexArrayObject();
+//    gVBO = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+//    gIBO = new QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
 //
-//    f->glEnableVertexAttribArray(0);
-//    f->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
+//    gVAO->create();
+//    gVBO->create();
+//    gIBO->create();
 //
-//    f->glBindBuffer(GL_ARRAY_BUFFER, _vertexArrayBuffers[TEXCOORD_VB]);
-//    f->glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(glm::vec2), &texCoords[0], GL_STATIC_DRAW);
+//    gVBO->setUsagePattern(QOpenGLBuffer::StaticDraw);
+//    gIBO->setUsagePattern(QOpenGLBuffer::StaticDraw);
 //
-//    f->glEnableVertexAttribArray(1);
-//    f->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, nullptr);
-//
-//    f->glBindBuffer(GL_ARRAY_BUFFER, _vertexArrayBuffers[NORMAL_VB]);
-//    f->glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(glm::vec3), &normals[0], GL_STATIC_DRAW);
-//
-//    f->glEnableVertexAttribArray(2);
-//    f->glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
-//
-//    f->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vertexArrayBuffers[INDEX_VB]);
-//    f->glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(indices[0]), &indices[0], GL_STATIC_DRAW);
-//
-//    f->glBindVertexArray(0);
+//    gVAO->bind();
+//    gVBO->bind();
+//    gIBO->bind();
+//    gIBO->allocate(indices, numIndices * sizeof(unsigned int));
+//    gVBO->allocate(vertices, numVertices * sizeof(Vertex));
+//    gameF->glEnableVertexAttribArray(0);
+//    gameF->glEnableVertexAttribArray(1);
+//    gameF->glEnableVertexAttribArray(2);
+//    gameF->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), nullptr);
+//    gameF->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
+//    gameF->glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(5 * sizeof(GLfloat)));
+//    gVAO->release();
+//    if (sceneMode)
+//        ContextController::instance()->setCurrent(0);
 }
 
 void Mesh::draw() const {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
-    vertexArrayObject->bind();
-    vertexBufferObject->bind();
-    indexBufferObject->bind();
-    f->glDrawElements(GL_TRIANGLES, _drawCount, GL_UNSIGNED_INT, nullptr);
-    vertexArrayObject->release();
-    indexBufferObject->release();
-    vertexBufferObject->release();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+//    if (ContextController::instance()->getCurrent()) {
+        sVAO->bind();
+        sVBO->bind();
+        sIBO->bind();
+        f->glDrawElements(GL_TRIANGLES, _drawCount, GL_UNSIGNED_INT, nullptr);
+        sVAO->release();
+        sIBO->release();
+        sVBO->release();
+//    }
+//    else {
+//        gVAO->bind();
+//        gVBO->bind();
+//        gIBO->bind();
+//        f->glDrawElements(GL_TRIANGLES, _drawCount, GL_UNSIGNED_INT, nullptr);
+//        gVAO->release();
+//        gIBO->release();
+//        gVBO->release();
+//    }
+
+//    std::cout << f->glGetError() << std::endl;
 
 //    f->glBindVertexArray(_vertexArrayObject);
 //    f->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _vertexArrayBuffers[INDEX_VB]);
@@ -103,9 +106,12 @@ void Mesh::draw() const {
 }
 
 Mesh::~Mesh() {
-    vertexArrayObject->destroy();
-    vertexBufferObject->destroy();
-    indexBufferObject->destroy();
+    sVAO->destroy();
+    sVBO->destroy();
+    sIBO->destroy();
+//    gVAO->destroy();
+//    gVBO->destroy();
+//    gIBO->destroy();
 
 //    f->glDeleteBuffers(NUM_BUFFERS, _vertexArrayBuffers);
 //    f->glDeleteVertexArrays(1, &_vertexArrayObject);

@@ -15,7 +15,7 @@ Material *Material::createMaterial(const std::string &name, const std::string &f
 void Material::bind(const Transform &transform, const Camera &camera, DirectionalLight light) {
     _shader->bind();
     _texture->bind(0);
-    _shader->update(transform, camera, light, glm::vec3(0.11, 0.11, 0.07));
+    _shader->update(transform, camera, light, camera.ambient);
 }
 
 Material::Material(const std::string &filePath, unsigned int id) : Asset(filePath, id) {

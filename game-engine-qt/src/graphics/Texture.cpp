@@ -5,7 +5,7 @@
 #include "../../include/engine/game/ContextController.h"
 
 Texture::Texture(const std::string& texturePath, unsigned int id) : Asset(texturePath, id){
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     cv::Mat img = cv::imread(texturePath, cv::IMREAD_COLOR);
     cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
 
@@ -28,13 +28,13 @@ Texture::Texture(const std::string& texturePath, unsigned int id) : Asset(textur
 }
 
 Texture::~Texture() {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     f->glDeleteTextures(1, &_texture);
 }
 
 
 void Texture::bind(unsigned int unit) const{
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     assert(unit >= 0 && unit <= 31);
     f->glActiveTexture(GL_TEXTURE0 + unit);
     f->glBindTexture(GL_TEXTURE_2D, _texture);

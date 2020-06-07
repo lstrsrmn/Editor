@@ -380,6 +380,7 @@ CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QDialog
 CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
@@ -657,6 +658,7 @@ CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/com
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/components/Renderer.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/core/Asset.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/core/AssetManager.h
+CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/core/Utils.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/editor/EditorView.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/editor/EventHandler.h
 CMakeFiles/engine_editor.dir/main.cpp.o: ../../game-engine-qt/include/engine/game/Game.h
@@ -1020,6 +1022,7 @@ CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QApplication
+CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QDialog
 CMakeFiles/engine_editor.dir/main.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
@@ -1319,6 +1322,7 @@ CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/eng
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../../game-engine-qt/include/engine/graphics/lighting/PointLight.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../widgets/GameGLView.h
+CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../widgets/ListDialog.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../widgets/SceneGLView.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../qtui/Editor.cpp
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../qtui/Editor.h
@@ -1670,6 +1674,7 @@ CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QAction
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QApplication
+CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommandLinkButton
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QDialog
@@ -1982,7 +1987,9 @@ CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/incl
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../../game-engine-qt/include/engine/graphics/lighting/PointLight.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../widgets/GameGLView.cpp
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../widgets/GameGLView.h
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../widgets/ListDialog.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEventLoop
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QMargins
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QMetaType
@@ -2326,12 +2333,16 @@ CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QDialog
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QHBoxLayout
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QLabel
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QLayout
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QLineEdit
+CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QListWidget
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QMainWindow
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QScrollerProperties
@@ -3107,6 +3118,7 @@ CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
 CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout

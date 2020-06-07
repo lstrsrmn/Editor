@@ -4,6 +4,7 @@
 #define GLM_ENABLE_EXPERIMENTAL
 
 #include <math.h>
+#include <nlohmann/json.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -25,6 +26,19 @@ public:
 
         return posMatrix * rotMatrix * scaleMatrix;
     }
+
+    inline void serializeToJSON(nlohmann::json& object) {
+        object["transform"]["pos"] = {pos.x, pos.y, pos.z};
+        object["transform"]["rot"] = {rot.x, rot.y, rot.z};
+        object["transform"]["scale"] = {scale.x, scale.y, scale.z};
+    }
+
+    inline static Transform deserializeFromJSON(nlohmann::json& object) {
+        return Transform(glm::vec3(object["transform"]["pos"][0], object["transform"]["pos"][1], object["transform"]["pos"][2]),
+                glm::vec3(object["transform"]["rot"][0], object["transform"]["rot"][1], object["transform"]["rot"][2]),
+                glm::vec3(object["transform"]["scale"][0], object["transform"]["scale"][1], object["transform"]["scale"][2]));
+    }
+
     glm::vec3 pos;
     glm::vec3 rot;
     glm::vec3 scale;

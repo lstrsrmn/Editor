@@ -39,6 +39,7 @@ private:
     GameObject* _selectedObject;
     Texture* _selectedTexture;
     Material* _selectedMaterial;
+    Scene* _selectedScene;
     Ui::Editor *ui;
     bool _gameRunning = false;
     std::map<QTreeWidgetItem*, GameObject*> _treeObjectDir;
@@ -48,6 +49,9 @@ private:
     void recurseProjectTree(const std::string&, QTreeWidgetItem*);
 
 private slots:
+    void openScene(bool = false);
+    void newScene(bool = false);
+    void saveScene(bool = false);
     void createMaterial();
     void updateMaterialManager();
     void materialSelected(QListWidgetItem*);
@@ -78,7 +82,5 @@ private slots:
     void updateProject();
     void updateOpenFolder(QTreeWidgetItem*, int);
 };
-static void copyFile(const std::string&, const std::string&);
-static std::string removeExtension(const std::string&);
 
 #endif // EDITOR_H

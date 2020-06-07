@@ -5,7 +5,8 @@
 #include "SceneGLView.h"
 
 SceneGLView::SceneGLView(QWidget *parent) {
-    create();
+//    create();
+//    ContextController::instance()->setSceneGLCallbacks(std::bind(&SceneGLView::makeCurrent, this), std::bind(&SceneGLView::createContextFunctions, this));
 }
 
 SceneGLView::~SceneGLView() {
@@ -13,10 +14,11 @@ SceneGLView::~SceneGLView() {
 }
 
 void SceneGLView::initializeGL() {
-    makeCurrent();
-    QOpenGLFunctions *f = context()->functions();
-    f->initializeOpenGLFunctions();
-    ContextController::instance()->setSceneGLFunctions(f, this);
+    QOpenGLFunctions *f = context()->globalShareContext()->functions();
+//    f->initializeOpenGLFunctions();
+    ContextController::instance()->setSceneGL(f, this);
+
+    ContextController::instance()->setCurrent(0);
 
     _sceneView = SceneView::instance();
     _sceneView->setGlFunctions(f);

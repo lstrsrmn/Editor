@@ -46,14 +46,8 @@
 
 int main(int argc, char* argv[]) {
 //    return run_game();
+    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
-
-
-//    QSurfaceFormat fmt;
-//    fmt.setDepthBufferSize(24);
-//    fmt.setVersion(4, 6);
-//    fmt.setProfile(QSurfaceFormat::CoreProfile);
-//    QSurfaceFormat::setDefaultFormat(fmt);
 
     Editor* editor = new Editor();
     editor->setMinimumSize(QSize(800, 600));

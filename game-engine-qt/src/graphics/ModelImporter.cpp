@@ -17,7 +17,7 @@ ModelMeshData loadModel(const std::string& modelName, bool flipV) {
     for (unsigned int i = 0; i < modelScene->mNumMeshes; i++)
         meshes[i] = getMeshData(modelScene->mMeshes[i], flipV);
 
-    return {meshes, modelScene->mNumMeshes};
+    return {meshes, modelScene->mNumMeshes, modelName};
 }
 
 Mesh* getMeshData(const aiMesh* mesh, bool flipV) {

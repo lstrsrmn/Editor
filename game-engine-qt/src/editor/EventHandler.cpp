@@ -28,11 +28,6 @@ void TextEventHandler::changed(const QString &value) {
     *_var = value;
 }
 
-
-void ButtonEventHandler::clicked() {
-
-}
-
 FileEventHandler::FileEventHandler(QString *path) {
     _path = path;
 }
@@ -41,12 +36,19 @@ void FileEventHandler::openFileDialog() {
     *_path = QFileDialog::getOpenFileName();
 }
 
-template<typename T>
-UpdateEventHandler<T>::UpdateEventHandler(T object) {
-    _object = object;
+CallbackListener::CallbackListener(std::function<void(const QString&)> callback) {
+    _callback = callback;
 }
 
-template<typename T>
-void UpdateEventHandler<T>::clicked() {
-    _object->update();
+void CallbackListener::changed(const QString &value) {
+    _callback(value);
 }
+
+ButtonCallbackHandler::ButtonCallbackHandler(std::function<void()> callback) {
+    _callback = callback;
+}
+
+void ButtonCallbackHandler::clicked() {
+    _callback();
+}
+

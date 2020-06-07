@@ -3,7 +3,7 @@
 	"CMAKE_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
-	"CMAKE_EXECUTABLE" : "/snap/clion/112/bin/cmake/linux/bin/cmake",
+	"CMAKE_EXECUTABLE" : "/snap/clion/114/bin/cmake/linux/bin/cmake",
 	"CMAKE_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
 	"HEADERS" : 
 	[
@@ -68,7 +68,7 @@
 		"-dM",
 		"-E",
 		"-c",
-		"/snap/clion/112/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+		"/snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
 	],
 	"MOC_PREDEFS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/engine_editor_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,

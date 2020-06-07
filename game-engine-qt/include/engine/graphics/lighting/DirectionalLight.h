@@ -1,6 +1,7 @@
 #ifndef GAME_ENGINE_DIRECTIONALLIGHT_H
 #define GAME_ENGINE_DIRECTIONALLIGHT_H
 
+#include <nlohmann/json.hpp>
 #include <glm/glm.hpp>
 
 class DirectionalLight {
@@ -16,6 +17,10 @@ public:
     void setColour(const glm::vec3 &colour);
 
     void setIntensity(float intensity);
+
+    void serializeToJSON(nlohmann::json&);
+
+    static DirectionalLight deserializeFromJSON(nlohmann::json&);
 
 private:
     float _intensity = 1.0f;

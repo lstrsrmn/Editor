@@ -1,6 +1,8 @@
 
 #include "../../include/engine/components/Component.h"
 
+std::map<unsigned int, Component*> ComponentFactory::_defaults;
+
 void Component::setGameObject(GameObject *gameObject){
     _gameObject = gameObject;
 }
@@ -16,3 +18,8 @@ std::string Component::componentName() {
 Component::~Component() {
 
 }
+
+Component *ComponentFactory::createComponent(unsigned int ID) {
+    return _defaults[ID]->clone();
+}
+

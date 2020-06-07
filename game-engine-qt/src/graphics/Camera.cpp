@@ -1,8 +1,9 @@
 #include "../../include/engine/graphics/Camera.h"
 #include "../../include/engine/game/ContextController.h"
 #include <iostream>
-Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar) {
+Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar, glm::vec3 amb) {
     _position = pos;
+    ambient = amb;
     _fov = fov;
     _zNear = zNear;
     _zFar = zFar;
@@ -20,7 +21,7 @@ void Camera::moveBy(glm::vec3 movement) {
 }
 
 void Camera::clear(float r, float g, float b, float a) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     f->glClearColor(r, g, b, a);
     f->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
@@ -81,4 +82,17 @@ const glm::vec3 &Camera::getUp() const {
 
 void Camera::setUp(const glm::vec3 &up) {
     _up = up;
+}
+
+void Camera::serializeToJSON(nlohmann::json &scene) {
+    scene["camera"]["pos"] = {_position.x, _position.y, _position.z};
+    scene["camera"]["fov"] = _fov;
+    scene["camera"]["clipping"] = {_zNear, _zFar};
+    scene["camera"]["ambient"] = {ambient.x, ambient.y, ambient.z};
+}
+
+Camera *Camera::deserializeFromJSON(nlohmann::json &scene) {
+    glm::vec3 pos{scene["camera"]["pos"][0], scene["camera"]["pos"][1], scene["camera"]["pos"][2]};
+    glm::vec3 amb{scene["camera"]["ambient"][0], scene["camera"]["ambient"][1], scene["camera"]["ambient"][2]};
+    return new Camera(pos, scene["camera"]["fov"], 70, scene["camera"]["clipping"][0], scene["camera"]["clipping"][1], amb);
 }

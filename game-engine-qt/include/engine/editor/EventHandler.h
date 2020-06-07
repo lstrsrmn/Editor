@@ -10,64 +10,97 @@
 #include <QtWidgets/QFileDialog>
 
 typedef void (*buttonPressedCallBack)();
-typedef void (*updateCallBack)();
 
-class ButtonEventHandler: public QObject {
+class FloatEventHandler : public QObject {
 Q_OBJECT
 public:
-    explicit ButtonEventHandler(buttonPressedCallBack);
-private slots:
-    void clicked();
-};
+    explicit FloatEventHandler(float *);
 
-class FloatEventHandler: public QObject {
-Q_OBJECT
-public:
-    explicit FloatEventHandler(float*);
 private slots:
-    void changed(const QString&);
+
+    void changed(const QString &);
+
 private:
-    float* _var;
+    float *_var;
 };
 
-class IntEventHandler: public QObject {
+class IntEventHandler : public QObject {
 Q_OBJECT
 public:
-    explicit IntEventHandler(int*);
+    explicit IntEventHandler(int *);
+
 private slots:
-    void changed(const QString&);
+
+    void changed(const QString &);
+
 private:
-    int* _var;
+    int *_var;
 };
 
-class TextEventHandler: public QObject {
+class TextEventHandler : public QObject {
 Q_OBJECT
 public:
-    explicit TextEventHandler(QString*);
+    explicit TextEventHandler(QString *);
+
 private slots:
-    void changed(const QString&);
+
+    void changed(const QString &);
+
 private:
-    QString* _var;
+    QString *_var;
 };
 
-class FileEventHandler: public QObject {
+class FileEventHandler : public QObject {
 Q_OBJECT
 public:
-    explicit FileEventHandler(QString*);
+    explicit FileEventHandler(QString *);
+
 private slots:
+
     void openFileDialog();
+
 private:
-    QString* _path;
+    QString *_path;
+};
+
+class CallbackListener : public QObject {
+Q_OBJECT
+public:
+    explicit CallbackListener(std::function<void(const QString &)>);
+
+    template<typename T>
+    static std::function<void(const QString &)> createCallback(T *, void(T::*)(const QString &));
+
+private:
+    std::function<void(const QString &)> _callback;
+private slots:
+
+    void changed(const QString &);
 };
 
 template<typename T>
-class UpdateEventHandler: public ButtonEventHandler{
+std::function<void(const QString &)>
+CallbackListener::createCallback(T *listener, void(T::*callback)(const QString &)) {
+    return std::bind(callback, listener, std::placeholders::_1);
+}
+
+
+class ButtonCallbackHandler : public QObject {
+Q_OBJECT
 public:
-    explicit UpdateEventHandler(T);
+    explicit ButtonCallbackHandler(std::function<void()>);
+
+    template<typename T>
+    static std::function<void()> createCallback(T*, void(T::*)());
+
 private:
+    std::function<void()> _callback;
+private slots:
     void clicked();
-private:
-    T _object;
 };
 
+template<typename T>
+std::function<void()> ButtonCallbackHandler::createCallback(T *listener, void(T::*callback)()) {
+    return std::bind(callback, listener);
+}
 #endif //ENGINE_EDITOR_EVENTHANDLER_H

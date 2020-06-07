@@ -1,4 +1,4 @@
-/snap/clion/112/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lstrsrmn/CLionProjects/Editor/engine-editor
+/snap/clion/114/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lstrsrmn/CLionProjects/Editor/engine-editor
 CMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/assimp-5.0/assimpTargets.cmake:54 (if):
   if given arguments:
 

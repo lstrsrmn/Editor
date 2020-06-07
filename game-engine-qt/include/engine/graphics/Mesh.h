@@ -14,6 +14,7 @@ class Mesh;
 struct ModelMeshData {
     Mesh **meshes;
     unsigned int numMeshes;
+    std::string filePath;
 };
 
 struct Vertex {
@@ -26,7 +27,7 @@ struct Vertex {
 
 class Mesh {
 public:
-    Mesh(Vertex *, unsigned int, unsigned int *, unsigned int);
+    Mesh(Vertex *, unsigned int, unsigned int *, unsigned int, bool = true);
 
     void draw() const;
 
@@ -44,9 +45,9 @@ private:
 
         NUM_BUFFERS
     };
-    QOpenGLVertexArrayObject *vertexArrayObject;
-    QOpenGLBuffer *vertexBufferObject;
-    QOpenGLBuffer *indexBufferObject;
+    QOpenGLVertexArrayObject *sVAO, *gVAO;
+    QOpenGLBuffer *sVBO, *gVBO;
+    QOpenGLBuffer *sIBO, *gIBO;
 
     unsigned int _drawCount;
 };

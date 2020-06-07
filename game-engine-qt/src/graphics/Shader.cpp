@@ -9,7 +9,7 @@ static std::string loadShader(const std::string& fileName);
 static GLuint createGLSLShader (const std::string& text, GLenum shaderType);
 
 Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderName, id) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
 
     std::filesystem::path path = std::filesystem::path(filePath);
     std::string fullPath = filePath + "/" + path.filename().string();
@@ -39,7 +39,7 @@ Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderNam
 }
 
 Shader::~Shader() {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     for (unsigned int _shader : _shaders) {
         f->glDetachShader(_program, _shader);
         f->glDeleteShader(_shader);
@@ -49,12 +49,12 @@ Shader::~Shader() {
 }
 
 void Shader::bind() const {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     f->glUseProgram(_program);
 }
 
 void Shader::update(const Transform &transform, const Camera& camera, DirectionalLight directionalLight, glm::vec3 ambient) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     glm::mat4 model = transform.getModel();
     glm::mat4 MVP = camera.getViewProjection() * model;
 
@@ -69,7 +69,7 @@ void Shader::update(const Transform &transform, const Camera& camera, Directiona
 }
 
 Shader *Shader::createShader(const std::string &name, const std::string &fileName, const std::string &filePath) {
-    return AssetManager<Shader>::createAsset(name, filePath + fileName + "/" + fileName);
+    return AssetManager<Shader>::createAsset(name, filePath + "/" + fileName);
 }
 
 
@@ -94,7 +94,7 @@ static std::string loadShader(const std::string& fileName) {
 }
 
 static void checkShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
     GLint success = 0;
     GLchar error[1024] = {0};
 
@@ -114,7 +114,7 @@ static void checkShaderError(GLuint shader, GLuint flag, bool isProgram, const s
 }
 
 static GLuint createGLSLShader (const std::string& text, GLenum shaderType) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentContext();
+    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
 
     GLuint shader = f->glCreateShader(shaderType);
 

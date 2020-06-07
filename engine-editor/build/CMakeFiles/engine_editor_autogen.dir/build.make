@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/112/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -55,7 +55,7 @@ include CMakeFiles/engine_editor_autogen.dir/progress.make
 
 CMakeFiles/engine_editor_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target engine_editor"
-	/snap/clion/112/bin/cmake/linux/bin/cmake -E cmake_autogen /home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor_autogen.dir/AutogenInfo.json Debug
+	/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_autogen /home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles/engine_editor_autogen.dir/AutogenInfo.json Debug
 
 engine_editor_autogen: CMakeFiles/engine_editor_autogen
 engine_editor_autogen: CMakeFiles/engine_editor_autogen.dir/build.make

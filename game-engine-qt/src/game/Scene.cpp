@@ -6,6 +6,7 @@ SceneManager *SceneManager::_instance = nullptr;
 
 Scene::Scene(Camera *camera, DirectionalLight light) {
     _camera = camera;
+    camera->_scene = this;
     _directionalLight = light;
     _id = SceneManager::instance()->addScene(this);
 }
@@ -78,6 +79,49 @@ void Scene::deleteRenderer(Renderer* renderer) {
         if (_renderers[i] == renderer) {
             _renderers.erase(_renderers.begin() + i);
         }
+    }
+}
+
+void Scene::serializeToJSON() {
+    std::ofstream sceneFile((_fileLocation + "/" + _name.toStdString() + ".scene").c_str());
+    nlohmann::json scene;
+    _camera->serializeToJSON(scene);
+    _directionalLight.serializeToJSON(scene);
+    for (GameObject* object: _gameObjects) {
+        object->serializeToJSON(scene["objects"]);
+    }
+    sceneFile << scene.dump(4) << std::endl;
+}
+
+Scene* Scene::deserializeFromJSON(const std::string& filePath) {
+    std::ifstream file(filePath);
+    nlohmann::json sceneJSON;
+    file >> sceneJSON;
+    Camera* camera = Camera::deserializeFromJSON(sceneJSON);
+    DirectionalLight light = DirectionalLight::deserializeFromJSON(sceneJSON);
+    Scene* scene = new Scene(camera, light);
+    for (nlohmann::json::iterator it = sceneJSON["objects"].begin(); it != sceneJSON["objects"].end(); it++) {
+        scene->_gameObjects.push_back(GameObject::deserializeFromJSON(it.value(), it.key(), scene));
+    }
+    scene->_fileLocation = std::filesystem::path(filePath).parent_path();
+    scene->setName({removeExtension(std::filesystem::path(filePath).filename()).c_str()});
+    return scene;
+}
+
+Camera *Scene::getCamera() const {
+    return _camera;
+}
+
+DirectionalLight Scene::getDirectionalLight() const {
+    return _directionalLight;
+}
+
+void Scene::updateMaterials() {
+    for (Renderer* renderer : _renderers) {
+        if (renderer->componentName() == "MeshRenderer") {
+            MeshRenderer* meshRenderer = (MeshRenderer*)renderer;
+            meshRenderer->_material->bind(meshRenderer->_gameObject->getTransform(), *_camera, _directionalLight);
+            }
     }
 }
 

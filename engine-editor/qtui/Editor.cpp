@@ -2,6 +2,7 @@
 #include "../build/ui_Editor.h"
 
 std::string projectDir = "/home/lstrsrmn/Game-Engine-Projects/Test-Project";
+//std::string projectDir = "";
 
 Editor::Editor(QWidget *parent) :
         QMainWindow(parent),
@@ -25,6 +26,9 @@ Editor::Editor(QWidget *parent) :
     connect(ui->actionTextures, SIGNAL(triggered(bool)), this, SLOT(textureManager(bool)));
     connect(ui->actionMaterials, SIGNAL(triggered(bool)), this, SLOT(materialManager(bool)));
     connect(ui->actionShaders, SIGNAL(triggered(bool)), this, SLOT(shaderManager(bool)));
+    connect(ui->actionSave_Scene, SIGNAL(triggered(bool)), this, SLOT(saveScene(bool)));
+    connect(ui->actionNew_Scene, SIGNAL(triggered(bool)), this, SLOT(newScene(bool)));
+    connect(ui->actionOpen_Scene, SIGNAL(triggered(bool)), this, SLOT(openScene(bool)));
     //TODO: then make game run scene, then make scenes savable
 }
 
@@ -67,21 +71,33 @@ void Editor::runButtonClicked() {
     _gameRunning = !_gameRunning;
 //    ui->gameGLWidget->setEnabled(_gameRunning);
     if (_gameRunning) {
+        ContextController::instance()->setCurrent(1);
+        ui->gameGLWidget->bindScene(SceneView::instance()->getCurrentScene());
         ui->gameGLWidget->setEnabled(true);
         ui->runStopButton->setText("Stop");
         ui->ViewPort->setCurrentIndex(1);
     } else {
+        ContextController::instance()->setCurrent(0);
         ui->gameGLWidget->setEnabled(false);
         ui->runStopButton->setText("Run");
+        ui->ViewPort->setCurrentIndex(0);
     }
 }
 
 void Editor::loadScene() {
-    Scene *scene = SceneView::instance()->getCurrentScene();
+    _selectedScene = SceneView::instance()->getCurrentScene();
     ui->hierarchyTree->clear();
     _treeObjectDir.clear();
-    ui->hierarchyTree->setHeaderLabel(scene->getName());
-    for (GameObject *object : scene->getObjects()) {
+    ui->hierarchyTree->setHeaderLabel(_selectedScene->getName());
+    if (_selectedScene->getCamera() != nullptr) {
+        QTreeWidgetItem* node = new QTreeWidgetItem(ui->hierarchyTree->invisibleRootItem());
+        node->setText(0, "Camera");
+    }
+    {
+        QTreeWidgetItem *node = new QTreeWidgetItem(ui->hierarchyTree->invisibleRootItem());
+        node->setText(0, "Directional Light");
+    }
+    for (GameObject *object : _selectedScene->getObjects()) {
         QTreeWidgetItem *node = new QTreeWidgetItem(ui->hierarchyTree->invisibleRootItem());
         node->setText(0, object->getName());
         _treeObjectDir[node] = object;
@@ -101,8 +117,7 @@ void Editor::loadObject(bool) {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString filePath = dialog.selectedFiles()[0];;
-    ModelMeshData input = loadModel(filePath.toStdString());
+    QString filePath = dialog.selectedFiles()[0];
     loadObject(filePath.toStdString());
 }
 
@@ -127,17 +142,39 @@ void Editor::loadObject(const std::string &filePath) {
     saveProjectMeta();
 }
 
-void Editor::objectSelected(QTreeWidgetItem *selectedWidget, int column) {
-    _selectedObject = _treeObjectDir[selectedWidget];
+void Editor::objectSelected(QTreeWidgetItem *selectedWidget, int) {
     ui->inspectorObjects->setEnabled(true);
 
+    if (selectedWidget->text(0) == "Camera") {
+        QWidget *camera = ui->inspectorObjects->widget(0);
+        for (QObject* widget : camera->children())
+            delete widget;
+        QFrame *cFrame = new QFrame(camera);
+        QFormLayout *cLayout = new QFormLayout;
+        EditorView<Camera>::displayEditorView(_selectedScene->getCamera(), cLayout);
+        cFrame->setLayout(cLayout);
+        cFrame->show();
+        return;
+    }
+
+    if (selectedWidget->text(0) == "Directional Light") {
+        return;
+    }
+
+    _selectedObject = _treeObjectDir[selectedWidget];
 
     for (int i = 0; i < ui->inspectorObjects->count() - 1; i++)
         ui->inspectorObjects->removeItem(1);
     for (Component *component: _selectedObject->getComponents()) {
         QWidget *node = new QWidget();
+        QFrame* frame = new QFrame(node);
         ui->inspectorObjects->addItem(node, component->componentName().c_str());
+        QFormLayout *layout = new QFormLayout;
+        component->showInspector(layout);
+        frame->setLayout(layout);
+        frame->show();
     }
+
     QWidget *transform = ui->inspectorObjects->widget(0);
     QFrame *tFrame = new QFrame(transform);
     QFormLayout *tLayout = new QFormLayout;
@@ -148,6 +185,7 @@ void Editor::objectSelected(QTreeWidgetItem *selectedWidget, int column) {
 }
 
 void Editor::updateProject() {
+    ui->projectTree->clear();
     QTreeWidget *projectTree = ui->projectTree;
     QTreeWidgetItem *root = projectTree->invisibleRootItem();
     root->setText(0, projectDir.c_str());
@@ -283,28 +321,27 @@ void Editor::newProject(bool) {
     projectDir = path;
     mkdir((projectDir).c_str(), 0777);
     mkdir((projectDir + "/meta").c_str(), 0777);
-    mkdir((projectDir + "/assets").c_str(), 0777);
-    mkdir((projectDir + "/assets/Textures").c_str(), 0777);
-    copyFile("res/textures/defaultDiffuse.jpg", projectDir + "/assets/Textures/default");
-    mkdir((projectDir + "/assets/Shaders").c_str(), 0777);
-    mkdir((projectDir + "/assets/Shaders/basicShader").c_str(), 0777);
-    copyFile("res/shaders/basicShader/basicShader.vs", projectDir + "/assets/Shaders/basicShader/basicShader.vs");
-    copyFile("res/shaders/basicShader/basicShader.fs", projectDir + "/assets/Shaders/basicShader/basicShader.fs");
-    mkdir((projectDir + "/assets/Materials").c_str(), 0777);
-    mkdir((projectDir + "/assets/Models").c_str(), 0777);
-    mkdir((projectDir + "/assets/Scripts").c_str(), 0777);
+    mkdir((projectDir + "/Assets").c_str(), 0777);
+    mkdir((projectDir + "/Assets/Textures").c_str(), 0777);
+    copyFile("res/textures/defaultDiffuse.jpg", projectDir + "/Assets/Textures/defaultTexture.jpg");
+    Texture* texture = AssetManager<Texture>::createAsset("DefaultTexture", projectDir + "/Assets/Textures/defaultTexture.jpg");
+    mkdir((projectDir + "/Assets/Shaders").c_str(), 0777);
+    mkdir((projectDir + "/Assets/Shaders/basicShader").c_str(), 0777);
+    copyFile("res/shaders/basicShader/basicShader.vs", projectDir + "/Assets/Shaders/basicShader/basicShader.vs");
+    copyFile("res/shaders/basicShader/basicShader.fs", projectDir + "/Assets/Shaders/basicShader/basicShader.fs");
+    Shader* shader = AssetManager<Shader>::createAsset("basicShader", projectDir + "/Assets/Shaders/basicShader");
+    mkdir((projectDir + "/Assets/Materials").c_str(), 0777);
+    Material::createMaterial("DefaultMaterial", projectDir + "/Assets/Materials", shader, texture);
+    mkdir((projectDir + "/Assets/Models").c_str(), 0777);
+    copyFile("res/models/default/Monkey.fbx", projectDir + "/Assets/Models/Monkey.fbx");
+    copyFile("res/models/default/Plane.fbx", projectDir + "/Assets/Models/Plane.fbx");
+    mkdir((projectDir + "/Assets/Scripts").c_str(), 0777);
     std::ofstream project(path + "meta/project.meta"), textures(path + "meta/textures.meta"),
     shaders(path + "meta/shaders.meta"), materials(path + "meta/materials.meta");
-    //TODO: get these files to create and set up defaults
-//    project << "" << std::endl;
-//    project.close();
-//    textures << "" << std::endl;
-//    textures.close();
-//    shaders << "" << std::endl;
-//    shaders.close();
-//    materials << "" << std::endl;
-//    materials.close();
-
+    mkdir((projectDir + "/Assets/Scenes").c_str(), 0777);
+    std::cout << "working" << std::endl;
+    saveProjectMeta();
+    updateProject();
 }
 
 void Editor::saveProjectMeta() {
@@ -521,7 +558,7 @@ void Editor::shaderMenu(const QPoint &point) {
 }
 
 void Editor::deleteShader(bool) {
-    QListWidgetItem *item = shadersList->selectedItems()[0];
+//    QListWidgetItem *item = shadersList->selectedItems()[0];
 
 }
 
@@ -602,15 +639,44 @@ void Editor::materialSelected(QListWidgetItem *) {
 
 }
 
-void copyFile(const std::string& source, const std::string &destination) {
-    std::ifstream src(source.c_str());
-    std::ofstream dest(destination.c_str());
-    dest << src.rdbuf();
+void Editor::saveScene(bool) {
+    Scene* scene = SceneView::instance()->getCurrentScene();
+    if (scene->_fileLocation == "") {
+        QFileDialog dialog;
+        dialog.setFileMode(QFileDialog::Directory);
+        dialog.setOption(QFileDialog::ShowDirsOnly, true);
+        dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+        dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+        dialog.exec();
+        scene->_fileLocation = dialog.selectedFiles()[0].toStdString();
+    }
+    scene->serializeToJSON();
+}
+
+void Editor::newScene(bool) {
+    QFileDialog dialog;
+    dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    QString result = dialog.selectedFiles()[0];
+}
+
+void Editor::openScene(bool) {
+    QFileDialog dialog;
+    dialog.setOption(QFileDialog::DontResolveSymlinks, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.exec();
+    QString result = dialog.selectedFiles()[0];
+    Scene* scene = Scene::deserializeFromJSON(result.toStdString());
+    SceneView::instance()->addScene(scene);
+    SceneView::instance()->setActive(scene->getId());
+    Game::instance()->addScene(scene);
+    Game::instance()->setActive(scene->getId());
+    saveProjectMeta();
+    loadScene();
+    updateProject();
 }
 
 
-std::string removeExtension(const std::string &filename) {
-    size_t lastdot = filename.find_last_of(".");
-    if (lastdot == std::string::npos) return filename;
-    return filename.substr(0, lastdot);
-}
+
+

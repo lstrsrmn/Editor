@@ -34,9 +34,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Editor
 {
 public:
-    QAction *actionNew_Scene;
     QAction *actionNew_Project;
-    QAction *actionOpen_Scene;
     QAction *actionOpen_Project;
     QAction *actionClose;
     QAction *actionRecently_Closed;
@@ -48,6 +46,9 @@ public:
     QAction *actionMaterials;
     QAction *actionTextures;
     QAction *actionShaders;
+    QAction *actionSave_Scene;
+    QAction *actionNew_Scene;
+    QAction *actionOpen_Scene;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QCommandLinkButton *runStopButton;
@@ -94,12 +95,8 @@ public:
         if (Editor->objectName().isEmpty())
             Editor->setObjectName(QString::fromUtf8("Editor"));
         Editor->resize(800, 564);
-        actionNew_Scene = new QAction(Editor);
-        actionNew_Scene->setObjectName(QString::fromUtf8("actionNew_Scene"));
         actionNew_Project = new QAction(Editor);
         actionNew_Project->setObjectName(QString::fromUtf8("actionNew_Project"));
-        actionOpen_Scene = new QAction(Editor);
-        actionOpen_Scene->setObjectName(QString::fromUtf8("actionOpen_Scene"));
         actionOpen_Project = new QAction(Editor);
         actionOpen_Project->setObjectName(QString::fromUtf8("actionOpen_Project"));
         actionClose = new QAction(Editor);
@@ -122,6 +119,12 @@ public:
         actionTextures->setObjectName(QString::fromUtf8("actionTextures"));
         actionShaders = new QAction(Editor);
         actionShaders->setObjectName(QString::fromUtf8("actionShaders"));
+        actionSave_Scene = new QAction(Editor);
+        actionSave_Scene->setObjectName(QString::fromUtf8("actionSave_Scene"));
+        actionNew_Scene = new QAction(Editor);
+        actionNew_Scene->setObjectName(QString::fromUtf8("actionNew_Scene"));
+        actionOpen_Scene = new QAction(Editor);
+        actionOpen_Scene->setObjectName(QString::fromUtf8("actionOpen_Scene"));
         centralwidget = new QWidget(Editor);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -306,10 +309,11 @@ public:
         menuFile->addAction(actionNew_Project);
         menuFile->addAction(actionOpen_Project);
         menuFile->addSeparator();
-        menuFile->addAction(actionNew_Scene);
-        menuFile->addAction(actionOpen_Scene);
-        menuFile->addSeparator();
         menuFile->addAction(actionClose);
+        menuScene->addAction(actionSave_Scene);
+        menuScene->addAction(actionNew_Scene);
+        menuScene->addAction(actionOpen_Scene);
+        menuScene->addSeparator();
         menuScene->addAction(actionNew_Object);
         menuAssets->addAction(actionMaterials);
         menuAssets->addAction(actionTextures);
@@ -327,9 +331,7 @@ public:
     void retranslateUi(QMainWindow *Editor)
     {
         Editor->setWindowTitle(QCoreApplication::translate("Editor", "MainWindow", nullptr));
-        actionNew_Scene->setText(QCoreApplication::translate("Editor", "New Scene", nullptr));
         actionNew_Project->setText(QCoreApplication::translate("Editor", "New Project", nullptr));
-        actionOpen_Scene->setText(QCoreApplication::translate("Editor", "Open Scene", nullptr));
         actionOpen_Project->setText(QCoreApplication::translate("Editor", "Open Project", nullptr));
         actionClose->setText(QCoreApplication::translate("Editor", "Close", nullptr));
         actionRecently_Closed->setText(QCoreApplication::translate("Editor", "Recently Closed", nullptr));
@@ -341,13 +343,16 @@ public:
         actionMaterials->setText(QCoreApplication::translate("Editor", "Materials", nullptr));
         actionTextures->setText(QCoreApplication::translate("Editor", "Textures", nullptr));
         actionShaders->setText(QCoreApplication::translate("Editor", "Shaders", nullptr));
+        actionSave_Scene->setText(QCoreApplication::translate("Editor", "Save Scene", nullptr));
+        actionNew_Scene->setText(QCoreApplication::translate("Editor", "New Scene", nullptr));
+        actionOpen_Scene->setText(QCoreApplication::translate("Editor", "Open Scene", nullptr));
         runStopButton->setText(QCoreApplication::translate("Editor", "Run", nullptr));
         ViewPort->setTabText(ViewPort->indexOf(Scene), QCoreApplication::translate("Editor", "Scene", nullptr));
 #if QT_CONFIG(tooltip)
         Game->setToolTip(QCoreApplication::translate("Editor", "<html><head/><body><p>Test2</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        gameGLWidget->setToolTip(QCoreApplication::translate("Editor", "<html><head/><body><p>Test1</p></body></html>", nullptr));
+        gameGLWidget->setToolTip(QCoreApplication::translate("Editor", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         ViewPort->setTabText(ViewPort->indexOf(Game), QCoreApplication::translate("Editor", "Game", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Editor", "File", nullptr));

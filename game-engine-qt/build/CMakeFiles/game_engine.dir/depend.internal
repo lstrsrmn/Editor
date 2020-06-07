@@ -122,6 +122,7 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Component.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QObject
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qabstractitemmodel.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qalgorithms.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qarraydata.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qatomic.h
@@ -231,6 +232,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/qvector2d.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/qwindowdefs.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/qwindowdefs_win.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QLabel
@@ -239,7 +241,11 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QPushButton
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QWidget
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractbutton.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractslider.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractspinbox.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qboxlayout.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qcombobox.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qdialog.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qfiledialog.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qformlayout.h
@@ -250,7 +256,13 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qlayoutitem.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qlineedit.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qpushbutton.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qrubberband.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qsizepolicy.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qslider.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qstyle.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qstyleoption.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtabbar.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtabwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtwidgets-config.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
@@ -260,6 +272,7 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
@@ -619,6 +632,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -889,14 +903,26 @@
  /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/components/Renderer.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -1111,6 +1137,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -1240,6 +1267,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -1380,6 +1408,134 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Asset.cpp
@@ -1391,6 +1547,7 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QObject
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qabstractitemmodel.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qalgorithms.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qarraydata.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/qatomic.h
@@ -1500,6 +1657,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/qvector2d.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/qwindowdefs.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/qwindowdefs_win.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QLabel
@@ -1508,7 +1666,11 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QPushButton
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QWidget
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractbutton.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractslider.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qabstractspinbox.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qboxlayout.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qcombobox.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qdialog.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qfiledialog.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qformlayout.h
@@ -1519,7 +1681,13 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qlayoutitem.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qlineedit.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qpushbutton.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qrubberband.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qsizepolicy.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qslider.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qstyle.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qstyleoption.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtabbar.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtabwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtwidgets-config.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
@@ -1638,7 +1806,10 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
@@ -1650,7 +1821,13 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -1865,6 +2042,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -1994,6 +2172,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -2134,9 +2313,141 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/Game.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
@@ -2145,7 +2456,13 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Game.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -2360,6 +2677,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -2489,6 +2807,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -2629,16 +2948,156 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/GameObject.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/GameObject.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -2854,6 +3313,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -2983,6 +3443,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -3123,16 +3584,156 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/Scene.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Scene.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -3347,6 +3948,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -3476,6 +4078,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -3616,18 +4219,157 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -3842,6 +4584,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -3971,6 +4714,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -4111,9 +4855,140 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
@@ -4125,7 +5000,13 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -4340,6 +5221,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -4469,6 +5351,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -4609,6 +5492,134 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp
@@ -5090,9 +6101,11 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Material.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
@@ -5102,6 +6115,8 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
@@ -5320,6 +6335,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -5449,6 +6465,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -5719,7 +6736,10 @@
  /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
@@ -5731,8 +6751,13 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Mesh.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -6077,6 +7102,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -6217,9 +7243,141 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/ModelImporter.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
@@ -6228,9 +7386,13 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/ModelImporter.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -6575,6 +7737,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -6715,8 +7878,137 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Shader.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
@@ -6731,7 +8023,11 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Shader.cpp
@@ -6948,6 +8244,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -7077,6 +8374,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
@@ -7217,8 +8515,137 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidget.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/include/opencv4/opencv2/calib3d.hpp
+ /usr/include/opencv4/opencv2/core.hpp
+ /usr/include/opencv4/opencv2/core/affine.hpp
+ /usr/include/opencv4/opencv2/core/async.hpp
+ /usr/include/opencv4/opencv2/core/base.hpp
+ /usr/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/include/opencv4/opencv2/core/check.hpp
+ /usr/include/opencv4/opencv2/core/cuda.hpp
+ /usr/include/opencv4/opencv2/core/cuda.inl.hpp
+ /usr/include/opencv4/opencv2/core/cuda_types.hpp
+ /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/include/opencv4/opencv2/core/cvdef.h
+ /usr/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/include/opencv4/opencv2/core/hal/interface.h
+ /usr/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/include/opencv4/opencv2/core/mat.hpp
+ /usr/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/include/opencv4/opencv2/core/matx.hpp
+ /usr/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/include/opencv4/opencv2/core/operations.hpp
+ /usr/include/opencv4/opencv2/core/optim.hpp
+ /usr/include/opencv4/opencv2/core/ovx.hpp
+ /usr/include/opencv4/opencv2/core/persistence.hpp
+ /usr/include/opencv4/opencv2/core/saturate.hpp
+ /usr/include/opencv4/opencv2/core/traits.hpp
+ /usr/include/opencv4/opencv2/core/types.hpp
+ /usr/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/include/opencv4/opencv2/core/version.hpp
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/include/opencv4/opencv2/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dict.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp
+ /usr/include/opencv4/opencv2/dnn/layer.hpp
+ /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
+ /usr/include/opencv4/opencv2/dnn/version.hpp
+ /usr/include/opencv4/opencv2/features2d.hpp
+ /usr/include/opencv4/opencv2/flann.hpp
+ /usr/include/opencv4/opencv2/flann/all_indices.h
+ /usr/include/opencv4/opencv2/flann/allocator.h
+ /usr/include/opencv4/opencv2/flann/any.h
+ /usr/include/opencv4/opencv2/flann/autotuned_index.h
+ /usr/include/opencv4/opencv2/flann/composite_index.h
+ /usr/include/opencv4/opencv2/flann/config.h
+ /usr/include/opencv4/opencv2/flann/defines.h
+ /usr/include/opencv4/opencv2/flann/dist.h
+ /usr/include/opencv4/opencv2/flann/dynamic_bitset.h
+ /usr/include/opencv4/opencv2/flann/flann_base.hpp
+ /usr/include/opencv4/opencv2/flann/general.h
+ /usr/include/opencv4/opencv2/flann/ground_truth.h
+ /usr/include/opencv4/opencv2/flann/heap.h
+ /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h
+ /usr/include/opencv4/opencv2/flann/index_testing.h
+ /usr/include/opencv4/opencv2/flann/kdtree_index.h
+ /usr/include/opencv4/opencv2/flann/kdtree_single_index.h
+ /usr/include/opencv4/opencv2/flann/kmeans_index.h
+ /usr/include/opencv4/opencv2/flann/linear_index.h
+ /usr/include/opencv4/opencv2/flann/logger.h
+ /usr/include/opencv4/opencv2/flann/lsh_index.h
+ /usr/include/opencv4/opencv2/flann/lsh_table.h
+ /usr/include/opencv4/opencv2/flann/matrix.h
+ /usr/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/include/opencv4/opencv2/flann/nn_index.h
+ /usr/include/opencv4/opencv2/flann/params.h
+ /usr/include/opencv4/opencv2/flann/random.h
+ /usr/include/opencv4/opencv2/flann/result_set.h
+ /usr/include/opencv4/opencv2/flann/sampling.h
+ /usr/include/opencv4/opencv2/flann/saving.h
+ /usr/include/opencv4/opencv2/flann/timer.h
+ /usr/include/opencv4/opencv2/highgui.hpp
+ /usr/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/include/opencv4/opencv2/imgproc.hpp
+ /usr/include/opencv4/opencv2/ml.hpp
+ /usr/include/opencv4/opencv2/ml/ml.inl.hpp
+ /usr/include/opencv4/opencv2/objdetect.hpp
+ /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+ /usr/include/opencv4/opencv2/opencv.hpp
+ /usr/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/opencv4/opencv2/photo.hpp
+ /usr/include/opencv4/opencv2/shape.hpp
+ /usr/include/opencv4/opencv2/shape/emdL1.hpp
+ /usr/include/opencv4/opencv2/shape/hist_cost.hpp
+ /usr/include/opencv4/opencv2/shape/shape_distance.hpp
+ /usr/include/opencv4/opencv2/shape/shape_transformer.hpp
+ /usr/include/opencv4/opencv2/stitching.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/camera.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp
+ /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp
+ /usr/include/opencv4/opencv2/stitching/warpers.hpp
+ /usr/include/opencv4/opencv2/superres.hpp
+ /usr/include/opencv4/opencv2/superres/optical_flow.hpp
+ /usr/include/opencv4/opencv2/video.hpp
+ /usr/include/opencv4/opencv2/video/background_segm.hpp
+ /usr/include/opencv4/opencv2/video/tracking.hpp
+ /usr/include/opencv4/opencv2/videoio.hpp
+ /usr/include/opencv4/opencv2/videostab.hpp
+ /usr/include/opencv4/opencv2/videostab/deblurring.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching.hpp
+ /usr/include/opencv4/opencv2/videostab/fast_marching_inl.hpp
+ /usr/include/opencv4/opencv2/videostab/frame_source.hpp
+ /usr/include/opencv4/opencv2/videostab/global_motion.hpp
+ /usr/include/opencv4/opencv2/videostab/inpainting.hpp
+ /usr/include/opencv4/opencv2/videostab/log.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_core.hpp
+ /usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp
+ /usr/include/opencv4/opencv2/videostab/optical_flow.hpp
+ /usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp
+ /usr/include/opencv4/opencv2/videostab/ring_buffer.hpp
+ /usr/include/opencv4/opencv2/videostab/stabilizer.hpp
+ /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp
+ /usr/include/opencv4/opencv2/viz.hpp
+ /usr/include/opencv4/opencv2/viz/types.hpp
+ /usr/include/opencv4/opencv2/viz/viz3d.hpp
+ /usr/include/opencv4/opencv2/viz/vizcore.hpp
+ /usr/include/opencv4/opencv2/viz/widgets.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Texture.cpp.o
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
@@ -7233,8 +8660,13 @@
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+ /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
  /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Texture.cpp
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QList
@@ -7449,6 +8881,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix3x3
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QMatrix4x4
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLContext
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QOpenGLVertexArrayObject
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDevice
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QPaintDeviceWindow
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtGui/QSurfaceFormat
@@ -7578,6 +9011,7 @@
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qglshaderprogram.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglglobal.h
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtOpenGL/qtopenglversion.h
+ /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QComboBox
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QCommonStyle
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFileDialog
  /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QFormLayout
