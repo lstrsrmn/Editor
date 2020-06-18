@@ -22,7 +22,6 @@ struct Vertex {
     glm::vec2 texCoord{};
     glm::vec3 normal{};
 };
-//} __attribute__((packed));
 
 
 class Mesh {

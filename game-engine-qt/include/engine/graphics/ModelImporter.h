@@ -7,6 +7,9 @@
 #include <assimp/postprocess.h>
 #include <vector>
 
+struct ModelMeshData;
+class Mesh;
+
 ModelMeshData loadDefaultModel(const std::string&, const std::string& = "res/models/default/", bool flipV = true);
 ModelMeshData loadModel(const std::string&, bool flipV = true);
 

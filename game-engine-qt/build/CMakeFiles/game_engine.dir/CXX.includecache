@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/FJDYMCWYW7/moc_EventHandler.cpp
-memory
--
-../../../include/engine/editor/EventHandler.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/mocs_compilation.cpp
-FJDYMCWYW7/moc_EventHandler.cpp
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/FJDYMCWYW7/moc_EventHandler.cpp
-
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 ../game/Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
@@ -300,10 +286,6 @@ glm/glm.hpp
 glm/glm.hpp
 -
 
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Component.cpp
-../../include/engine/components/Component.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
-
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/MeshRenderer.cpp
 ../../include/engine/components/MeshRenderer.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
@@ -319,14 +301,6 @@ glm/glm.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 iostream
 -
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp
-../../include/engine/editor/EditorView.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp
-../../include/engine/editor/EventHandler.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
 iostream

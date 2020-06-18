@@ -9,6 +9,9 @@
 #include "../game/Transform.h"
 #include "lighting/DirectionalLight.h"
 
+class Texture;
+class Shader;
+
 class Material : public Asset {
     ASSET(Material)
 public:

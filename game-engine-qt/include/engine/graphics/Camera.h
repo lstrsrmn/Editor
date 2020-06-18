@@ -66,7 +66,6 @@ CUSTOM_EDITOR(Camera) {
         FloatEventHandler* xAmbientInput = new FloatEventHandler(&object->ambient.x);
         FloatEventHandler* yAmbientInput = new FloatEventHandler(&object->ambient.y);
         FloatEventHandler* zAmbientInput = new FloatEventHandler(&object->ambient.z);
-        ButtonCallbackHandler* buttonCallbackHandler = new ButtonCallbackHandler(ButtonCallbackHandler::createCallback(object->_scene, Scene::updateMaterials));
         EditorFunctions::label(layout, "Position");
         EditorFunctions::floatInput(layout, "x: ", xPosInput, std::to_string(object->_position.x).c_str());
         EditorFunctions::floatInput(layout, "y: ", yPosInput, std::to_string(object->_position.y).c_str());
@@ -75,7 +74,6 @@ CUSTOM_EDITOR(Camera) {
         EditorFunctions::floatInput(layout, "x: ", xAmbientInput, std::to_string(object->ambient.x).c_str());
         EditorFunctions::floatInput(layout, "y: ", yAmbientInput, std::to_string(object->ambient.y).c_str());
         EditorFunctions::floatInput(layout, "z: ", zAmbientInput, std::to_string(object->ambient.z).c_str());
-        EditorFunctions::buttonInput(layout, "Update", buttonCallbackHandler);
     }
 };
 

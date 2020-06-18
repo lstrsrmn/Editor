@@ -1,7 +1,3 @@
-//
-// Created by lstrsrmn on 08/05/2020.
-//
-
 #ifndef GAME_ENGINE_MESHRENDERER_H
 #define GAME_ENGINE_MESHRENDERER_H
 
@@ -11,8 +7,9 @@
 #include "../graphics/ModelImporter.h"
 #include "../editor/EditorView.h"
 
+struct ModelMeshData;
+class Mesh;
 class MeshRenderer;
-//void MeshRenderer::updateMaterial(const QString&);
 
 CUSTOM_EDITOR(MeshRenderer) {
     static void displayEditorView(MeshRenderer *object, QFormLayout *layout);
@@ -25,7 +22,7 @@ public:
     MeshRenderer(Material*, ModelMeshData);
     void render(const Camera&, const DirectionalLight&) override;
     Material* _material;
-    ModelMeshData _meshes{};
+    ModelMeshData _meshes;
     void updateMaterial(const QString&);
     void serializeToJSON(nlohmann::json&) override;
     static MeshRenderer* deserializeFromJSON(nlohmann::json&);
