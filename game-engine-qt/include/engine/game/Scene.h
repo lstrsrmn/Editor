@@ -7,15 +7,18 @@
 #include <filesystem>
 #include <nlohmann/json.hpp>
 #include "../core/Utils.h"
-#include "../components/MeshRenderer.h"
-#include "GameObject.h"
-#include "../graphics/lighting/DirectionalLight.h"
+#include "Game.h"
+#include "SceneView.h"
 
+class Camera;
+class DirectionalLight;
+class GameObject;
+class Renderer;
 class SceneManager;
 
 class Scene {
 public:
-    Scene(Camera*, DirectionalLight);
+    Scene(Camera*, DirectionalLight*);
 
     void update();
 
@@ -49,14 +52,14 @@ public:
 
     Camera *getCamera() const;
 
-    DirectionalLight getDirectionalLight() const;
+    DirectionalLight* getDirectionalLight() const;
 
     void updateMaterials();
 
 private:
     QString _name;
     unsigned int _id;
-    DirectionalLight _directionalLight;
+    DirectionalLight *_directionalLight;
     Camera *_camera;
     std::vector<GameObject *> _gameObjects;
     std::vector<Renderer *> _renderers;

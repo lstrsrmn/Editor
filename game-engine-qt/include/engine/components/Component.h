@@ -2,6 +2,7 @@
 #define GAME_ENGINE_COMPONENT_H
 
 #include "../game/Transform.h"
+#include "../game/GameObject.h"
 
 #include <string>
 #include <nlohmann/json.hpp>
@@ -36,8 +37,6 @@ EditorView<type>::displayEditorView(this, layout); \
 } \
 private: \
 type() = default;
-
-class GameObject;
 
 struct ComponentFactory;
 

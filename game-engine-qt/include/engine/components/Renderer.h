@@ -6,13 +6,13 @@
 #define GAME_ENGINE_RENDERER_H
 
 #include "Component.h"
-#include "../graphics/Camera.h"
-#include "../graphics/lighting/DirectionalLight.h"
 
+class Camera;
+class DirectionalLight;
 
 class Renderer : public Component {
 public:
-    virtual void render(const Camera&, const DirectionalLight&) = 0;
+    virtual void render(const Camera&, DirectionalLight*) = 0;
     void setGameObject(GameObject *gameObject) override;
     virtual ~Renderer() override;
 private:

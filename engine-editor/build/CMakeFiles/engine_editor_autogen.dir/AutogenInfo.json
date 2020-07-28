@@ -3,7 +3,7 @@
 	"CMAKE_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
-	"CMAKE_EXECUTABLE" : "/snap/clion/114/bin/cmake/linux/bin/cmake",
+	"CMAKE_EXECUTABLE" : "/snap/clion/121/bin/cmake/linux/bin/cmake",
 	"CMAKE_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
 	"HEADERS" : 
 	[
@@ -13,19 +13,14 @@
 			"DZ4BYIM6BU/moc_Editor.cpp"
 		],
 		[
-			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.h",
-			"MU",
-			"IMAN36LHMA/moc_GameGLView.cpp"
-		],
-		[
 			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.h",
 			"MU",
 			"IMAN36LHMA/moc_ListDialog.cpp"
 		],
 		[
-			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.h",
+			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.h",
 			"MU",
-			"IMAN36LHMA/moc_SceneGLView.cpp"
+			"IMAN36LHMA/moc_ProgramGLView.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -68,7 +63,7 @@
 		"-dM",
 		"-E",
 		"-c",
-		"/snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+		"/snap/clion/121/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
 	],
 	"MOC_PREDEFS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/engine_editor_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
@@ -88,15 +83,11 @@
 			"MU"
 		],
 		[
-			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp",
-			"MU"
-		],
-		[
 			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp",
 			"MU"
 		],
 		[
-			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp",
+			"/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.cpp",
 			"MU"
 		]
 	],

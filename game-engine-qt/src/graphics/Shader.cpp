@@ -1,15 +1,14 @@
-#include <fstream>
-#include <iostream>
-
 #include "../../include/engine/graphics/Shader.h"
 #include "../../include/engine/game/ContextController.h"
+#include "../../include/engine/graphics/Camera.h"
+#include "../../include/engine/graphics/lighting/DirectionalLight.h"
 
 static void checkShaderError (GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage);
 static std::string loadShader(const std::string& fileName);
 static GLuint createGLSLShader (const std::string& text, GLenum shaderType);
 
 Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderName, id) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = ContextController::getFunctions();
 
     std::filesystem::path path = std::filesystem::path(filePath);
     std::string fullPath = filePath + "/" + path.filename().string();
@@ -18,7 +17,7 @@ Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderNam
     _shaders[0] = createGLSLShader(loadShader(fullPath + ".vs"), GL_VERTEX_SHADER);
     _shaders[1] = createGLSLShader(loadShader(fullPath + ".fs"), GL_FRAGMENT_SHADER);
 
-    for (unsigned int _shader : _shaders)
+    for (GLuint _shader : _shaders)
         f->glAttachShader(_program, _shader);
 
     f->glBindAttribLocation(_program, 0, "position");
@@ -39,7 +38,7 @@ Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderNam
 }
 
 Shader::~Shader() {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = ContextController::getFunctions();
     for (unsigned int _shader : _shaders) {
         f->glDetachShader(_program, _shader);
         f->glDeleteShader(_shader);
@@ -49,17 +48,18 @@ Shader::~Shader() {
 }
 
 void Shader::bind() const {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = ContextController::getFunctions();
     f->glUseProgram(_program);
 }
 
-void Shader::update(const Transform &transform, const Camera& camera, DirectionalLight directionalLight, glm::vec3 ambient) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+void Shader::update(const Transform &transform, const Camera& camera, DirectionalLight* directionalLight) {
+    QOpenGLFunctions* f = ContextController::getFunctions();
     glm::mat4 model = transform.getModel();
     glm::mat4 MVP = camera.getViewProjection() * model;
 
-    glm::vec3 direction = directionalLight.getDirection();
-    glm::vec3 colour = directionalLight.getColour();
+    glm::vec3 direction = directionalLight->getDirection();
+    glm::vec3 colour = directionalLight->getColour();
+    glm::vec3 ambient = camera.ambient;
 
     f->glUniformMatrix4fv(_uniforms[TRANSFORM_U], 1, GL_FALSE, &MVP[0][0]);
     f->glUniformMatrix4fv(_uniforms[NORMAL_MATRIX_U], 1, GL_FALSE, &model[0][0]);
@@ -94,7 +94,7 @@ static std::string loadShader(const std::string& fileName) {
 }
 
 static void checkShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = ContextController::getFunctions();
     GLint success = 0;
     GLchar error[1024] = {0};
 
@@ -114,7 +114,7 @@ static void checkShaderError(GLuint shader, GLuint flag, bool isProgram, const s
 }
 
 static GLuint createGLSLShader (const std::string& text, GLenum shaderType) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = ContextController::getFunctions();
 
     GLuint shader = f->glCreateShader(shaderType);
 

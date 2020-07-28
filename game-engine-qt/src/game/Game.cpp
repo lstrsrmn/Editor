@@ -1,6 +1,5 @@
-#include <cstdio>
-#include <iostream>
 #include "../../include/engine/game/Game.h"
+#include "../../include/engine/game/Scene.h"
 
 Game *Game::_instance = nullptr;
 

@@ -36,8 +36,8 @@ void DirectionalLight::serializeToJSON(nlohmann::json &scene) {
     scene["directionalLight"]["intensity"] = _intensity;
 }
 
-DirectionalLight DirectionalLight::deserializeFromJSON(nlohmann::json &scene) {
+DirectionalLight* DirectionalLight::deserializeFromJSON(nlohmann::json &scene) {
     glm::vec3 direction{scene["directionalLight"]["direction"][0], scene["directionalLight"]["direction"][1], scene["directionalLight"]["direction"][2]};
     glm::vec3 colour{scene["directionalLight"]["colour"][0], scene["directionalLight"]["colour"][1], scene["directionalLight"]["colour"][2]};
-    return DirectionalLight(direction, colour, scene["directionalLight"]["intensity"]);
+    return new DirectionalLight(direction, colour, scene["directionalLight"]["intensity"]);
 }

@@ -5,9 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/engine_editor.dir/main.cpp.o"
   "CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o"
-  "CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o"
   "CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o"
-  "CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o"
+  "CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o"
   "engine_editor"
   "engine_editor.pdb"
 )

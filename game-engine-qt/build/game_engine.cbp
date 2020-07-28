@@ -154,9 +154,6 @@
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h">
 			<Option target="game_engine"/>
 		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h">
-			<Option target="game_engine"/>
-		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h">
 			<Option target="game_engine"/>
 		</Unit>
@@ -215,9 +212,6 @@
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp">
-			<Option target="game_engine"/>
-		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp">
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp">

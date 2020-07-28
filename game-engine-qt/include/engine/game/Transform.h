@@ -13,11 +13,13 @@
 
 class Transform {
 public:
-    Transform(const glm::vec3 &pos = glm::vec3(), const glm::vec3 &rot = glm::vec3(),
+    Transform(GameObject* object, const glm::vec3 &pos = glm::vec3(), const glm::vec3 &rot = glm::vec3(),
               const glm::vec3 scale = glm::vec3(1.0, 1.0, 1.0)) :
             pos(pos),
             rot(rot),
-            scale(scale) {}
+            scale(scale) {
+        _object = object;
+    }
 
     inline glm::mat4 getModel() const {
         glm::mat4 posMatrix = glm::translate(pos);
@@ -33,17 +35,23 @@ public:
         object["transform"]["scale"] = {scale.x, scale.y, scale.z};
     }
 
-    inline static Transform deserializeFromJSON(nlohmann::json& object) {
-        return Transform(glm::vec3(object["transform"]["pos"][0], object["transform"]["pos"][1], object["transform"]["pos"][2]),
+    inline static Transform deserializeFromJSON(nlohmann::json& object, GameObject* gameObject) {
+        return Transform(gameObject, glm::vec3(object["transform"]["pos"][0], object["transform"]["pos"][1], object["transform"]["pos"][2]),
                 glm::vec3(object["transform"]["rot"][0], object["transform"]["rot"][1], object["transform"]["rot"][2]),
                 glm::vec3(object["transform"]["scale"][0], object["transform"]["scale"][1], object["transform"]["scale"][2]));
+    }
+
+    inline GameObject* getObject() const {
+        return _object;
     }
 
     glm::vec3 pos;
     glm::vec3 rot;
     glm::vec3 scale;
+    Transform* parent = nullptr;
 
 private:
+    GameObject* _object = nullptr;
 };
 
 CUSTOM_EDITOR(Transform) {

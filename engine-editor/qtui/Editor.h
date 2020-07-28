@@ -14,6 +14,7 @@
 #include <engine/graphics/Texture.h>
 #include <engine/graphics/Material.h>
 #include "../widgets/ListDialog.h"
+#include "../widgets/ProgramGLView.h"
 
 namespace Ui {
 class Editor;
@@ -30,6 +31,7 @@ public:
     void startup();
 
 private:
+//    ProgramGLView* _glViewCanvas;
     QListWidget* texturesList;
     QListWidget* materialsList;
     QListWidget* shadersList;

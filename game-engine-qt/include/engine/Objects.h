@@ -5,8 +5,7 @@
 #ifndef ENGINE_EDITOR_OBJECTS_H
 #define ENGINE_EDITOR_OBJECTS_H
 
-#include "game/GameObject.h"
-#include "graphics/ModelImporter.h"
-#include "components/MeshRenderer.h"
+#include "graphics/lighting/DirectionalLight.h"
+#include "graphics/Texture.h"
 
 #endif //ENGINE_EDITOR_OBJECTS_H

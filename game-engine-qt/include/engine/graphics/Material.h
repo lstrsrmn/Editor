@@ -3,11 +3,9 @@
 
 #include <nlohmann/json.hpp>
 #include <fstream>
-#include "Shader.h"
-#include "Texture.h"
-#include "Camera.h"
+#include "../components/MeshRenderer.h"
 #include "../game/Transform.h"
-#include "lighting/DirectionalLight.h"
+#include "../core/AssetManager.h"
 
 class Texture;
 class Shader;
@@ -17,7 +15,7 @@ class Material : public Asset {
 public:
     static Material* createMaterial(const std::string&, const std::string&, Shader*, Texture*);
     static Material* loadMaterial(const std::string&);
-    void bind(const Transform&, const Camera&, DirectionalLight light);
+    void bind(const Transform&, const Camera&, DirectionalLight* light);
     Texture* _texture;
     Shader* _shader;
 private:

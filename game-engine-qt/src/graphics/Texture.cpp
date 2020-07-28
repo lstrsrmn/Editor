@@ -2,18 +2,17 @@
 #include <cassert>
 #include <iostream>
 #include "../../include/engine/graphics/Texture.h"
-#include "../../include/engine/game/ContextController.h"
+//#include "../../include/engine/game/ContextController.h"
 
 Texture::Texture(const std::string& texturePath, unsigned int id) : Asset(texturePath, id){
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = Game::instance()->getGlFunctions();
+
     cv::Mat img = cv::imread(texturePath, cv::IMREAD_COLOR);
     cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
 
     if (img.data == NULL)
         std::cerr << "Texture loading failed" << std::endl;
     unsigned char* data = img.data;
-    img.rows;
-    img.cols;
 
     f->glGenTextures(1, &_texture);
     f->glBindTexture(GL_TEXTURE_2D, _texture);
@@ -28,13 +27,15 @@ Texture::Texture(const std::string& texturePath, unsigned int id) : Asset(textur
 }
 
 Texture::~Texture() {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+//    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = Game::instance()->getGlFunctions();
     f->glDeleteTextures(1, &_texture);
 }
 
 
 void Texture::bind(unsigned int unit) const{
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+//    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = Game::instance()->getGlFunctions();
     assert(unit >= 0 && unit <= 31);
     f->glActiveTexture(GL_TEXTURE0 + unit);
     f->glBindTexture(GL_TEXTURE_2D, _texture);

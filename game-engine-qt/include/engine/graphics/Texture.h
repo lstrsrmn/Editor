@@ -7,8 +7,7 @@
 #include <opencv2/opencv.hpp>
 #include <map>
 #include <nlohmann/json.hpp>
-#include "../game/Game.h"
-#include "../core/Asset.h"
+#include "Material.h"
 #include "../core/AssetManager.h"
 
 class Texture: public Asset {

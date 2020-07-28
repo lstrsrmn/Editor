@@ -37,6 +37,14 @@ Editor::~Editor() {
 }
 
 void Editor::startup() {
+//    for (QObject *widget: ui->Scene->children()) {
+//        delete widget;
+//    }
+//    for (QObject *widget: ui->Game->children()) {
+//        delete widget;
+//    }
+//    _glViewCanvas = new ProgramGLView(ui->Scene);
+
     QWidget *window = new QWidget;
     window->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, window->size(),
                                             QGuiApplication::screens()[0]->geometry()));
@@ -54,7 +62,7 @@ void Editor::startup() {
     QPushButton *newButton = new QPushButton("New Project");
     connect(newButton, SIGNAL(clicked()), this, SLOT(newProject()));
     connect(newButton, SIGNAL(clicked()), window, SLOT(close()));
-    QPushButton *loadButton = new QPushButton("Load Projcet");
+    QPushButton *loadButton = new QPushButton("Load Project");
     connect(loadButton, SIGNAL(clicked()), this, SLOT(loadProject()));
     connect(loadButton, SIGNAL(clicked()), window, SLOT(close()));
     frameLayout->addWidget(newButton);
@@ -69,22 +77,16 @@ void Editor::startup() {
 
 void Editor::runButtonClicked() {
     _gameRunning = !_gameRunning;
-//    ui->gameGLWidget->setEnabled(_gameRunning);
+    ui->programGLWidget->changeGameEnabled(_gameRunning);
     if (_gameRunning) {
-        ContextController::instance()->setCurrent(1);
-        ui->gameGLWidget->bindScene(SceneView::instance()->getCurrentScene());
-        ui->gameGLWidget->setEnabled(true);
         ui->runStopButton->setText("Stop");
-        ui->ViewPort->setCurrentIndex(1);
     } else {
-        ContextController::instance()->setCurrent(0);
-        ui->gameGLWidget->setEnabled(false);
         ui->runStopButton->setText("Run");
-        ui->ViewPort->setCurrentIndex(0);
     }
 }
 
 void Editor::loadScene() {
+    //TODO: make this work properly
     _selectedScene = SceneView::instance()->getCurrentScene();
     ui->hierarchyTree->clear();
     _treeObjectDir.clear();
@@ -102,13 +104,27 @@ void Editor::loadScene() {
         node->setText(0, object->getName());
         _treeObjectDir[node] = object;
     }
+    ui->programGLWidget->updateSize();
 }
 
 void Editor::viewPortChanged(int newViewPort) {
-    ContextController::instance()->setCurrent(newViewPort);
     if (newViewPort == 0) {
-        ui->gameGLWidget->setEnabled(false);
+        ui->runStopButton->setDisabled(true);
         ui->runStopButton->setText("Run");
+        _gameRunning = false;
+        ui->programGLWidget->setParent(ui->Scene);
+        ui->sceneVerticalLayout->addWidget(ui->programGLWidget);
+        ui->programGLWidget->changeViewPort(SCENE);
+        ui->programGLWidget->setFocus();
+    }
+    else if (newViewPort == 1) {
+        ui->runStopButton->setDisabled(false);
+        ui->runStopButton->setText("Run");
+        _gameRunning = false;
+        ui->programGLWidget->setParent(ui->Game);
+        ui->gameVerticalLayout->addWidget(ui->programGLWidget);
+        ui->programGLWidget->changeViewPort(GAME);
+        ui->programGLWidget->setFocus();
     }
 }
 
@@ -300,7 +316,7 @@ void Editor::deleteObject(bool) {
 }
 
 void Editor::setSceneViewFocus(bool) {
-    ui->sceneGLWidget->setFocus(_selectedObject->getTransform().pos);
+    ui->programGLWidget->setViewFocus(_selectedObject->getTransform().pos);
 }
 
 void Editor::newProject(bool) {

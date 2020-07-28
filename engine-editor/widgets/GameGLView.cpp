@@ -41,7 +41,7 @@ void GameGLView::initializeGL() {
 
     MeshRenderer* cameraRenderer = new MeshRenderer(material, model);
 
-    DirectionalLight light;
+    DirectionalLight* light = new DirectionalLight();
 
     _scene = new Scene(camera, light);
 

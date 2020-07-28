@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/121/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/121/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -55,7 +55,7 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target game_engine"
-	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_autogen /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir/AutogenInfo.json Debug
+	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /snap/clion/121/bin/cmake/linux/bin/cmake -E cmake_autogen /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir/AutogenInfo.json Debug
 
 game_engine_autogen: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen
 game_engine_autogen: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir/build.make

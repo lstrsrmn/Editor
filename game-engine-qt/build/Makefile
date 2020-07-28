@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/121/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/121/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/lstrsrmn/CLionProjects/Editor/engine-editor/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/114/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/121/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/114/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/121/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -518,33 +518,6 @@ src/graphics/Camera.cpp.s:
 	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.s
 .PHONY : src/graphics/Camera.cpp.s
 
-src/graphics/Display.o: src/graphics/Display.cpp.o
-
-.PHONY : src/graphics/Display.o
-
-# target to build an object file
-src/graphics/Display.cpp.o:
-	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o
-.PHONY : src/graphics/Display.cpp.o
-
-src/graphics/Display.i: src/graphics/Display.cpp.i
-
-.PHONY : src/graphics/Display.i
-
-# target to preprocess a source file
-src/graphics/Display.cpp.i:
-	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.i
-.PHONY : src/graphics/Display.cpp.i
-
-src/graphics/Display.s: src/graphics/Display.cpp.s
-
-.PHONY : src/graphics/Display.s
-
-# target to generate assembly for a file
-src/graphics/Display.cpp.s:
-	cd /home/lstrsrmn/CLionProjects/Editor/engine-editor/build && $(MAKE) -f /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.s
-.PHONY : src/graphics/Display.cpp.s
-
 src/graphics/Material.o: src/graphics/Material.cpp.o
 
 .PHONY : src/graphics/Material.o
@@ -786,9 +759,6 @@ help:
 	@echo "... src/graphics/Camera.o"
 	@echo "... src/graphics/Camera.i"
 	@echo "... src/graphics/Camera.s"
-	@echo "... src/graphics/Display.o"
-	@echo "... src/graphics/Display.i"
-	@echo "... src/graphics/Display.s"
 	@echo "... src/graphics/Material.o"
 	@echo "... src/graphics/Material.i"
 	@echo "... src/graphics/Material.s"

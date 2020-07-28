@@ -18,7 +18,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Scene.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/Scene.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o"
-  "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Material.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Mesh.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o"
   "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/ModelImporter.cpp" "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/ModelImporter.cpp.o"

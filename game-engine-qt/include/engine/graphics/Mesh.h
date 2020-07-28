@@ -4,19 +4,23 @@
 #include <glm/glm.hpp>
 #include <QtOpenGL>
 #include <string>
-#include <assimp/Importer.hpp>
-#include "../game/Game.h"
 #include <QOpenGLVertexArrayObject>
 //#include "../game/ContextController.h"
 
 class Mesh;
 
-struct ModelMeshData {
+struct ModelMeshTree {
     Mesh **meshes;
     unsigned int numMeshes;
-    std::string filePath;
+    ModelMeshTree** children;
+    unsigned int numChildren;
+    glm::mat4 transform;
 };
 
+struct ModelMeshData {
+    ModelMeshTree* tree;
+    std::filesystem::path filePath;
+};
 struct Vertex {
     glm::vec3 pos{};
     glm::vec2 texCoord{};
@@ -44,9 +48,9 @@ private:
 
         NUM_BUFFERS
     };
-    QOpenGLVertexArrayObject *sVAO, *gVAO;
-    QOpenGLBuffer *sVBO, *gVBO;
-    QOpenGLBuffer *sIBO, *gIBO;
+    QOpenGLVertexArrayObject *VAO;
+    QOpenGLBuffer *VBO;
+    QOpenGLBuffer *IBO;
 
     unsigned int _drawCount;
 };

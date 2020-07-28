@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/121/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/121/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -70,35 +70,9 @@ CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/engine-editor/build/engine_editor_autogen/mocs_compilation.cpp -o CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: CMakeFiles/engine_editor.dir/flags.make
-CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o: ../widgets/GameGLView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp
-
-CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp > CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.i
-
-CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp -o CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.s
-
-CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: CMakeFiles/engine_editor.dir/flags.make
-CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o: ../widgets/SceneGLView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp
-
-CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp > CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.i
-
-CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp -o CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.s
-
 CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o: CMakeFiles/engine_editor.dir/flags.make
 CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o: ../widgets/ListDialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp
 
 CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.i: cmake_force
@@ -109,9 +83,22 @@ CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp -o CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.s
 
+CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o: CMakeFiles/engine_editor.dir/flags.make
+CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o: ../widgets/ProgramGLView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.cpp
+
+CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.cpp > CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.i
+
+CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.cpp -o CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.s
+
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: CMakeFiles/engine_editor.dir/flags.make
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o: ../qtui/Editor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/engine-editor/qtui/Editor.cpp
 
 CMakeFiles/engine_editor.dir/qtui/Editor.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/engine_editor.dir/qtui/Editor.cpp.s: cmake_force
 
 CMakeFiles/engine_editor.dir/main.cpp.o: CMakeFiles/engine_editor.dir/flags.make
 CMakeFiles/engine_editor.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine_editor.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine_editor.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine_editor.dir/main.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/engine-editor/main.cpp
 
 CMakeFiles/engine_editor.dir/main.cpp.i: cmake_force
@@ -138,9 +125,8 @@ CMakeFiles/engine_editor.dir/main.cpp.s: cmake_force
 # Object files for target engine_editor
 engine_editor_OBJECTS = \
 "CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o" \
-"CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o" \
 "CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o" \
+"CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o" \
 "CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o" \
 "CMakeFiles/engine_editor.dir/main.cpp.o"
 
@@ -148,9 +134,8 @@ engine_editor_OBJECTS = \
 engine_editor_EXTERNAL_OBJECTS =
 
 engine_editor: CMakeFiles/engine_editor.dir/engine_editor_autogen/mocs_compilation.cpp.o
-engine_editor: CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o
-engine_editor: CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o
 engine_editor: CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.o
+engine_editor: CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o
 engine_editor: CMakeFiles/engine_editor.dir/qtui/Editor.cpp.o
 engine_editor: CMakeFiles/engine_editor.dir/main.cpp.o
 engine_editor: CMakeFiles/engine_editor.dir/build.make
@@ -208,7 +193,7 @@ engine_editor: /home/lstrsrmn/Qt/5.14.2/gcc_64/lib/libQt5Widgets.so.5.14.2
 engine_editor: /home/lstrsrmn/Qt/5.14.2/gcc_64/lib/libQt5Gui.so.5.14.2
 engine_editor: /home/lstrsrmn/Qt/5.14.2/gcc_64/lib/libQt5Core.so.5.14.2
 engine_editor: CMakeFiles/engine_editor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable engine_editor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable engine_editor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine_editor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

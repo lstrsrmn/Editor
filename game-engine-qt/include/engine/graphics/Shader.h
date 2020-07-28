@@ -7,12 +7,11 @@
 #include <nlohmann/json.hpp>
 #include <filesystem>
 #include "../game/Transform.h"
-#include "Camera.h"
-#include "lighting/DirectionalLight.h"
-#include "lighting/PointLight.h"
-#include "../game/Game.h"
-#include "../core/Asset.h"
 #include "../core/AssetManager.h"
+#include "Material.h"
+
+class Camera;
+class DirectionalLight;
 
 class Shader : public Asset{
     ASSET(Shader)
@@ -21,15 +20,13 @@ public:
 //    static Shader* createAsset(const std::string&, const std::string&, const std::string & = "res/shaders/");
     void bind() const;
 
-    void update(const Transform &transform, const Camera& camera, DirectionalLight directionalLight, glm::vec3 ambient);
+    void update(const Transform &transform, const Camera& camera, DirectionalLight* directionalLight);
 
     virtual ~Shader();
 
 private:
     static const unsigned int NUM_SHADER = 2;
     Shader(const std::string &, unsigned int);
-    DirectionalLight _lightDirection;
-    glm::vec3 _ambient;
 
     enum {
         TRANSFORM_U,

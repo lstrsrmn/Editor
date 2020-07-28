@@ -1,10 +1,16 @@
 
 #include <iostream>
 #include "../../include/engine/game/Scene.h"
+#include "../../include/engine/graphics/Camera.h"
+#include "../../include/engine/graphics/lighting/DirectionalLight.h"
+#include "../../include/engine/game/GameObject.h"
+#include "../../include/engine/components/Renderer.h"
+#include "../../include/engine/components/MeshRenderer.h"
+#include "../../include/engine/graphics/Material.h"
 
 SceneManager *SceneManager::_instance = nullptr;
 
-Scene::Scene(Camera *camera, DirectionalLight light) {
+Scene::Scene(Camera *camera, DirectionalLight* light) {
     _camera = camera;
     camera->_scene = this;
     _directionalLight = light;
@@ -86,7 +92,7 @@ void Scene::serializeToJSON() {
     std::ofstream sceneFile((_fileLocation + "/" + _name.toStdString() + ".scene").c_str());
     nlohmann::json scene;
     _camera->serializeToJSON(scene);
-    _directionalLight.serializeToJSON(scene);
+    _directionalLight->serializeToJSON(scene);
     for (GameObject* object: _gameObjects) {
         object->serializeToJSON(scene["objects"]);
     }
@@ -98,7 +104,7 @@ Scene* Scene::deserializeFromJSON(const std::string& filePath) {
     nlohmann::json sceneJSON;
     file >> sceneJSON;
     Camera* camera = Camera::deserializeFromJSON(sceneJSON);
-    DirectionalLight light = DirectionalLight::deserializeFromJSON(sceneJSON);
+    DirectionalLight* light = DirectionalLight::deserializeFromJSON(sceneJSON);
     Scene* scene = new Scene(camera, light);
     for (nlohmann::json::iterator it = sceneJSON["objects"].begin(); it != sceneJSON["objects"].end(); it++) {
         scene->_gameObjects.push_back(GameObject::deserializeFromJSON(it.value(), it.key(), scene));
@@ -112,7 +118,7 @@ Camera *Scene::getCamera() const {
     return _camera;
 }
 
-DirectionalLight Scene::getDirectionalLight() const {
+DirectionalLight* Scene::getDirectionalLight() const {
     return _directionalLight;
 }
 

@@ -7,11 +7,10 @@
 
 #include <vector>
 #include <nlohmann/json.hpp>
-//#include "../components/MeshRenderer.h"
-#include "../components/Component.h"
+#include "Scene.h"
 #include "Transform.h"
 
-class Scene;
+class Component;
 
 class GameObject {
 public:

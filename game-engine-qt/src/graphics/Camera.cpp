@@ -1,6 +1,6 @@
 #include "../../include/engine/graphics/Camera.h"
 #include "../../include/engine/game/ContextController.h"
-#include <iostream>
+
 Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar, glm::vec3 amb) {
     _position = pos;
     ambient = amb;
@@ -21,7 +21,7 @@ void Camera::moveBy(glm::vec3 movement) {
 }
 
 void Camera::clear(float r, float g, float b, float a) {
-    QOpenGLFunctions* f = ContextController::instance()->getCurrentFunctions();
+    QOpenGLFunctions* f = ContextController::getFunctions();
     f->glClearColor(r, g, b, a);
     f->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
@@ -35,9 +35,9 @@ void Camera::rotateBy(float x, float y, float z) {
 
 //    _up = rotMatrix * glm::vec4(_up, 1);
 //    _forward = rotMatrix * glm::vec4(_forward, 1);
-    glm::quat qx(cos(x / 2), getRight() * sin(x / 2));
-    glm::quat qy(cos(y / 2), getUp() * sin(y / 2));
-    glm::quat qz(cos(z / 2), getForward() * sin(z / 2));
+    glm::quat qx(cos(x / 2), getRight() * sinf(x / 2));
+    glm::quat qy(cos(y / 2), getUp() * sinf(y / 2));
+    glm::quat qz(cos(z / 2), getForward() * sinf(z / 2));
 
     glm::mat4 rotMatrix = glm::toMat4(qz * qx * qy);
 
@@ -94,5 +94,5 @@ void Camera::serializeToJSON(nlohmann::json &scene) {
 Camera *Camera::deserializeFromJSON(nlohmann::json &scene) {
     glm::vec3 pos{scene["camera"]["pos"][0], scene["camera"]["pos"][1], scene["camera"]["pos"][2]};
     glm::vec3 amb{scene["camera"]["ambient"][0], scene["camera"]["ambient"][1], scene["camera"]["ambient"][2]};
-    return new Camera(pos, scene["camera"]["fov"], 70, scene["camera"]["clipping"][0], scene["camera"]["clipping"][1], amb);
+    return new Camera(pos, scene["camera"]["fov"], 1, scene["camera"]["clipping"][0], scene["camera"]["clipping"][1], amb);
 }

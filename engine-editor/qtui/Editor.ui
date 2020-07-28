@@ -17,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QCommandLinkButton" name="runStopButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
@@ -43,31 +46,20 @@
        <attribute name="title">
         <string>Scene</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="sceneVerticalLayout">
         <item>
-         <widget class="SceneGLView" name="sceneGLWidget"/>
+         <widget class="ProgramGLView" name="programGLWidget"/>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="Game">
        <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Test2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
        </property>
        <attribute name="title">
         <string>Game</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="GameGLView" name="gameGLWidget">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="gameVerticalLayout"/>
       </widget>
      </widget>
     </item>
@@ -441,14 +433,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GameGLView</class>
+   <class>ProgramGLView</class>
    <extends>QOpenGLWidget</extends>
-   <header>../../../widgets/GameGLView.h</header>
-  </customwidget>
-  <customwidget>
-   <class>SceneGLView</class>
-   <extends>QOpenGLWidget</extends>
-   <header>../../../widgets/SceneGLView.h</header>
+   <header>../../../widgets/ProgramGLView.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

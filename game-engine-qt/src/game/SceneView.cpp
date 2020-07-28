@@ -1,4 +1,6 @@
 #include "../../include/engine/game/SceneView.h"
+#include "../../include/engine/game/Scene.h"
+#include "../../include/engine/graphics/Camera.h"
 
 SceneView *SceneView::_instance = nullptr;
 
@@ -84,7 +86,7 @@ void SceneView::orbit(glm::vec2 delta) {
 void SceneView::zoom(float zoomAmount) {
     glm::vec3 pos = _sceneCamera->getPosition() - _focus;
     const float factor = 0.1;
-    pos = pos * (exp(zoomAmount * factor));
+    pos = pos * (expf(zoomAmount * factor));
     _sceneCamera->moveTo(pos + _focus);
 }
 

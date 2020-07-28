@@ -9,6 +9,8 @@
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 ../game/Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
+../game/GameObject.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
 string
 -
 nlohmann/json.hpp
@@ -17,22 +19,14 @@ nlohmann/json.hpp
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
 Renderer.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
-../graphics/Material.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
-../graphics/Mesh.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
-../graphics/ModelImporter.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
 ../editor/EditorView.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
+../graphics/ModelImporter.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
 Component.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
-../graphics/Camera.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
-../graphics/lighting/DirectionalLight.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
 string
@@ -99,10 +93,6 @@ vector
 -
 string
 -
-Scene.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
-../graphics/Display.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
 QtOpenGL
 -
 
@@ -111,8 +101,8 @@ vector
 -
 nlohmann/json.hpp
 -
-../components/Component.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+Scene.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
 
@@ -129,22 +119,22 @@ nlohmann/json.hpp
 -
 ../core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
-../components/MeshRenderer.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
-GameObject.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-../graphics/lighting/DirectionalLight.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+Game.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
+SceneView.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h
 vector
 -
 map
 -
-Scene.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
-../core/Utils.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
+glm/glm.hpp
+-
+string
+-
+QtOpenGL
+-
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
 math.h
@@ -177,32 +167,20 @@ glm/gtx/quaternion.hpp
 -
 ../editor/EditorView.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h
-string
--
-glm/glm.hpp
--
-QtOpenGL
--
-cstdio
--
+../game/Scene.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
 nlohmann/json.hpp
 -
 fstream
 -
-Shader.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
-Texture.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
-Camera.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+../components/MeshRenderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
 ../game/Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
-lighting/DirectionalLight.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+../core/AssetManager.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
 glm/glm.hpp
@@ -211,10 +189,6 @@ QtOpenGL
 -
 string
 -
-assimp/Importer.hpp
--
-../game/Game.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
 QOpenGLVertexArrayObject
 -
 
@@ -243,18 +217,10 @@ filesystem
 -
 ../game/Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
-Camera.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
-lighting/DirectionalLight.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
-lighting/PointLight.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
-../game/Game.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
-../core/Asset.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
 ../core/AssetManager.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
+Material.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
 string
@@ -269,10 +235,8 @@ map
 -
 nlohmann/json.hpp
 -
-../game/Game.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
-../core/Asset.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+Material.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
 ../core/AssetManager.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
 
@@ -281,40 +245,14 @@ nlohmann/json.hpp
 -
 glm/glm.hpp
 -
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
-glm/glm.hpp
--
+../Shader.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/MeshRenderer.cpp
 ../../include/engine/components/MeshRenderer.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
-../../include/engine/game/GameObject.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp
-../../include/engine/components/Renderer.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
-../../include/engine/game/GameObject.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-../../include/engine/game/Scene.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
-iostream
--
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
-iostream
--
-../../include/engine/game/ContextController.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Game.cpp
-cstdio
--
-iostream
--
-../../include/engine/game/Game.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
+../../include/engine/graphics/Material.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/GameObject.cpp
 QtCore/QString
@@ -323,8 +261,6 @@ iostream
 -
 ../../include/engine/game/GameObject.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
-../../include/engine/game/Scene.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 ../../include/engine/components/MeshRenderer.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
 
@@ -333,26 +269,28 @@ iostream
 -
 ../../include/engine/game/Scene.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp
-../../include/engine/game/SceneView.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp
 ../../include/engine/graphics/Camera.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
-../../include/engine/game/ContextController.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
-iostream
--
+../../include/engine/graphics/lighting/DirectionalLight.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+../../include/engine/game/GameObject.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
+../../include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+../../include/engine/components/MeshRenderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
+../../include/engine/graphics/Material.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp
 ../../include/engine/graphics/Material.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+../../include/engine/graphics/Shader.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
+../../include/engine/graphics/Texture.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Mesh.cpp
-vector
--
 iostream
 -
 ../../include/engine/graphics/Mesh.h
@@ -365,14 +303,14 @@ iostream
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Shader.cpp
-fstream
--
-iostream
--
 ../../include/engine/graphics/Shader.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
 ../../include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
+../../include/engine/graphics/Camera.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+../../include/engine/graphics/lighting/DirectionalLight.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Texture.cpp
 cassert
@@ -381,8 +319,10 @@ iostream
 -
 ../../include/engine/graphics/Texture.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Texture.h
-../../include/engine/game/ContextController.h
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/lighting/DirectionalLight.cpp
+../../../include/engine/graphics/lighting/DirectionalLight.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
 
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
 qcoreevent.h

@@ -26,8 +26,7 @@
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "../../../widgets/GameGLView.h"
-#include "../../../widgets/SceneGLView.h"
+#include "../../../widgets/ProgramGLView.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -54,11 +53,10 @@ public:
     QCommandLinkButton *runStopButton;
     QTabWidget *ViewPort;
     QWidget *Scene;
-    QVBoxLayout *verticalLayout_3;
-    SceneGLView *sceneGLWidget;
+    QVBoxLayout *sceneVerticalLayout;
+    ProgramGLView *programGLWidget;
     QWidget *Game;
-    QVBoxLayout *verticalLayout_2;
-    GameGLView *gameGLWidget;
+    QVBoxLayout *gameVerticalLayout;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuScene;
@@ -131,6 +129,7 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         runStopButton = new QCommandLinkButton(centralwidget);
         runStopButton->setObjectName(QString::fromUtf8("runStopButton"));
+        runStopButton->setEnabled(false);
         runStopButton->setCursor(QCursor(Qt::PointingHandCursor));
         runStopButton->setCheckable(false);
 
@@ -144,24 +143,18 @@ public:
 "}"));
         Scene = new QWidget();
         Scene->setObjectName(QString::fromUtf8("Scene"));
-        verticalLayout_3 = new QVBoxLayout(Scene);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        sceneGLWidget = new SceneGLView(Scene);
-        sceneGLWidget->setObjectName(QString::fromUtf8("sceneGLWidget"));
+        sceneVerticalLayout = new QVBoxLayout(Scene);
+        sceneVerticalLayout->setObjectName(QString::fromUtf8("sceneVerticalLayout"));
+        programGLWidget = new ProgramGLView(Scene);
+        programGLWidget->setObjectName(QString::fromUtf8("programGLWidget"));
 
-        verticalLayout_3->addWidget(sceneGLWidget);
+        sceneVerticalLayout->addWidget(programGLWidget);
 
         ViewPort->addTab(Scene, QString());
         Game = new QWidget();
         Game->setObjectName(QString::fromUtf8("Game"));
-        verticalLayout_2 = new QVBoxLayout(Game);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        gameGLWidget = new GameGLView(Game);
-        gameGLWidget->setObjectName(QString::fromUtf8("gameGLWidget"));
-        gameGLWidget->setEnabled(false);
-
-        verticalLayout_2->addWidget(gameGLWidget);
-
+        gameVerticalLayout = new QVBoxLayout(Game);
+        gameVerticalLayout->setObjectName(QString::fromUtf8("gameVerticalLayout"));
         ViewPort->addTab(Game, QString());
 
         verticalLayout->addWidget(ViewPort);
@@ -349,10 +342,7 @@ public:
         runStopButton->setText(QCoreApplication::translate("Editor", "Run", nullptr));
         ViewPort->setTabText(ViewPort->indexOf(Scene), QCoreApplication::translate("Editor", "Scene", nullptr));
 #if QT_CONFIG(tooltip)
-        Game->setToolTip(QCoreApplication::translate("Editor", "<html><head/><body><p>Test2</p></body></html>", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        gameGLWidget->setToolTip(QCoreApplication::translate("Editor", "<html><head/><body><p><br/></p></body></html>", nullptr));
+        Game->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         ViewPort->setTabText(ViewPort->indexOf(Game), QCoreApplication::translate("Editor", "Game", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Editor", "File", nullptr));

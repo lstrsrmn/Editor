@@ -9,15 +9,15 @@ ModelMeshData loadModel(const std::string& modelName, bool flipV) {
                                                                          aiProcess_CalcTangentSpace | aiProcess_FixInfacingNormals | aiProcess_FindInvalidData | aiProcess_ValidateDataStructure);
 
     if (!modelScene) {
-        return {};
+        return {nullptr, std::string()};
     }
 
-    Mesh** meshes = new Mesh*[modelScene->mNumMeshes];
+//    Mesh** meshes = new Mesh*[modelScene->mNumMeshes];
+//
+//    for (unsigned int i = 0; i < modelScene->mNumMeshes; i++)
+//        meshes[i] = getMeshData(modelScene->mMeshes[i], flipV);
 
-    for (unsigned int i = 0; i < modelScene->mNumMeshes; i++)
-        meshes[i] = getMeshData(modelScene->mMeshes[i], flipV);
-
-    return {meshes, modelScene->mNumMeshes, modelName};
+    return {getMeshesFromNode(modelScene->mRootNode, modelScene, flipV), modelName};
 }
 
 Mesh* getMeshData(const aiMesh* mesh, bool flipV) {
@@ -51,4 +51,30 @@ Mesh* getMeshData(const aiMesh* mesh, bool flipV) {
         indices[i * 3 + 2] = face->mIndices[2];
     }
     return new Mesh(vertices, mesh->mNumVertices, indices, mesh->mNumFaces * 3);
+}
+
+ModelMeshTree* getMeshesFromNode(const aiNode* node, const aiScene* scene, bool flipV) {
+    ModelMeshTree* tree = new ModelMeshTree();
+    tree->transform = aiToGlmMatrix(node->mTransformation);
+    tree->numMeshes = node->mNumMeshes;
+    tree->meshes = new Mesh*[node->mNumMeshes];
+    for (int i = 0; i < node->mNumMeshes; i++) {
+        tree->meshes[i] = getMeshData(scene->mMeshes[node->mMeshes[i]], flipV);
+    }
+    tree->numChildren = node->mNumChildren;
+    tree->children = new ModelMeshTree*[node->mNumChildren];
+    for (int i = 0; i < node->mNumChildren; i++) {
+        tree->children[i] = getMeshesFromNode(node->mChildren[i], scene, flipV);
+    }
+    return tree;
+}
+
+glm::mat4 aiToGlmMatrix(const aiMatrix4x4& aiMat) {
+    glm::mat4 glmMat;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            glmMat[i][j] = aiMat[i][j];
+        }
+    }
+    return glmMat;
 }

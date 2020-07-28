@@ -1,36 +1,44 @@
 
 #include "../../include/engine/components/MeshRenderer.h"
-#include "../../include/engine/game/GameObject.h"
+#include "../../include/engine/graphics/Material.h"
 
 //INIT_COMPONENT(MeshRenderer)
 std::map<std::string, Material*> EditorView<MeshRenderer>::materialChoice;
 
-MeshRenderer::MeshRenderer(Material* material, ModelMeshData meshes) {
+MeshRenderer::MeshRenderer(Material* material, ModelMeshData data) {
     _material = material;
-    _meshes = meshes;
+    _meshData = data;
 }
 
 
-void MeshRenderer::render(const Camera& camera, const DirectionalLight& directionalLight) {
+void MeshRenderer::render(const Camera& camera, DirectionalLight* directionalLight) {
     _material->bind(_gameObject->getTransform(), camera, directionalLight);
-    for (unsigned int i = 0; i < _meshes.numMeshes; i++) {
-        _meshes.meshes[i]->draw();
-    }
+    __render(_meshData.tree);
 }
 
 void MeshRenderer::serializeToJSON(nlohmann::json& object) {
     object["meshRenderer"]["materialID"] = _material->getID();
-    object["meshRenderer"]["modelFilePath"] = _meshes.filePath;
+    object["meshRenderer"]["modelFilePath"] = _meshData.filePath;
 }
 
 MeshRenderer *MeshRenderer::deserializeFromJSON(nlohmann::json &object) {
-    ModelMeshData meshes = loadModel(object["modelFilePath"]);
+//    TODO: static model loader for scene assets
+    ModelMeshData meshData = loadModel(object["modelFilePath"]);
     Material* material = AssetManager<Material>::getAsset(object["materialID"]);
-    return new MeshRenderer(material, meshes);
+    return new MeshRenderer(material, meshData);
 }
 
 void MeshRenderer::updateMaterial(const QString &materialName) {
     _material = EditorView<MeshRenderer>::materialChoice[materialName.toStdString()];
+}
+
+void MeshRenderer::__render(ModelMeshTree* tree) const{
+    for (unsigned int i = 0; i < tree->numMeshes; i++) {
+        tree->meshes[i]->draw();
+    }
+    for (unsigned int i = 0; i < tree->numChildren; i++) {
+        __render(tree->children[i]);
+    }
 }
 
 void EditorView<MeshRenderer>::displayEditorView(MeshRenderer *object, QFormLayout *layout) {

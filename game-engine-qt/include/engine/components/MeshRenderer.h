@@ -2,14 +2,12 @@
 #define GAME_ENGINE_MESHRENDERER_H
 
 #include "Renderer.h"
-#include "../graphics/Material.h"
-#include "../graphics/Mesh.h"
-#include "../graphics/ModelImporter.h"
 #include "../editor/EditorView.h"
 
-struct ModelMeshData;
-class Mesh;
+#include "../graphics/ModelImporter.h"
+
 class MeshRenderer;
+class Material;
 
 CUSTOM_EDITOR(MeshRenderer) {
     static void displayEditorView(MeshRenderer *object, QFormLayout *layout);
@@ -20,12 +18,14 @@ class MeshRenderer : public Renderer {
     SUBSCRIBE_COMPONENT(MeshRenderer)
 public:
     MeshRenderer(Material*, ModelMeshData);
-    void render(const Camera&, const DirectionalLight&) override;
+    void render(const Camera&, DirectionalLight*) override;
     Material* _material;
-    ModelMeshData _meshes;
+    ModelMeshData _meshData;
     void updateMaterial(const QString&);
     void serializeToJSON(nlohmann::json&) override;
     static MeshRenderer* deserializeFromJSON(nlohmann::json&);
+private:
+    void __render(ModelMeshTree*) const;
 
     // TODO: vector of materials instead of 1
 };

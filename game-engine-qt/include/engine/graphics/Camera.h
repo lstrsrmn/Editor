@@ -10,9 +10,8 @@
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
 #include "../editor/EditorView.h"
+#include "../game/Scene.h"
 //#include "../game/Game.h"
-
-class Scene;
 
 class Camera {
 public:

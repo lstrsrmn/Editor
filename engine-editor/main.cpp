@@ -46,7 +46,7 @@
 
 int main(int argc, char* argv[]) {
 //    return run_game();
-    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+//    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
 
     Editor* editor = new Editor();

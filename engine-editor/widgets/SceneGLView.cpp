@@ -15,10 +15,6 @@ SceneGLView::~SceneGLView() {
 
 void SceneGLView::initializeGL() {
     QOpenGLFunctions *f = context()->globalShareContext()->functions();
-//    f->initializeOpenGLFunctions();
-    ContextController::instance()->setSceneGL(f, this);
-
-    ContextController::instance()->setCurrent(0);
 
     _sceneView = SceneView::instance();
     _sceneView->setGlFunctions(f);
@@ -34,7 +30,7 @@ void SceneGLView::initializeGL() {
     DirectionalLight *light = new DirectionalLight(glm::vec3(0, -1, 0), glm::vec3(1, 1, 1));
 
     _sceneView->getCamera()->moveTo({0, 1, -10});
-    _scene = new Scene(_sceneView->getCamera(), *light);
+    _scene = new Scene(_sceneView->getCamera(), light);
     _scene->setName("Test Scene");
     _sceneView->addScene(_scene);
     _sceneView->setActive(_scene->getId());

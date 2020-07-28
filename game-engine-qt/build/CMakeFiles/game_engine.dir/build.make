@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/121/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/121/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -252,22 +252,9 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game_engine.dir/src/graphics/lighting/PointLight.cpp.s"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/lighting/PointLight.cpp -o CMakeFiles/game_engine.dir/src/graphics/lighting/PointLight.cpp.s
 
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o"
-	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game_engine.dir/src/graphics/Display.cpp.i"
-	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp > CMakeFiles/game_engine.dir/src/graphics/Display.cpp.i
-
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game_engine.dir/src/graphics/Display.cpp.s"
-	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp -o CMakeFiles/game_engine.dir/src/graphics/Display.cpp.s
-
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.i: cmake_force
@@ -280,7 +267,7 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.i: cmake_force
@@ -293,7 +280,7 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/core/Utils.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.i: cmake_force
@@ -306,7 +293,7 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EditorView.cpp.i: cmake_force
@@ -319,7 +306,7 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/editor/EventHandler.cpp.i: cmake_force
@@ -332,7 +319,7 @@ include /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/flags.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Asset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game_engine.dir/src/core/Asset.cpp.o -c /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Asset.cpp
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.i: cmake_force
@@ -360,7 +347,6 @@ game_engine_OBJECTS = \
 "CMakeFiles/game_engine.dir/src/graphics/Material.cpp.o" \
 "CMakeFiles/game_engine.dir/src/graphics/lighting/DirectionalLight.cpp.o" \
 "CMakeFiles/game_engine.dir/src/graphics/lighting/PointLight.cpp.o" \
-"CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o" \
 "CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o" \
 "CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o" \
 "CMakeFiles/game_engine.dir/src/core/Utils.cpp.o" \
@@ -386,7 +372,6 @@ game_engine_EXTERNAL_OBJECTS =
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Material.cpp.o
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/lighting/DirectionalLight.cpp.o
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/lighting/PointLight.cpp.o
-/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/game/ContextController.cpp.o
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Utils.cpp.o
@@ -395,7 +380,7 @@ game_engine_EXTERNAL_OBJECTS =
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/src/core/Asset.cpp.o
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/build.make
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/libgame_engine.a: /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX static library libgame_engine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lstrsrmn/CLionProjects/Editor/engine-editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX static library libgame_engine.a"
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && $(CMAKE_COMMAND) -P CMakeFiles/game_engine.dir/cmake_clean_target.cmake
 	cd /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game_engine.dir/link.txt --verbose=$(VERBOSE)
 

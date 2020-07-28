@@ -3,7 +3,7 @@
 	"CMAKE_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt",
-	"CMAKE_EXECUTABLE" : "/snap/clion/114/bin/cmake/linux/bin/cmake",
+	"CMAKE_EXECUTABLE" : "/snap/clion/121/bin/cmake/linux/bin/cmake",
 	"CMAKE_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
 	"HEADERS" : 
 	[
@@ -93,11 +93,6 @@
 			"IQXIP6DULK/moc_Camera.cpp"
 		],
 		[
-			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h",
-			"MU",
-			"IQXIP6DULK/moc_Display.cpp"
-		],
-		[
 			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h",
 			"MU",
 			"IQXIP6DULK/moc_Material.cpp"
@@ -172,7 +167,7 @@
 		"-dM",
 		"-E",
 		"-c",
-		"/snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+		"/snap/clion/121/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
 	],
 	"MOC_PREDEFS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
@@ -236,10 +231,6 @@
 		],
 		[
 			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp",
-			"MU"
-		],
-		[
-			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp",
 			"MU"
 		],
 		[

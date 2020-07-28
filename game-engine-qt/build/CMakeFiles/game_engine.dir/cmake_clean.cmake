@@ -16,7 +16,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/game_engine.dir/src/game/Scene.cpp.o"
   "CMakeFiles/game_engine.dir/src/game/SceneView.cpp.o"
   "CMakeFiles/game_engine.dir/src/graphics/Camera.cpp.o"
-  "CMakeFiles/game_engine.dir/src/graphics/Display.cpp.o"
   "CMakeFiles/game_engine.dir/src/graphics/Material.cpp.o"
   "CMakeFiles/game_engine.dir/src/graphics/Mesh.cpp.o"
   "CMakeFiles/game_engine.dir/src/graphics/ModelImporter.cpp.o"

@@ -37,15 +37,10 @@ protected:
 
 private:
     QPoint _mouseStartPos;
-    GameObject* mObj;
-    GameObject* pObj;
-//    MeshRenderer* mRenderer;
-    ModelMeshData monkey;
     bool _pan = false;
     bool _orbit = false;
     SceneView* _sceneView;
     Scene* _scene;
-    Material* _material;
 };
 
 

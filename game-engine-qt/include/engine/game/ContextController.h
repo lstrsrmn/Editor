@@ -13,23 +13,16 @@ class GameGLView;
 
 class ContextController {
 public:
-    static ContextController* instance();
-    void setSceneGL(QOpenGLFunctions*, QOpenGLWidget*);
-//    void setSceneGLCallbacks(std::function<void()>, std::function<void()>);
-    void setGameGL(QOpenGLFunctions*, QOpenGLWidget*);
-//    void setGameGLCallbacks(std::function<void()>, std::function<void()>);
-    void setCurrent(int current);
-    int getCurrent() const;
-    QOpenGLFunctions* getCurrentFunctions();
-    QOpenGLContext* getSceneContext();
+    static void setGL(QOpenGLFunctions*, QOpenGLWidget*);
+    static QOpenGLFunctions* getFunctions();
+    static QOpenGLContext* getContext();
 
 private:
+    static ContextController* instance();
     ContextController();
     static ContextController* _instance;
-    QOpenGLFunctions* _GLFunctions[2] = {nullptr, nullptr};
-    QOpenGLWidget* _GLWidgets[2] = {nullptr, nullptr};
-//    std::function<void()> sMakeCurrent, sCreateContextFunctions, gMakeCurrent, gCreateContextFunctions;
-    int _current = 0;
+    QOpenGLFunctions* _GLFunctions = nullptr;
+    QOpenGLWidget* _GLWidget = nullptr;
 };
 
 

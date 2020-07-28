@@ -5,13 +5,12 @@
 #include <QtCore/QString>
 #include <iostream>
 #include "../../include/engine/game/GameObject.h"
-#include "../../include/engine/game/Scene.h"
 #include "../../include/engine/components/MeshRenderer.h"
 
 class Scene;
 
 GameObject::GameObject() {
-    _transform = Transform();
+    _transform = Transform(this);
 }
 
 void GameObject::update() {
@@ -67,7 +66,7 @@ void GameObject::serializeToJSON(nlohmann::json& scene) {
 
 GameObject* GameObject::deserializeFromJSON(nlohmann::json& objectJSON,const std::string& name, Scene* scene) {
     GameObject* object = new GameObject;
-    object->_transform = Transform::deserializeFromJSON(objectJSON);
+    object->_transform = Transform::deserializeFromJSON(objectJSON, object);
     object->_scene = scene;
     object->_name = QString(name.c_str());
     for (nlohmann::json::iterator it = objectJSON["components"].begin(); it != objectJSON["components"].end(); it++) {

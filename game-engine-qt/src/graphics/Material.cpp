@@ -1,4 +1,6 @@
 #include "../../include/engine/graphics/Material.h"
+#include "../../include/engine/graphics/Shader.h"
+#include "../../include/engine/graphics/Texture.h"
 
 Material *Material::createMaterial(const std::string &name, const std::string &filePath, Shader *shader, Texture *texture) {
     std::ofstream materialMat(filePath + "/" + name + ".mat");
@@ -12,10 +14,10 @@ Material *Material::createMaterial(const std::string &name, const std::string &f
     return newMaterial;
 }
 
-void Material::bind(const Transform &transform, const Camera &camera, DirectionalLight light) {
+void Material::bind(const Transform &transform, const Camera &camera, DirectionalLight* light) {
     _shader->bind();
     _texture->bind(0);
-    _shader->update(transform, camera, light, camera.ambient);
+    _shader->update(transform, camera, light);
 }
 
 Material::Material(const std::string &filePath, unsigned int id) : Asset(filePath, id) {

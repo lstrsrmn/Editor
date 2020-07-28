@@ -7,8 +7,12 @@
 
 #include <vector>
 #include <map>
-#include "Scene.h"
-#include "../core/Utils.h"
+#include <glm/glm.hpp>
+#include <string>
+#include <QtOpenGL>
+
+class Camera;
+class Scene;
 
 class SceneView {
 public:

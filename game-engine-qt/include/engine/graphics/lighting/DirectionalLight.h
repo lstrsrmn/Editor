@@ -3,6 +3,7 @@
 
 #include <nlohmann/json.hpp>
 #include <glm/glm.hpp>
+#include "../Shader.h"
 
 class DirectionalLight {
 public:
@@ -20,7 +21,7 @@ public:
 
     void serializeToJSON(nlohmann::json&);
 
-    static DirectionalLight deserializeFromJSON(nlohmann::json&);
+    static DirectionalLight* deserializeFromJSON(nlohmann::json&);
 
 private:
     float _intensity = 1.0f;

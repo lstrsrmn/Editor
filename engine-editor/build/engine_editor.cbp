@@ -219,22 +219,16 @@
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/qtui/Editor.ui">
 			<Option target="engine_editor"/>
 		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.cpp">
-			<Option target="engine_editor"/>
-		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/GameGLView.h">
-			<Option target="engine_editor"/>
-		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.cpp">
 			<Option target="engine_editor"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ListDialog.h">
 			<Option target="engine_editor"/>
 		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.cpp">
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.cpp">
 			<Option target="engine_editor"/>
 		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/SceneGLView.h">
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/engine-editor/widgets/ProgramGLView.h">
 			<Option target="engine_editor"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/mocs_compilation.cpp">
@@ -289,9 +283,6 @@
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h">
-			<Option target="game_engine"/>
-		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Display.h">
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h">
@@ -352,9 +343,6 @@
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp">
-			<Option target="game_engine"/>
-		</Unit>
-		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Display.cpp">
 			<Option target="game_engine"/>
 		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp">

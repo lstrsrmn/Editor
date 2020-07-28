@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/121/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/121/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/lstrsrmn/CLionProjects/Editor/engine-editor/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/114/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/121/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/114/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/121/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -243,33 +243,6 @@ qtui/Editor.cpp.s:
 	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/qtui/Editor.cpp.s
 .PHONY : qtui/Editor.cpp.s
 
-widgets/GameGLView.o: widgets/GameGLView.cpp.o
-
-.PHONY : widgets/GameGLView.o
-
-# target to build an object file
-widgets/GameGLView.cpp.o:
-	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.o
-.PHONY : widgets/GameGLView.cpp.o
-
-widgets/GameGLView.i: widgets/GameGLView.cpp.i
-
-.PHONY : widgets/GameGLView.i
-
-# target to preprocess a source file
-widgets/GameGLView.cpp.i:
-	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.i
-.PHONY : widgets/GameGLView.cpp.i
-
-widgets/GameGLView.s: widgets/GameGLView.cpp.s
-
-.PHONY : widgets/GameGLView.s
-
-# target to generate assembly for a file
-widgets/GameGLView.cpp.s:
-	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/GameGLView.cpp.s
-.PHONY : widgets/GameGLView.cpp.s
-
 widgets/ListDialog.o: widgets/ListDialog.cpp.o
 
 .PHONY : widgets/ListDialog.o
@@ -297,32 +270,32 @@ widgets/ListDialog.cpp.s:
 	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ListDialog.cpp.s
 .PHONY : widgets/ListDialog.cpp.s
 
-widgets/SceneGLView.o: widgets/SceneGLView.cpp.o
+widgets/ProgramGLView.o: widgets/ProgramGLView.cpp.o
 
-.PHONY : widgets/SceneGLView.o
+.PHONY : widgets/ProgramGLView.o
 
 # target to build an object file
-widgets/SceneGLView.cpp.o:
-	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.o
-.PHONY : widgets/SceneGLView.cpp.o
+widgets/ProgramGLView.cpp.o:
+	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.o
+.PHONY : widgets/ProgramGLView.cpp.o
 
-widgets/SceneGLView.i: widgets/SceneGLView.cpp.i
+widgets/ProgramGLView.i: widgets/ProgramGLView.cpp.i
 
-.PHONY : widgets/SceneGLView.i
+.PHONY : widgets/ProgramGLView.i
 
 # target to preprocess a source file
-widgets/SceneGLView.cpp.i:
-	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.i
-.PHONY : widgets/SceneGLView.cpp.i
+widgets/ProgramGLView.cpp.i:
+	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.i
+.PHONY : widgets/ProgramGLView.cpp.i
 
-widgets/SceneGLView.s: widgets/SceneGLView.cpp.s
+widgets/ProgramGLView.s: widgets/ProgramGLView.cpp.s
 
-.PHONY : widgets/SceneGLView.s
+.PHONY : widgets/ProgramGLView.s
 
 # target to generate assembly for a file
-widgets/SceneGLView.cpp.s:
-	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/SceneGLView.cpp.s
-.PHONY : widgets/SceneGLView.cpp.s
+widgets/ProgramGLView.cpp.s:
+	$(MAKE) -f CMakeFiles/engine_editor.dir/build.make CMakeFiles/engine_editor.dir/widgets/ProgramGLView.cpp.s
+.PHONY : widgets/ProgramGLView.cpp.s
 
 # Help Target
 help:
@@ -345,15 +318,12 @@ help:
 	@echo "... qtui/Editor.o"
 	@echo "... qtui/Editor.i"
 	@echo "... qtui/Editor.s"
-	@echo "... widgets/GameGLView.o"
-	@echo "... widgets/GameGLView.i"
-	@echo "... widgets/GameGLView.s"
 	@echo "... widgets/ListDialog.o"
 	@echo "... widgets/ListDialog.i"
 	@echo "... widgets/ListDialog.s"
-	@echo "... widgets/SceneGLView.o"
-	@echo "... widgets/SceneGLView.i"
-	@echo "... widgets/SceneGLView.s"
+	@echo "... widgets/ProgramGLView.o"
+	@echo "... widgets/ProgramGLView.i"
+	@echo "... widgets/ProgramGLView.s"
 .PHONY : help
 
 

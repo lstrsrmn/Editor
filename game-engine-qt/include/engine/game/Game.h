@@ -4,9 +4,9 @@
 #include <map>
 #include <vector>
 #include <string>
-#include "Scene.h"
-#include "../graphics/Display.h"
 #include <QtOpenGL>
+
+class Scene;
 
 enum GameErrorCode {
     SUCCESS,
