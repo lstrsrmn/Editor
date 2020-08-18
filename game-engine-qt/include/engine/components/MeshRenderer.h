@@ -17,15 +17,14 @@ CUSTOM_EDITOR(MeshRenderer) {
 class MeshRenderer : public Renderer {
     SUBSCRIBE_COMPONENT(MeshRenderer)
 public:
-    MeshRenderer(Material*, ModelMeshData);
+    MeshRenderer(Material*, Mesh*);
     void render(const Camera&, DirectionalLight*) override;
     Material* _material;
-    ModelMeshData _meshData;
     void updateMaterial(const QString&);
     void serializeToJSON(nlohmann::json&) override;
     static MeshRenderer* deserializeFromJSON(nlohmann::json&);
 private:
-    void __render(ModelMeshTree*) const;
+    Mesh* _mesh;
 
     // TODO: vector of materials instead of 1
 };

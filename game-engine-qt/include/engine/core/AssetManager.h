@@ -5,6 +5,8 @@
 #include <map>
 #include <fstream>
 #include <nlohmann/json.hpp>
+
+
 #include "Asset.h"
 
 
@@ -14,17 +16,17 @@ template<> std::map<unsigned int, type*> AssetManager<type>::_loadedAssets;
 template<typename AssetType>
 class AssetManager {
 public:
-    static void writeAssetMeta(const std::string &);
+    static void writeAssetMeta(const std::filesystem::path &);
 
-    static void readAssetMeta(const std::string &);
+    static void readAssetMeta(const std::filesystem::path &);
 
-    static bool requestAssetID(const std::string &, unsigned int &);
+    static bool requestAssetID(const std::filesystem::path &, unsigned int &);
 
     static void addAsset(AssetType *, unsigned int);
 
     static AssetType *getAsset(unsigned int);
 
-    static AssetType *createAsset(const std::string&, const std::string&);
+    static AssetType *createAsset(const std::string&, const std::filesystem::path&);
 
     static std::map<unsigned int, AssetType *> getLoadedAssets();
 
@@ -34,11 +36,12 @@ private:
     static std::map<unsigned int, AssetType *> _loadedAssets;
 };
 
+
 template<typename AssetType>
 std::map<unsigned int, AssetType*> AssetManager<AssetType>::_loadedAssets;
 
 template<typename AssetType>
-void AssetManager<AssetType>::writeAssetMeta(const std::string &metaFile) {
+void AssetManager<AssetType>::writeAssetMeta(const std::filesystem::path &metaFile) {
     std::ofstream assetMeta(metaFile);
     nlohmann::json assets;
     for (std::pair<unsigned int, AssetType*> entry: _loadedAssets) {
@@ -51,7 +54,7 @@ void AssetManager<AssetType>::writeAssetMeta(const std::string &metaFile) {
 }
 
 template<typename AssetType>
-void AssetManager<AssetType>::readAssetMeta(const std::string &metaFile) {
+void AssetManager<AssetType>::readAssetMeta(const std::filesystem::path &metaFile) {
     std::ifstream assetsMeta(metaFile);
     nlohmann::json assets;
     assetsMeta >> assets;
@@ -62,7 +65,7 @@ void AssetManager<AssetType>::readAssetMeta(const std::string &metaFile) {
 }
 
 template<typename AssetType>
-bool AssetManager<AssetType>::requestAssetID(const std::string &filePath, unsigned int &id) {
+bool AssetManager<AssetType>::requestAssetID(const std::filesystem::path &filePath, unsigned int &id) {
     id = std::hash<std::string>()(filePath);
     return _loadedAssets.find(id) == _loadedAssets.end();
 }
@@ -78,7 +81,7 @@ AssetType *AssetManager<AssetType>::getAsset(unsigned int id) {
 }
 
 template<typename AssetType>
-AssetType *AssetManager<AssetType>::createAsset(const std::string &name, const std::string &path) {
+AssetType *AssetManager<AssetType>::createAsset(const std::string &name, const std::filesystem::path& path) {
     unsigned int id;
     std::string fullPath = path;
     if (requestAssetID(fullPath, id)) {

@@ -9,6 +9,8 @@
 #include <QObject>
 #include <QPushButton>
 #include <QComboBox>
+#include <QSpinBox>
+#include <functional>
 #include "EventHandler.h"
 
 class EditorFunctions {
@@ -16,7 +18,8 @@ public:
     static void label(QFormLayout*, const QString&);
     static void textInput(QFormLayout*, const QString&, TextEventHandler*, const QString& = "");
     static void intInput(QFormLayout*, const QString&, IntEventHandler*, const QString& = "");
-    static void floatInput(QFormLayout*, const QString&, FloatEventHandler*, const QString& = "", int = 4);
+    static void floatInput(QFormLayout*, const QString&, const std::function<void(float)>&, const float, int = 4);
+    static void floatInput(QFormLayout*, const QString&, float&, int = 4);
     static void filePathInput(QFormLayout*, const QString&, FileEventHandler*);
     static void buttonInput(QFormLayout*, const QString&, ButtonCallbackHandler*);
 

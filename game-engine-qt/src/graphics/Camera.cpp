@@ -2,7 +2,7 @@
 #include "../../include/engine/game/ContextController.h"
 
 Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar, glm::vec3 amb) {
-    _position = pos;
+    position = pos;
     ambient = amb;
     _fov = fov;
     _zNear = zNear;
@@ -13,11 +13,11 @@ Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar, 
 }
 
 glm::mat4 Camera::getViewProjection() const {
-    return _perspective * glm::lookAt(_position, _position + _forward, _up);
+    return _perspective * glm::lookAt(position, position + _forward, _up);
 }
 
 void Camera::moveBy(glm::vec3 movement) {
-    _position += movement;
+    position += movement;
 }
 
 void Camera::clear(float r, float g, float b, float a) {
@@ -46,18 +46,18 @@ void Camera::rotateBy(float x, float y, float z) {
 }
 
 void Camera::lookAt(glm::vec3 target) {
-    _forward = glm::normalize(target - _position);
+    _forward = glm::normalize(target - position);
     glm::vec3 _right = glm::normalize(glm::vec3(_forward.z, 0, -_forward.x));
     _up = glm::cross(_forward, _right);
 //    _up = glm::normalize(glm::vec3(_forward.x, (pow(_forward.x, 2) + pow(_forward.z, 2)) / _forward.y, _forward.z));
 }
 
 void Camera::moveTo(glm::vec3 pos){
-    _position = pos;
+    position = pos;
 }
 
 const glm::vec3 &Camera::getPosition() const {
-    return _position;
+    return position;
 }
 
 void Camera::setAR(float aspect) {
@@ -85,7 +85,7 @@ void Camera::setUp(const glm::vec3 &up) {
 }
 
 void Camera::serializeToJSON(nlohmann::json &scene) {
-    scene["camera"]["pos"] = {_position.x, _position.y, _position.z};
+    scene["camera"]["pos"] = {position.x, position.y, position.z};
     scene["camera"]["fov"] = _fov;
     scene["camera"]["clipping"] = {_zNear, _zFar};
     scene["camera"]["ambient"] = {ambient.x, ambient.y, ambient.z};

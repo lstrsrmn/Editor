@@ -19,12 +19,24 @@ void EditorFunctions::intInput(QFormLayout *layout, const QString &label, IntEve
     QObject::connect(inputBox, SIGNAL(textChanged(const QString&)), handler, SLOT(changed(const QString&)));
 }
 
-void EditorFunctions::floatInput(QFormLayout *layout, const QString &label, FloatEventHandler* handler, const QString& defaultText, int decimals) {
-    QLineEdit* inputBox = new QLineEdit();
-    inputBox->setValidator(new QDoubleValidator(-std::numeric_limits<double>::max(), std::numeric_limits<double>::max(), decimals));
-    inputBox->setText(defaultText);
+void EditorFunctions::floatInput(QFormLayout *layout, const QString &label, const std::function<void(float)>& setter, const float defaultValue, int decimals) {
+    QDoubleSpinBox* inputBox = new QDoubleSpinBox();
+    inputBox->setValue(defaultValue);
+    inputBox->setDecimals(decimals);
     layout->addRow(label, inputBox);
-    QObject::connect(inputBox, SIGNAL(textChanged(const QString&)), handler, SLOT(changed(const QString&)));
+    QObject::connect(inputBox, qOverload<double>(&QDoubleSpinBox::valueChanged), [setter](double val){
+        setter(val);
+    });
+}
+
+void EditorFunctions::floatInput(QFormLayout *layout, const QString& label, float &value, int decimals) {
+    QDoubleSpinBox* inputBox = new QDoubleSpinBox();
+    inputBox->setValue(value);
+    inputBox->setDecimals(decimals);
+    layout->addRow(label, inputBox);
+    QObject::connect(inputBox, qOverload<double>(&QDoubleSpinBox::valueChanged), [&value](double val){
+        value = val;
+    });
 }
 
 void EditorFunctions::buttonInput(QFormLayout *layout, const QString &label, ButtonCallbackHandler* listener) {
@@ -38,5 +50,6 @@ void EditorFunctions::filePathInput(QFormLayout *layout, const QString &label, F
     layout->addRow(button);
     QObject::connect(button, SIGNAL(clicked()), handler, SLOT(openFileDialog()));
 }
+
 
 

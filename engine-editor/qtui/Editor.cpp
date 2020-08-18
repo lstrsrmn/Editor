@@ -1,9 +1,6 @@
 #include "Editor.h"
 #include "../build/ui_Editor.h"
 
-std::string projectDir = "/home/lstrsrmn/Game-Engine-Projects/Test-Project";
-//std::string projectDir = "";
-
 Editor::Editor(QWidget *parent) :
         QMainWindow(parent),
         ui(new Ui::Editor) {
@@ -100,12 +97,27 @@ void Editor::loadScene() {
         node->setText(0, "Directional Light");
     }
     for (GameObject *object : _selectedScene->getObjects()) {
-        QTreeWidgetItem *node = new QTreeWidgetItem(ui->hierarchyTree->invisibleRootItem());
-        node->setText(0, object->getName());
-        _treeObjectDir[node] = object;
+        if (!object->getTransform().getParent()) {
+            QTreeWidgetItem *node = new QTreeWidgetItem(ui->hierarchyTree->invisibleRootItem());
+            node->setText(0, object->getName());
+            _treeObjectDir[node] = object;
+            recurseSceneHierarchy(object, node);
+        }
     }
     ui->programGLWidget->updateSize();
 }
+
+void Editor::recurseSceneHierarchy(GameObject* parent, QTreeWidgetItem* node) {
+    for (Transform* child : parent->getTransform().getChildren()) {
+        if (child->getObject()) {
+            QTreeWidgetItem *childNode = new QTreeWidgetItem(node);
+            node->setText(0, child->getObject()->getName());
+            _treeObjectDir[node] = child->getObject();
+            recurseSceneHierarchy(child->getObject(), childNode);
+        }
+    }
+}
+
 
 void Editor::viewPortChanged(int newViewPort) {
     if (newViewPort == 0) {
@@ -133,26 +145,21 @@ void Editor::loadObject(bool) {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString filePath = dialog.selectedFiles()[0];
-    loadObject(filePath.toStdString());
+    std::filesystem::path filePath = dialog.selectedFiles()[0].toStdString();
+    if (std::filesystem::exists(filePath)) {
+        loadObject(filePath);
+    }
 }
 
-void Editor::loadObject(const std::string &filePath) {
+void Editor::loadObject(const std::filesystem::path &filePath) {
     const std::filesystem::path path = filePath;
     std::string fileName = removeExtension(path.filename().string());
     Scene *scene = SceneView::instance()->getCurrentScene();
-    ModelMeshData input = loadModel(filePath);
+    ModelMeshData* input = AssetManager<ModelMeshData>::createAsset(fileName, path);
     Material *material = listSelectDialog<Material>();
     if (material == nullptr)
         return;
-    GameObject *newObject = scene->createGameObject();
-    QString name = QInputDialog::getText(this, "Object name", "Please input object name");
-    if (name.isEmpty())
-        newObject->setName("new Object");
-    else
-        newObject->setName(name);
-    MeshRenderer *renderer = new MeshRenderer(material, input);
-    newObject->addComponent(renderer);
+    scene->createGameObjectsFromMeshData(input, material);
     loadScene();
 
     saveProjectMeta();
@@ -222,10 +229,10 @@ void Editor::updateOpenFolder(QTreeWidgetItem *item, int) {
     folderPath = item->text(0).toStdString();
     QTreeWidgetItem *parent = item->parent();
     while (parent != nullptr) {
-        folderPath.insert(0, parent->text(0).toStdString() + "/");
+        folderPath = parent->text(0).toStdString()/folderPath;
         parent = parent->parent();
     }
-    folderPath.insert(0, projectDir + "/");
+    folderPath = projectDir/folderPath;
 
     ui->folderContents->clear();
     ui->folderContents->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -252,9 +259,8 @@ void Editor::updateOpenFolder(QTreeWidgetItem *item, int) {
 }
 
 void Editor::loadTableItem(QTableWidgetItem *item) {
-    std::string filePath = folderPath + "/" + item->text().toStdString();
-    const std::filesystem::path path = filePath;
-    const std::string ext = path.extension().string();
+    std::filesystem::path filePath = folderPath/item->text().toStdString();
+    const std::string ext = filePath.extension().string();
     if (ext == ".mat") {
         std::cout << "material" << std::endl;
     } else if (ext == ".jpg" || ext == ".png") {
@@ -316,12 +322,10 @@ void Editor::deleteObject(bool) {
 }
 
 void Editor::setSceneViewFocus(bool) {
-    ui->programGLWidget->setViewFocus(_selectedObject->getTransform().pos);
+    ui->programGLWidget->setViewFocus(_selectedObject->getTransform().getPos());
 }
 
 void Editor::newProject(bool) {
-    QString filePath;
-    QString previousPath;
     QFileDialog dialog;
     dialog.setWindowTitle("New Project");
     dialog.setFileMode(QFileDialog::Directory);
@@ -329,52 +333,59 @@ void Editor::newProject(bool) {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    filePath = dialog.selectedFiles()[0];
+    std::filesystem::path filePath = dialog.selectedFiles()[0].toStdString();
     QString name = QInputDialog::getText(this, "New Project", "Please name the new Project");
     if (name.isEmpty())
         return;
-    std::string path = filePath.toStdString() + "/" +name.toStdString();
-    projectDir = path;
+    projectDir = filePath/name.toStdString();
     mkdir((projectDir).c_str(), 0777);
-    mkdir((projectDir + "/meta").c_str(), 0777);
-    mkdir((projectDir + "/Assets").c_str(), 0777);
-    mkdir((projectDir + "/Assets/Textures").c_str(), 0777);
-    copyFile("res/textures/defaultDiffuse.jpg", projectDir + "/Assets/Textures/defaultTexture.jpg");
-    Texture* texture = AssetManager<Texture>::createAsset("DefaultTexture", projectDir + "/Assets/Textures/defaultTexture.jpg");
-    mkdir((projectDir + "/Assets/Shaders").c_str(), 0777);
-    mkdir((projectDir + "/Assets/Shaders/basicShader").c_str(), 0777);
-    copyFile("res/shaders/basicShader/basicShader.vs", projectDir + "/Assets/Shaders/basicShader/basicShader.vs");
-    copyFile("res/shaders/basicShader/basicShader.fs", projectDir + "/Assets/Shaders/basicShader/basicShader.fs");
-    Shader* shader = AssetManager<Shader>::createAsset("basicShader", projectDir + "/Assets/Shaders/basicShader");
-    mkdir((projectDir + "/Assets/Materials").c_str(), 0777);
-    Material::createMaterial("DefaultMaterial", projectDir + "/Assets/Materials", shader, texture);
-    mkdir((projectDir + "/Assets/Models").c_str(), 0777);
-    copyFile("res/models/default/Monkey.fbx", projectDir + "/Assets/Models/Monkey.fbx");
-    copyFile("res/models/default/Plane.fbx", projectDir + "/Assets/Models/Plane.fbx");
-    mkdir((projectDir + "/Assets/Scripts").c_str(), 0777);
-    std::ofstream project(path + "meta/project.meta"), textures(path + "meta/textures.meta"),
-    shaders(path + "meta/shaders.meta"), materials(path + "meta/materials.meta");
-    mkdir((projectDir + "/Assets/Scenes").c_str(), 0777);
-    std::cout << "working" << std::endl;
+    mkdir((projectDir/"meta").c_str(), 0777);
+    mkdir((projectDir/"Assets").c_str(), 0777);
+    mkdir((projectDir/"Assets/Textures").c_str(), 0777);
+    copyFile("res/textures/defaultDiffuse.jpg", projectDir/"Assets/Textures/defaultTexture.jpg");
+    Texture* texture = AssetManager<Texture>::createAsset("DefaultTexture", projectDir/"Assets/Textures/defaultTexture.jpg");
+    mkdir((projectDir/"Assets/Shaders").c_str(), 0777);
+    mkdir((projectDir/"Assets/Shaders/basicShader").c_str(), 0777);
+    copyFile("res/shaders/basicShader/basicShader.vs", projectDir/"Assets/Shaders/basicShader/basicShader.vs");
+    copyFile("res/shaders/basicShader/basicShader.fs", projectDir/"Assets/Shaders/basicShader/basicShader.fs");
+    Shader* shader = AssetManager<Shader>::createAsset("basicShader", projectDir/"Assets/Shaders/basicShader");
+    mkdir((projectDir/"Assets/Materials").c_str(), 0777);
+    Material::createMaterial("DefaultMaterial", projectDir/"Assets/Materials", shader, texture);
+    mkdir((projectDir/"Assets/Models").c_str(), 0777);
+    copyFile("res/models/default/Monkey.fbx", projectDir/"Assets/Models/Monkey.fbx");
+    copyFile("res/models/default/Plane.fbx", projectDir/"Assets/Models/Plane.fbx");
+    mkdir((projectDir/"Assets/Scripts").c_str(), 0777);
+    std::ofstream project(projectDir/"meta/project.meta"),
+    textures(projectDir/"meta/textures.meta"),
+    shaders(projectDir/"meta/shaders.meta"),
+    materials(projectDir/"meta/materials.meta"),
+    models(projectDir/"meta/models.meta");
+    mkdir((projectDir/"Assets/Scenes").c_str(), 0777);
+
+    project.close();
+    textures.close();
+    shaders.close();
+    materials.close();
+    models.close();
     saveProjectMeta();
     updateProject();
 }
 
 void Editor::saveProjectMeta() {
-    mkdir((projectDir + "/meta").c_str(), 0777);
-    std::string projectMetaDir = projectDir + "/meta/";
-    std::ofstream projectMeta(projectMetaDir + "project.meta");
+    mkdir((projectDir/"meta").c_str(), 0777);
+    std::filesystem::path projectMetaDir = projectDir/"meta/";
+    std::ofstream projectMeta(projectMetaDir/"project.meta");
     nlohmann::json project;
     project["name"] = "Test Project";
     projectMeta << project.dump(4) << std::endl;
     projectMeta.close();
-    AssetManager<Texture>::writeAssetMeta(projectMetaDir + "textures.meta");
-    AssetManager<Shader>::writeAssetMeta(projectMetaDir + "shaders.meta");
-    AssetManager<Material>::writeAssetMeta(projectMetaDir + "materials.meta");
+    AssetManager<Texture>::writeAssetMeta(projectMetaDir/"textures.meta");
+    AssetManager<Shader>::writeAssetMeta(projectMetaDir/"shaders.meta");
+    AssetManager<Material>::writeAssetMeta(projectMetaDir/"materials.meta");
+    AssetManager<ModelMeshData>::writeAssetMeta(projectMetaDir/"models.meta");
 }
 
 void Editor::loadProject(bool) {
-    QString filePath;
     QFileDialog dialog;
     dialog.setWindowTitle("Load Project");
     dialog.setFileMode(QFileDialog::Directory);
@@ -382,27 +393,23 @@ void Editor::loadProject(bool) {
         dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    filePath = dialog.selectedFiles()[0];
-    std::filesystem::path path = std::filesystem::path(filePath.toStdString() + "/meta");
+    std::filesystem::path filePath = dialog.selectedFiles()[0].toStdString();
+    std::filesystem::path path = std::filesystem::path(filePath/"meta");
     if (!std::filesystem::exists(path)) {
-        std::cout << filePath.toStdString() << std::endl;
-        QMessageBox error;
-        error.setWindowTitle("Invalid path");
-        error.setText(
-                "The selected path doesn't meet requirements to be a project");
-        error.exec();
+        QMessageBox::about(this, "Invalid path", "The selected path doesn't meet requirements to be a project");
         return;
     }
 
-    projectDir = filePath.toStdString();
-    const std::string projectMetaDir = projectDir + "/meta/";
-    std::ifstream projectMeta(projectMetaDir + "project.meta");
+    projectDir = filePath;
+    const std::filesystem::path projectMetaDir = projectDir/"meta/";
+    std::ifstream projectMeta(projectMetaDir/"project.meta");
     nlohmann::json project;
     projectMeta >> project;
     projectMeta.close();
-    AssetManager<Texture>::readAssetMeta(projectMetaDir + "textures.meta");
-    AssetManager<Shader>::readAssetMeta(projectMetaDir + "shaders.meta");
-    AssetManager<Material>::readAssetMeta(projectMetaDir + "materials.meta");
+    AssetManager<Texture>::readAssetMeta(projectMetaDir/"textures.meta");
+    AssetManager<Shader>::readAssetMeta(projectMetaDir/"shaders.meta");
+    AssetManager<Material>::readAssetMeta(projectMetaDir/"materials.meta");
+    AssetManager<ModelMeshData>::readAssetMeta(projectMetaDir/"models.meta");
     updateProject();
 }
 
@@ -450,11 +457,11 @@ void Editor::createTextureFromFile() {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString filePath = dialog.selectedFiles()[0];
-    if (!filePath.isEmpty()) {
+    std::filesystem::path filePath = dialog.selectedFiles()[0].toStdString();
+    if (std::filesystem::exists(filePath)) {
         QString name = QInputDialog::getText(this, "Create Texture", "Please input Texture name.");
         if (!name.isEmpty()) {
-            Texture::createTexture(name.toStdString(), filePath.toStdString());
+            Texture::createTexture(name.toStdString(), filePath);
             saveProjectMeta();
             updateTextureManager();
         }
@@ -540,11 +547,11 @@ void Editor::createShaderFromFile() {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString filePath = dialog.selectedFiles()[0];
-    if (!filePath.isEmpty()) {
+    std::filesystem::path filePath = dialog.selectedFiles()[0].toStdString();
+    if (std::filesystem::exists(filePath)) {
         QString name = QInputDialog::getText(this, "Create Shader", "Please input Shader name.");
         if (!name.isEmpty()) {
-            AssetManager<Shader>::createAsset(name.toStdString(), filePath.toStdString());
+            AssetManager<Shader>::createAsset(name.toStdString(), filePath);
             saveProjectMeta();
             updateShaderManager();
         }
@@ -640,13 +647,13 @@ void Editor::createMaterial() {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString filePath = dialog.selectedFiles()[0];
-    if (filePath.isEmpty())
+    std::filesystem::path filePath = dialog.selectedFiles()[0].toStdString();
+    if (!std::filesystem::exists(filePath))
         return;
     QString name = QInputDialog::getText(this, "Material Name", "Choose new Material's name");
     if (name.isEmpty())
         return;
-    Material::createMaterial(name.toStdString(), filePath.toStdString(), shader, texture);
+    Material::createMaterial(name.toStdString(), filePath, shader, texture);
     saveProjectMeta();
     updateMaterialManager();
 }
@@ -674,7 +681,8 @@ void Editor::newScene(bool) {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString result = dialog.selectedFiles()[0];
+    std::filesystem::path result = dialog.selectedFiles()[0].toStdString();
+    //TODO : add this
 }
 
 void Editor::openScene(bool) {
@@ -682,8 +690,8 @@ void Editor::openScene(bool) {
     dialog.setOption(QFileDialog::DontResolveSymlinks, true);
     dialog.setOption(QFileDialog::DontUseNativeDialog, true);
     dialog.exec();
-    QString result = dialog.selectedFiles()[0];
-    Scene* scene = Scene::deserializeFromJSON(result.toStdString());
+    std::filesystem::path result = dialog.selectedFiles()[0].toStdString();
+    Scene* scene = Scene::deserializeFromJSON(result);
     SceneView::instance()->addScene(scene);
     SceneView::instance()->setActive(scene->getId());
     Game::instance()->addScene(scene);
@@ -692,6 +700,7 @@ void Editor::openScene(bool) {
     loadScene();
     updateProject();
 }
+
 
 
 

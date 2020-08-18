@@ -5,40 +5,36 @@
 //INIT_COMPONENT(MeshRenderer)
 std::map<std::string, Material*> EditorView<MeshRenderer>::materialChoice;
 
-MeshRenderer::MeshRenderer(Material* material, ModelMeshData data) {
+MeshRenderer::MeshRenderer(Material* material, Mesh* mesh) {
     _material = material;
-    _meshData = data;
+    _mesh = mesh;
 }
 
 
 void MeshRenderer::render(const Camera& camera, DirectionalLight* directionalLight) {
     _material->bind(_gameObject->getTransform(), camera, directionalLight);
-    __render(_meshData.tree);
+    _mesh->draw();
 }
 
 void MeshRenderer::serializeToJSON(nlohmann::json& object) {
     object["meshRenderer"]["materialID"] = _material->getID();
-    object["meshRenderer"]["modelFilePath"] = _meshData.filePath;
+    object["meshRenderer"]["meshDataID"] = _mesh->getModelMeshData()->getID();
+    object["meshRenderer"]["subMeshID"] = _mesh->getID();
 }
 
 MeshRenderer *MeshRenderer::deserializeFromJSON(nlohmann::json &object) {
 //    TODO: static model loader for scene assets
-    ModelMeshData meshData = loadModel(object["modelFilePath"]);
+    ModelMeshData* meshData = AssetManager<ModelMeshData>::getAsset(object["meshDataID"]);
     Material* material = AssetManager<Material>::getAsset(object["materialID"]);
-    return new MeshRenderer(material, meshData);
+    Mesh* mesh = meshData->getSubMesh(object["subMeshID"]);
+    if (mesh)
+        return new MeshRenderer(material, mesh);
+    else
+        return nullptr;
 }
 
 void MeshRenderer::updateMaterial(const QString &materialName) {
     _material = EditorView<MeshRenderer>::materialChoice[materialName.toStdString()];
-}
-
-void MeshRenderer::__render(ModelMeshTree* tree) const{
-    for (unsigned int i = 0; i < tree->numMeshes; i++) {
-        tree->meshes[i]->draw();
-    }
-    for (unsigned int i = 0; i < tree->numChildren; i++) {
-        __render(tree->children[i]);
-    }
 }
 
 void EditorView<MeshRenderer>::displayEditorView(MeshRenderer *object, QFormLayout *layout) {

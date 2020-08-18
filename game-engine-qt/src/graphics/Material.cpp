@@ -14,7 +14,7 @@ Material *Material::createMaterial(const std::string &name, const std::string &f
     return newMaterial;
 }
 
-void Material::bind(const Transform &transform, const Camera &camera, DirectionalLight* light) {
+void Material::bind(Transform &transform, const Camera &camera, DirectionalLight* light) {
     _shader->bind();
     _texture->bind(0);
     _shader->update(transform, camera, light);

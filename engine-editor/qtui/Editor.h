@@ -36,8 +36,8 @@ private:
     QListWidget* materialsList;
     QListWidget* shadersList;
     void saveProjectMeta();
-    void loadObject(const std::string&);
-    std::string folderPath;
+    void loadObject(const std::filesystem::path&);
+    std::filesystem::path folderPath;
     GameObject* _selectedObject;
     Texture* _selectedTexture;
     Material* _selectedMaterial;
@@ -49,6 +49,8 @@ private:
     std::map<QListWidgetItem*, Shader*> _listShaderDir;
     std::map<QListWidgetItem*, Material*> _listMaterialDir;
     void recurseProjectTree(const std::string&, QTreeWidgetItem*);
+    std::filesystem::path projectDir = "/home/lstrsrmn/Game-Engine-Projects/Test-Project";
+    void recurseSceneHierarchy(GameObject*, QTreeWidgetItem*);
 
 private slots:
     void openScene(bool = false);

@@ -9,8 +9,7 @@
 
 class Scene;
 
-GameObject::GameObject() {
-    _transform = Transform(this);
+GameObject::GameObject() : _transform(this) {
 }
 
 void GameObject::update() {
@@ -24,12 +23,15 @@ Transform &GameObject::getTransform() {
 }
 
 void GameObject::addComponent(Component *component) {
-    _components.push_back(component);
-    component->setGameObject(this);
+    if (component) {
+        _components.push_back(component);
+        component->setGameObject(this);
+    }
 }
 
-void GameObject::setScene(Scene *scene) {
+void GameObject::setScene(Scene *scene, unsigned int id) {
     _scene = scene;
+    this->sceneObjectID = id;
 }
 
 Scene *GameObject::getScene() const {
@@ -58,6 +60,7 @@ GameObject::~GameObject() {
 }
 
 void GameObject::serializeToJSON(nlohmann::json& scene) {
+    scene[_name.toStdString()]["sceneObjectID"] = sceneObjectID;
     _transform.serializeToJSON(scene[_name.toStdString()]);
     for (Component* component: _components) {
         component->serializeToJSON(scene[_name.toStdString()]["components"]);
@@ -66,6 +69,7 @@ void GameObject::serializeToJSON(nlohmann::json& scene) {
 
 GameObject* GameObject::deserializeFromJSON(nlohmann::json& objectJSON,const std::string& name, Scene* scene) {
     GameObject* object = new GameObject;
+    object->sceneObjectID = objectJSON["sceneObjectID"];
     object->_transform = Transform::deserializeFromJSON(objectJSON, object);
     object->_scene = scene;
     object->_name = QString(name.c_str());
@@ -77,4 +81,17 @@ GameObject* GameObject::deserializeFromJSON(nlohmann::json& objectJSON,const std
         //TODO : other components
     }
     return object;
+}
+
+void GameObject::setParent(GameObject *parent) {
+    if (parent) {
+        _transform.setParent(&parent->_transform);
+    }
+    else {
+        _transform.setParent(nullptr);
+    }
+}
+
+unsigned int GameObject::getSceneObjectID() const {
+    return sceneObjectID;
 }

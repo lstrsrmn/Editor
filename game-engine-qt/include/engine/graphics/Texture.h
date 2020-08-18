@@ -13,11 +13,11 @@
 class Texture: public Asset {
     ASSET(Texture)
 public:
-    static Texture* createTexture(const std::string&, const std::string&);
+    static Texture* createTexture(const std::string&, const std::filesystem::path&);
     void bind(unsigned int) const;
     virtual ~Texture();
 private:
-    Texture(const std::string&, unsigned int);
+    Texture(const std::filesystem::path&, unsigned int);
     GLuint _texture;
 };
 

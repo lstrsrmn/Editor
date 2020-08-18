@@ -7,15 +7,16 @@
 
 #include <string>
 #include <nlohmann/json.hpp>
+#include <filesystem>
 
 class Asset {
 public:
     unsigned int getID() const;
-    std::string getFilePath() const;
+    std::filesystem::path getFilePath() const;
     std::string name;
 protected:
-    Asset(const std::string&, unsigned int);
-    std::string filePath;
+    Asset(const std::filesystem::path&, unsigned int);
+    std::filesystem::path filePath;
     unsigned int id;
 };
 

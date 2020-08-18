@@ -4,7 +4,7 @@
 #include "../../include/engine/graphics/Texture.h"
 //#include "../../include/engine/game/ContextController.h"
 
-Texture::Texture(const std::string& texturePath, unsigned int id) : Asset(texturePath, id){
+Texture::Texture(const std::filesystem::path& texturePath, unsigned int id) : Asset(texturePath, id){
     QOpenGLFunctions* f = Game::instance()->getGlFunctions();
 
     cv::Mat img = cv::imread(texturePath, cv::IMREAD_COLOR);
@@ -41,6 +41,6 @@ void Texture::bind(unsigned int unit) const{
     f->glBindTexture(GL_TEXTURE_2D, _texture);
 }
 
-Texture *Texture::createTexture(const std::string &name, const std::string &filePath) {
+Texture *Texture::createTexture(const std::string &name, const std::filesystem::path &filePath) {
     return AssetManager<Texture>::createAsset(name, filePath);
 }

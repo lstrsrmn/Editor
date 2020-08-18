@@ -6,6 +6,7 @@
 #include <fstream>
 #include <filesystem>
 #include <nlohmann/json.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
 #include "../core/Utils.h"
 #include "Game.h"
 #include "SceneView.h"
@@ -15,6 +16,9 @@ class DirectionalLight;
 class GameObject;
 class Renderer;
 class SceneManager;
+class ModelMeshData;
+struct ModelMeshTree;
+class Material;
 
 class Scene {
 public:
@@ -27,6 +31,8 @@ public:
     void draw(Camera *);
 
     GameObject *createGameObject();
+
+    GameObject *createGameObjectsFromMeshData(ModelMeshData*, Material*);
 
     void addRenderer(Renderer *);
 
@@ -48,7 +54,7 @@ public:
 
     static Scene* deserializeFromJSON(const std::string&);
 
-    std::string _fileLocation;
+    std::filesystem::path _fileLocation;
 
     Camera *getCamera() const;
 
@@ -57,6 +63,9 @@ public:
     void updateMaterials();
 
 private:
+    GameObject* getObjectByID(unsigned int);
+    unsigned int currentObjectID = 0;
+    GameObject* createGameObjectFromTree(GameObject*, ModelMeshTree*, Material*);
     QString _name;
     unsigned int _id;
     DirectionalLight *_directionalLight;

@@ -1,8 +1,47 @@
 #include <iostream>
 #include "../../include/engine/graphics/Mesh.h"
 #include "../../include/engine/game/ContextController.h"
+#include "../../include/engine/graphics/ModelImporter.h"
 
-Mesh::Mesh(Vertex *vertices, unsigned int numVertices, unsigned int *indices, unsigned int numIndices, bool sceneMode) {
+ModelMeshData::ModelMeshData(const std::filesystem::path &path, unsigned int id) : Asset(path, id) {
+    tree = loadModel(path);
+    setMeshParent(tree);
+}
+
+ModelMeshData *ModelMeshData::createModelMeshData(const std::string &name, const std::filesystem::path &path) {
+    return AssetManager<ModelMeshData>::createAsset(name, path);
+}
+
+void ModelMeshData::setMeshParent(ModelMeshTree* root) {
+    for (Mesh* mesh : root->meshes) {
+        mesh->parent = this;
+    }
+    for (ModelMeshTree* child : root->children) {
+        setMeshParent(child);
+    }
+}
+
+Mesh *ModelMeshData::getSubMesh(unsigned int id) {
+    return findSubMesh(id, tree);
+}
+
+Mesh *ModelMeshData::findSubMesh(unsigned int id, ModelMeshTree *root) {
+    for (Mesh* mesh : root->meshes) {
+        if (mesh->id == id)
+            return mesh;
+    }
+    Mesh* mesh = nullptr;
+    for (ModelMeshTree* child : root->children) {
+        mesh = findSubMesh(id, child);
+        if (mesh)
+            break;
+    }
+    return mesh;
+}
+
+Mesh::Mesh(Vertex *vertices, unsigned int numVertices, unsigned int *indices, unsigned int numIndices, unsigned int id, std::string name, bool sceneMode) {
+    this->id = id;
+    this->name = name;
     _drawCount = numIndices;
     QOpenGLFunctions *f = ContextController::getFunctions();
 
@@ -42,6 +81,14 @@ void Mesh::draw() const {
     VAO->release();
     IBO->release();
     VBO->release();
+}
+
+ModelMeshData *Mesh::getModelMeshData() const {
+    return parent;
+}
+
+unsigned int Mesh::getID() const {
+    return id;
 }
 
 Mesh::~Mesh() {

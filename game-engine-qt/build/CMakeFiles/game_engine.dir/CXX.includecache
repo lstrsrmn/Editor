@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/FJDYMCWYW7/moc_EventHandler.cpp
+memory
+-
+../../../include/engine/editor/EventHandler.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/mocs_compilation.cpp
+FJDYMCWYW7/moc_EventHandler.cpp
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/FJDYMCWYW7/moc_EventHandler.cpp
+
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
 ../game/Transform.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
@@ -32,6 +46,8 @@ Component.h
 string
 -
 nlohmann/json.hpp
+-
+filesystem
 -
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
@@ -68,6 +84,10 @@ QObject
 QPushButton
 -
 QComboBox
+-
+QSpinBox
+-
+functional
 -
 EventHandler.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
@@ -116,6 +136,8 @@ fstream
 filesystem
 -
 nlohmann/json.hpp
+-
+glm/gtx/matrix_decompose.hpp
 -
 ../core/Utils.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
@@ -185,12 +207,20 @@ fstream
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
 glm/glm.hpp
 -
+vector
+-
 QtOpenGL
 -
 string
 -
 QOpenGLVertexArrayObject
 -
+filesystem
+-
+assimp/mesh.h
+-
+../core/AssetManager.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/AssetManager.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
 Mesh.h
@@ -248,11 +278,51 @@ glm/glm.hpp
 ../Shader.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Shader.h
 
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
+glm/glm.hpp
+-
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Component.cpp
+../../include/engine/components/Component.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Component.h
+
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/MeshRenderer.cpp
 ../../include/engine/components/MeshRenderer.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/MeshRenderer.h
 ../../include/engine/graphics/Material.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/components/Renderer.cpp
+../../include/engine/components/Renderer.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/components/Renderer.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Asset.cpp
+../../include/engine/core/Asset.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Asset.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/core/Utils.cpp
+../../include/engine/core/Utils.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/core/Utils.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EditorView.cpp
+../../include/engine/editor/EditorView.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EditorView.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/editor/EventHandler.cpp
+../../include/engine/editor/EventHandler.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/editor/EventHandler.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/ContextController.cpp
+iostream
+-
+../../include/engine/game/ContextController.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Game.cpp
+../../include/engine/game/Game.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Game.h
+../../include/engine/game/Scene.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/GameObject.cpp
 QtCore/QString
@@ -282,6 +352,26 @@ iostream
 ../../include/engine/graphics/Material.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
 
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp
+../../include/engine/game/SceneView.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/SceneView.h
+../../include/engine/game/Scene.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Scene.h
+../../include/engine/graphics/Camera.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Transform.cpp
+../../include/engine/game/Transform.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/Transform.h
+../../include/engine/game/GameObject.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/GameObject.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp
+../../include/engine/graphics/Camera.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Camera.h
+../../include/engine/game/ContextController.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
+
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Material.cpp
 ../../include/engine/graphics/Material.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Material.h
@@ -297,6 +387,8 @@ iostream
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/Mesh.h
 ../../include/engine/game/ContextController.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/game/ContextController.h
+../../include/engine/graphics/ModelImporter.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/ModelImporter.h
 
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/ModelImporter.cpp
 ../../include/engine/graphics/ModelImporter.h
@@ -323,6 +415,10 @@ iostream
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/lighting/DirectionalLight.cpp
 ../../../include/engine/graphics/lighting/DirectionalLight.h
 /home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/DirectionalLight.h
+
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/lighting/PointLight.cpp
+../../../include/engine/graphics/lighting/PointLight.h
+/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/include/engine/graphics/lighting/PointLight.h
 
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtCore/QEvent
 qcoreevent.h
@@ -3953,6 +4049,10 @@ qpushbutton.h
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QScrollerProperties
 qscrollerproperties.h
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qscrollerproperties.h
+
+/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QSpinBox
+qspinbox.h
+/home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/qspinbox.h
 
 /home/lstrsrmn/Qt/5.14.2/gcc_64/include/QtWidgets/QWidget
 qwidget.h

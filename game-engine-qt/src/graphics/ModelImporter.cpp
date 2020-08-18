@@ -1,15 +1,15 @@
 #include "../../include/engine/graphics/ModelImporter.h"
 
-ModelMeshData loadDefaultModel(const std::string& modelName,const std::string& modelPath, bool flipV) {
-    return loadModel(modelPath+modelName, flipV);
+ModelMeshTree* loadDefaultModel(const std::filesystem::path& modelName,const std::filesystem::path& modelPath, bool flipV) {
+    return loadModel(modelPath/modelName, flipV);
 }
-ModelMeshData loadModel(const std::string& modelName, bool flipV) {
+ModelMeshTree* loadModel(const std::filesystem::path& modelName, bool flipV) {
     Assimp::Importer importer;
     const aiScene* modelScene = importer.ReadFile(modelName, aiProcess_Triangulate | aiProcess_GenNormals |
                                                                          aiProcess_CalcTangentSpace | aiProcess_FixInfacingNormals | aiProcess_FindInvalidData | aiProcess_ValidateDataStructure);
 
     if (!modelScene) {
-        return {nullptr, std::string()};
+        return nullptr;
     }
 
 //    Mesh** meshes = new Mesh*[modelScene->mNumMeshes];
@@ -17,13 +17,14 @@ ModelMeshData loadModel(const std::string& modelName, bool flipV) {
 //    for (unsigned int i = 0; i < modelScene->mNumMeshes; i++)
 //        meshes[i] = getMeshData(modelScene->mMeshes[i], flipV);
 
-    return {getMeshesFromNode(modelScene->mRootNode, modelScene, flipV), modelName};
+    return getMeshesFromNode(modelScene->mRootNode, modelScene, flipV);
 }
 
 Mesh* getMeshData(const aiMesh* mesh, bool flipV) {
     Vertex* vertices = new Vertex[mesh->mNumVertices];
     unsigned int* indices = new unsigned int [mesh->mNumFaces * 3];
-
+    std::string name = std::string(mesh->mName.C_Str(), mesh->mName.length);
+    unsigned int id = std::hash<std::string>()(name);
     for (unsigned int i = 0; i < mesh->mNumVertices; i++) {
         glm::vec3 pos(-mesh->mVertices[i].x, mesh->mVertices[i].z, mesh->mVertices[i].y);
         glm::vec2 tex;
@@ -50,19 +51,18 @@ Mesh* getMeshData(const aiMesh* mesh, bool flipV) {
         indices[i * 3 + 1] = face->mIndices[1];
         indices[i * 3 + 2] = face->mIndices[2];
     }
-    return new Mesh(vertices, mesh->mNumVertices, indices, mesh->mNumFaces * 3);
+
+    return new Mesh(vertices, mesh->mNumVertices, indices, mesh->mNumFaces * 3, id, name);
 }
 
 ModelMeshTree* getMeshesFromNode(const aiNode* node, const aiScene* scene, bool flipV) {
     ModelMeshTree* tree = new ModelMeshTree();
     tree->transform = aiToGlmMatrix(node->mTransformation);
-    tree->numMeshes = node->mNumMeshes;
-    tree->meshes = new Mesh*[node->mNumMeshes];
+    tree->meshes.resize(node->mNumMeshes);
     for (int i = 0; i < node->mNumMeshes; i++) {
         tree->meshes[i] = getMeshData(scene->mMeshes[node->mMeshes[i]], flipV);
     }
-    tree->numChildren = node->mNumChildren;
-    tree->children = new ModelMeshTree*[node->mNumChildren];
+    tree->children.resize(node->mNumChildren);
     for (int i = 0; i < node->mNumChildren; i++) {
         tree->children[i] = getMeshesFromNode(node->mChildren[i], scene, flipV);
     }

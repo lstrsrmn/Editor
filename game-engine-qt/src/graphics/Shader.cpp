@@ -7,11 +7,9 @@ static void checkShaderError (GLuint shader, GLuint flag, bool isProgram, const 
 static std::string loadShader(const std::string& fileName);
 static GLuint createGLSLShader (const std::string& text, GLenum shaderType);
 
-Shader::Shader(const std::string& shaderName, unsigned int id) : Asset(shaderName, id) {
+Shader::Shader(const std::filesystem::path& shaderName, unsigned int id) : Asset(shaderName, id) {
     QOpenGLFunctions* f = ContextController::getFunctions();
-
-    std::filesystem::path path = std::filesystem::path(filePath);
-    std::string fullPath = filePath + "/" + path.filename().string();
+    std::string fullPath = filePath/filePath.filename().string();
     _program = f->glCreateProgram();
 
     _shaders[0] = createGLSLShader(loadShader(fullPath + ".vs"), GL_VERTEX_SHADER);
@@ -52,7 +50,7 @@ void Shader::bind() const {
     f->glUseProgram(_program);
 }
 
-void Shader::update(const Transform &transform, const Camera& camera, DirectionalLight* directionalLight) {
+void Shader::update(Transform &transform, const Camera& camera, DirectionalLight* directionalLight) {
     QOpenGLFunctions* f = ContextController::getFunctions();
     glm::mat4 model = transform.getModel();
     glm::mat4 MVP = camera.getViewProjection() * model;
@@ -68,8 +66,8 @@ void Shader::update(const Transform &transform, const Camera& camera, Directiona
     f->glUniform4f(_uniforms[DIRECTIONAL_LIGHT_COLOUR_U], colour.x, colour.y, colour.z, 1.0f);
 }
 
-Shader *Shader::createShader(const std::string &name, const std::string &fileName, const std::string &filePath) {
-    return AssetManager<Shader>::createAsset(name, filePath + "/" + fileName);
+Shader *Shader::createShader(const std::string &name, const std::filesystem::path &fileName, const std::filesystem::path &filePath) {
+    return AssetManager<Shader>::createAsset(name, filePath/fileName);
 }
 
 

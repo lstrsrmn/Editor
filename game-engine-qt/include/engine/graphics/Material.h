@@ -15,7 +15,7 @@ class Material : public Asset {
 public:
     static Material* createMaterial(const std::string&, const std::string&, Shader*, Texture*);
     static Material* loadMaterial(const std::string&);
-    void bind(const Transform&, const Camera&, DirectionalLight* light);
+    void bind(Transform&, const Camera&, DirectionalLight* light);
     Texture* _texture;
     Shader* _shader;
 private:

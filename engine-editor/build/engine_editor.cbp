@@ -342,6 +342,9 @@
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp">
 			<Option target="game_engine"/>
 		</Unit>
+		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Transform.cpp">
+			<Option target="game_engine"/>
+		</Unit>
 		<Unit filename="/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/graphics/Camera.cpp">
 			<Option target="game_engine"/>
 		</Unit>

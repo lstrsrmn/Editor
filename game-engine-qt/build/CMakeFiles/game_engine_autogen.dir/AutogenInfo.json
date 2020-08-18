@@ -3,8 +3,10 @@
 	"CMAKE_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor/build",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt",
-	"CMAKE_EXECUTABLE" : "/snap/clion/121/bin/cmake/linux/bin/cmake",
+	"CMAKE_EXECUTABLE" : "/snap/clion/123/bin/cmake/linux/bin/cmake",
 	"CMAKE_SOURCE_DIR" : "/home/lstrsrmn/CLionProjects/Editor/engine-editor",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
@@ -167,7 +169,7 @@
 		"-dM",
 		"-E",
 		"-c",
-		"/snap/clion/121/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+		"/snap/clion/123/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp"
 	],
 	"MOC_PREDEFS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/game_engine_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
@@ -178,6 +180,7 @@
 	"QT_MOC_EXECUTABLE" : "/home/lstrsrmn/Qt/5.14.2/gcc_64/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/home/lstrsrmn/Qt/5.14.2/gcc_64/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 14,
 	"SETTINGS_FILE" : "/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/build/CMakeFiles/game_engine_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
@@ -227,6 +230,10 @@
 		],
 		[
 			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/SceneView.cpp",
+			"MU"
+		],
+		[
+			"/home/lstrsrmn/CLionProjects/Editor/game-engine-qt/src/game/Transform.cpp",
 			"MU"
 		],
 		[

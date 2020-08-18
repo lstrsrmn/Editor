@@ -1,10 +1,10 @@
 #include "../../include/engine/core/Asset.h"
 
-std::string Asset::getFilePath() const {
+std::filesystem::path Asset::getFilePath() const {
     return filePath;
 }
 
-Asset::Asset(const std::string &filePath, unsigned int id) {
+Asset::Asset(const std::filesystem::path &filePath, unsigned int id) {
     this->filePath = filePath;
     this->id = id;
 }

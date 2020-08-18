@@ -17,7 +17,7 @@ public:
     GameObject();
     void update();
     void addComponent(Component*);
-    void setScene(Scene*);
+    void setScene(Scene*, unsigned int);
     Scene* getScene() const;
     Transform& getTransform();
     const std::vector<Component*> getComponents() const;
@@ -25,6 +25,9 @@ public:
     void serializeToJSON(nlohmann::json&);
     static GameObject* deserializeFromJSON(nlohmann::json&, const std::string&, Scene*);
     void setName(const QString &name);
+    void setParent(GameObject*);
+
+    unsigned int getSceneObjectID() const;
 
     ~GameObject();
 
@@ -33,6 +36,7 @@ private:
     std::vector<Component*> _components;
     Transform _transform;
     Scene* _scene;
+    unsigned int sceneObjectID;
 };
 
 

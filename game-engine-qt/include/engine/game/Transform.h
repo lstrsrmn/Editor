@@ -11,72 +11,132 @@
 #include <glm/gtx/transform.hpp>
 #include "../editor/EditorView.h"
 
+class GameObject;
+
 class Transform {
+    friend class EditorView<Transform>;
+
 public:
-    Transform(GameObject* object, const glm::vec3 &pos = glm::vec3(), const glm::vec3 &rot = glm::vec3(),
+    Transform(GameObject *object, const glm::vec3 &pos = glm::vec3(), const glm::vec3 &rot = glm::vec3(),
               const glm::vec3 scale = glm::vec3(1.0, 1.0, 1.0)) :
-            pos(pos),
-            rot(rot),
-            scale(scale) {
+            _pos(pos),
+            _rot(rot),
+            _scale(scale) {
         _object = object;
     }
 
-    inline glm::mat4 getModel() const {
-        glm::mat4 posMatrix = glm::translate(pos);
-        glm::mat4 scaleMatrix = glm::scale(scale);
-        glm::mat4 rotMatrix = glm::toMat4(glm::quat(rot * (M_PIf32 / 180.0f)));
+    inline glm::mat4 getModel() {
+        if (changed) {
+            glm::mat4 posMatrix = glm::translate(_pos);
+            glm::mat4 scaleMatrix = glm::scale(_scale);
+            glm::mat4 rotMatrix = glm::toMat4(glm::quat(_rot * (M_PIf32 / 180.0f)));
+            modelMatrix = posMatrix * rotMatrix * scaleMatrix;
+            changed = false;
+        }
 
-        return posMatrix * rotMatrix * scaleMatrix;
+        if (parent) {
+            return parent->getModel() * modelMatrix;
+        }
+
+        return modelMatrix;
     }
 
-    inline void serializeToJSON(nlohmann::json& object) {
-        object["transform"]["pos"] = {pos.x, pos.y, pos.z};
-        object["transform"]["rot"] = {rot.x, rot.y, rot.z};
-        object["transform"]["scale"] = {scale.x, scale.y, scale.z};
-    }
+    void serializeToJSON(nlohmann::json &object);
 
-    inline static Transform deserializeFromJSON(nlohmann::json& object, GameObject* gameObject) {
-        return Transform(gameObject, glm::vec3(object["transform"]["pos"][0], object["transform"]["pos"][1], object["transform"]["pos"][2]),
-                glm::vec3(object["transform"]["rot"][0], object["transform"]["rot"][1], object["transform"]["rot"][2]),
-                glm::vec3(object["transform"]["scale"][0], object["transform"]["scale"][1], object["transform"]["scale"][2]));
-    }
+    static Transform& deserializeFromJSON(nlohmann::json &object, GameObject *gameObject);
 
-    inline GameObject* getObject() const {
+    inline GameObject *getObject() const {
         return _object;
     }
 
-    glm::vec3 pos;
-    glm::vec3 rot;
-    glm::vec3 scale;
-    Transform* parent = nullptr;
+    const glm::vec3 &getPos() const {
+        return _pos;
+    }
+
+    void setPos(const glm::vec3 &pos) {
+        _pos = pos;
+        changed = true;
+    }
+
+    const glm::vec3 &getRot() const {
+        return _rot;
+    }
+
+    void setRot(const glm::vec3 &rot) {
+        _rot = rot;
+        changed = true;
+    }
+
+    const glm::vec3 &getScale() const {
+        return _scale;
+    }
+
+    void setScale(const glm::vec3 &scale) {
+        _scale = scale;
+        changed = true;
+    }
+
+    Transform *getParent() const;
+
+    void setParent(Transform *parent);
+
+    const std::vector<Transform *> &getChildren() const;
 
 private:
-    GameObject* _object = nullptr;
+    bool changed = true;
+    glm::mat4 modelMatrix;
+    glm::vec3 _pos;
+    glm::vec3 _rot;
+    glm::vec3 _scale;
+    GameObject *_object = nullptr;
+    std::vector<Transform*> children;
+    Transform *parent = nullptr;
 };
 
-CUSTOM_EDITOR(Transform) {
+CUSTOM_EDITOR(Transform)
+{
     DISPLAY_EDITOR_VIEW(Transform) {
-        FloatEventHandler* xPosInput = new FloatEventHandler(&object->pos.x);
-        FloatEventHandler* yPosInput = new FloatEventHandler(&object->pos.y);
-        FloatEventHandler* zPosInput = new FloatEventHandler(&object->pos.z);
-        FloatEventHandler* xRotInput = new FloatEventHandler(&object->rot.x);
-        FloatEventHandler* yRotInput = new FloatEventHandler(&object->rot.y);
-        FloatEventHandler* zRotInput = new FloatEventHandler(&object->rot.z);
-        FloatEventHandler* xScaleInput = new FloatEventHandler(&object->scale.x);
-        FloatEventHandler* yScaleInput = new FloatEventHandler(&object->scale.y);
-        FloatEventHandler* zScaleInput = new FloatEventHandler(&object->scale.z);
         EditorFunctions::label(layout, "Position");
-        EditorFunctions::floatInput(layout, "x: ", xPosInput, std::to_string(object->pos.x).c_str());
-        EditorFunctions::floatInput(layout, "y: ", yPosInput, std::to_string(object->pos.y).c_str());
-        EditorFunctions::floatInput(layout, "z: ", zPosInput, std::to_string(object->pos.z).c_str());
+        EditorFunctions::floatInput(layout, "x: ", [object](float val) {
+            object->_pos.x = val;
+            object->changed = true;
+        }, object->_pos.x);
+        EditorFunctions::floatInput(layout, "y: ", [object](float val) {
+            object->_pos.y = val;
+            object->changed = true;
+        }, object->_pos.y);
+        EditorFunctions::floatInput(layout, "z: ", [object](float val) {
+            object->_pos.z = val;
+            object->changed = true;
+        }, object->_pos.z);
+
         EditorFunctions::label(layout, "Rotation");
-        EditorFunctions::floatInput(layout, "x: ", xRotInput, std::to_string(object->rot.x).c_str());
-        EditorFunctions::floatInput(layout, "y: ", yRotInput, std::to_string(object->rot.y).c_str());
-        EditorFunctions::floatInput(layout, "z: ", zRotInput, std::to_string(object->rot.z).c_str());
+        EditorFunctions::floatInput(layout, "x: ", [object](float val) {
+            object->_rot.x = val;
+            object->changed = true;
+        }, object->_rot.x);
+        EditorFunctions::floatInput(layout, "y: ", [object](float val) {
+            object->_rot.y = val;
+            object->changed = true;
+        }, object->_rot.y);
+        EditorFunctions::floatInput(layout, "z: ", [object](float val) {
+            object->_rot.z = val;
+            object->changed = true;
+        }, object->_rot.z);
+
         EditorFunctions::label(layout, "Scale");
-        EditorFunctions::floatInput(layout, "x: ", xScaleInput, std::to_string(object->scale.x).c_str());
-        EditorFunctions::floatInput(layout, "y: ", yScaleInput, std::to_string(object->scale.y).c_str());
-        EditorFunctions::floatInput(layout, "z: ", zScaleInput, std::to_string(object->scale.z).c_str());
+        EditorFunctions::floatInput(layout, "x: ", [object](float val) {
+            object->_scale.x = val;
+            object->changed = true;
+        }, object->_scale.x);
+        EditorFunctions::floatInput(layout, "y: ", [object](float val) {
+            object->_scale.y = val;
+            object->changed = true;
+        }, object->_scale.y);
+        EditorFunctions::floatInput(layout, "z: ", [object](float val) {
+            object->_scale.z = val;
+            object->changed = true;
+        }, object->_scale.z);
     }
 };
 
