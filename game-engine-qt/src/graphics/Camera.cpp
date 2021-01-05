@@ -2,6 +2,7 @@
 #include "../../include/engine/game/ContextController.h"
 
 Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar, glm::vec3 amb) {
+    // sets all inputed variables to local variables
     position = pos;
     ambient = amb;
     _fov = fov;
@@ -13,6 +14,7 @@ Camera::Camera(glm::vec3 pos, float fov, float aspect, float zNear, float zFar, 
 }
 
 glm::mat4 Camera::getViewProjection() const {
+    // necessary maths for the view projection matrix
     return _perspective * glm::lookAt(position, position + _forward, _up);
 }
 
