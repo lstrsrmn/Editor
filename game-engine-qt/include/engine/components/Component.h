@@ -1,26 +1,32 @@
 #ifndef GAME_ENGINE_COMPONENT_H
 #define GAME_ENGINE_COMPONENT_H
 
+// for include tree
 #include "../game/Transform.h"
 #include "../game/GameObject.h"
 
+// includes such that the program can use the string and json packages
 #include <string>
 #include <nlohmann/json.hpp>
 
+// defines a template, expecting class type T (not defined yet), this is the default where no type is defined
 template<typename T>
 struct ComponentInfo {
     static std::string componentName() {return "NO NAME";}
 };
 
+// defines a macro function that takes a type and creates a template that overrides the one defined above, this section of code is made to be able to retrieve a components type name
 #define ENGINE_COMPONENT(type) \
 template<> \
 struct ComponentInfo<type> { \
     static std::string componentName() {return #type;} \
 };
 
+// when init component macro is called, calls componentFactorys function "addComponentDefault" with this type
 #define INIT_COMPONENT(type) \
 static type* componentFactoryDefault_##type = ComponentFactory::addComponentDefault<type>();
 
+// macro explination
 #define SUBSCRIBE_COMPONENT(type) \
 public: \
 friend struct ComponentFactory; \
