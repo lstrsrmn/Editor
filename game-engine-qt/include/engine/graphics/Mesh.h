@@ -10,6 +10,7 @@
 #include <assimp/mesh.h>
 #include "../core/AssetManager.h"
 
+// forward declaration of mesh
 class Mesh;
 
 struct ModelMeshTree {
