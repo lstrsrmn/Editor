@@ -7,7 +7,7 @@
 #include "../game/Transform.h"
 #include "../core/AssetManager.h"
 
-// Partially defines classes so they can be used as types
+// Forward declaration of classes so they can be used as types
 class Texture;
 class Shader;
 
