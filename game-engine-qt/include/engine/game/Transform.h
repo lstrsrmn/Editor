@@ -14,6 +14,7 @@
 class GameObject;
 
 class Transform {
+    // give editorview access to all private methods and variables
     friend class EditorView<Transform>;
 
 public:
@@ -26,6 +27,7 @@ public:
     }
 
     inline glm::mat4 getModel() {
+        // optimised by only updating the matrix if the variables has changed
         if (changed) {
             glm::mat4 posMatrix = glm::translate(_pos);
             glm::mat4 scaleMatrix = glm::scale(_scale);
@@ -93,6 +95,7 @@ private:
     Transform *parent = nullptr;
 };
 
+// allows transforms to be editted in the UI, where position rotation and scale can be editted
 CUSTOM_EDITOR(Transform)
 {
     DISPLAY_EDITOR_VIEW(Transform) {
