@@ -14,6 +14,7 @@ class Component;
 
 class GameObject {
 public:
+    // constructor
     GameObject();
     void update();
     void addComponent(Component*);
