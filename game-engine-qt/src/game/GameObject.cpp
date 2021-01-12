@@ -23,6 +23,7 @@ Transform &GameObject::getTransform() {
 }
 
 void GameObject::addComponent(Component *component) {
+    // adds component to game object list of componenents, and set the components game object to this
     if (component) {
         _components.push_back(component);
         component->setGameObject(this);
