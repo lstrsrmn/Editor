@@ -1,13 +1,16 @@
 #include "../../include/engine/graphics/ModelImporter.h"
 
 ModelMeshTree* loadDefaultModel(const std::filesystem::path& modelName,const std::filesystem::path& modelPath, bool flipV) {
+    // wrapper function for loading default models
     return loadModel(modelPath/modelName, flipV);
 }
 ModelMeshTree* loadModel(const std::filesystem::path& modelName, bool flipV) {
+    // gets the scene from the file
     Assimp::Importer importer;
     const aiScene* modelScene = importer.ReadFile(modelName, aiProcess_Triangulate | aiProcess_GenNormals |
                                                                          aiProcess_CalcTangentSpace | aiProcess_FixInfacingNormals | aiProcess_FindInvalidData | aiProcess_ValidateDataStructure);
-
+    
+    // makes sure scene is valid
     if (!modelScene) {
         return nullptr;
     }
@@ -55,6 +58,7 @@ Mesh* getMeshData(const aiMesh* mesh, bool flipV) {
     return new Mesh(vertices, mesh->mNumVertices, indices, mesh->mNumFaces * 3, id, name);
 }
 
+// recursive function for going down the node tree and transferring the data into my own data structures
 ModelMeshTree* getMeshesFromNode(const aiNode* node, const aiScene* scene, bool flipV) {
     ModelMeshTree* tree = new ModelMeshTree();
     tree->transform = aiToGlmMatrix(node->mTransformation);
@@ -69,6 +73,7 @@ ModelMeshTree* getMeshesFromNode(const aiNode* node, const aiScene* scene, bool 
     return tree;
 }
 
+// converts between Mats from assimp (the model loader) and opengl (the renderer)
 glm::mat4 aiToGlmMatrix(const aiMatrix4x4& aiMat) {
     glm::mat4 glmMat;
     for (int i = 0; i < 4; i++) {
