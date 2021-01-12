@@ -7,9 +7,13 @@
 #include <assimp/postprocess.h>
 #include <vector>
 
+// forward declares classes
 struct ModelMeshTree;
 class Mesh;
 
+// classless .h and .cpp files, as all functions are static
+
+// functions for loading models from file path
 ModelMeshTree* loadDefaultModel(const std::filesystem::path&, const std::filesystem::path& = "res/models/default/", bool flipV = true);
 ModelMeshTree* loadModel(const std::filesystem::path&, bool flipV = true);
 
