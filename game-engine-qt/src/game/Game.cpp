@@ -4,6 +4,7 @@
 Game *Game::_instance = nullptr;
 
 Game *Game::instance() {
+    // returns a new game object if one doesnt exist, if one exists returns that making a max of 1 "Game" classes created at any time
     if (_instance == nullptr) {
         _instance = new Game();
     }
@@ -11,7 +12,7 @@ Game *Game::instance() {
 }
 
 void Game::addScene(Scene *scene) {
-    // random segault here for no apparent reason
+    // adds a scene to the game
     if (_scenes.empty())
         _scenes[scene->getId()] = scene;
     else if (_scenes[scene->getId()] == nullptr)
@@ -54,6 +55,7 @@ void Game::setGlFunctions(QOpenGLFunctions *glFunctions) {
 }
 
 void Game::setAR(float AR) {
+    // sets AR of all scenes in game
     if (_scenes[_activeScene] != nullptr)
         _scenes[_activeScene]->setAR(AR);
     _AR = AR;
