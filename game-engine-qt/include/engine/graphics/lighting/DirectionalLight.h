@@ -7,6 +7,7 @@
 
 class DirectionalLight {
 public:
+    // public constructor
     DirectionalLight(glm::vec3 = glm::vec3(0, 0, 1), glm::vec3 = glm::vec3(1, 1, 1), float = 1.0f);
 
     const glm::vec3 &getDirection() const;
