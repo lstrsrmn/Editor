@@ -1,7 +1,3 @@
-//
-// Created by lstrsrmn on 08/05/2020.
-//
-
 #include "../../../include/engine/graphics/lighting/DirectionalLight.h"
 
 DirectionalLight::DirectionalLight(glm::vec3 direction, glm::vec3 colour, float intensity) {
