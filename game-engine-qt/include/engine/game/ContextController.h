@@ -3,7 +3,9 @@
 
 #include "Game.h"
 #include "SceneView.h"
+
 // previously used, not anymore
+
 class SceneGLView;
 class GameGLView;
 
