@@ -45,5 +45,6 @@ void Texture::bind(unsigned int unit) const{
 }
 
 Texture *Texture::createTexture(const std::string &name, const std::filesystem::path &filePath) {
+    // creates a new texture through the asset manager request system
     return AssetManager<Texture>::createAsset(name, filePath);
 }
