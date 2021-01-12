@@ -1,13 +1,9 @@
-//
-// Created by lstrsrmn on 19/05/2020.
-//
-
 #ifndef ENGINE_EDITOR_CONTEXTCONTROLLER_H
 #define ENGINE_EDITOR_CONTEXTCONTROLLER_H
 
 #include "Game.h"
 #include "SceneView.h"
-
+// previously used, not anymore
 class SceneGLView;
 class GameGLView;
 
