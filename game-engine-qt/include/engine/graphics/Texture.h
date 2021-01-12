@@ -10,13 +10,16 @@
 #include "Material.h"
 #include "../core/AssetManager.h"
 
+// creates texture as an asset through the ASSET macro
 class Texture: public Asset {
     ASSET(Texture)
 public:
+    // static constructor
     static Texture* createTexture(const std::string&, const std::filesystem::path&);
     void bind(unsigned int) const;
     virtual ~Texture();
 private:
+    // private constructor
     Texture(const std::filesystem::path&, unsigned int);
     GLuint _texture;
 };
