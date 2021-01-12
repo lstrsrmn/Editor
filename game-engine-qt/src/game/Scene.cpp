@@ -14,6 +14,7 @@ Scene::Scene(Camera *camera, DirectionalLight* light) {
     _camera = camera;
     camera->_scene = this;
     _directionalLight = light;
+    // adds this to the scene manager
     _id = SceneManager::instance()->addScene(this);
 }
 
@@ -28,6 +29,7 @@ void Scene::update() {
 }
 
 GameObject *Scene::createGameObject() {
+    // sets the game objects scene to this and puts this in the vector of game objects
     GameObject *gameObject = new GameObject();
     _gameObjects.push_back(gameObject);
     gameObject->setScene(this, currentObjectID++);
@@ -142,6 +144,7 @@ GameObject *Scene::createGameObjectsFromMeshData(ModelMeshData *meshData, Materi
 
 GameObject *Scene::createGameObjectFromTree(GameObject* parent, ModelMeshTree *tree, Material *material) {
     GameObject *node = createGameObject();
+    // turns the trees transform into a set of individual transformations
     glm::vec3 scale, translation, skew;
     glm::quat ori;
     glm::vec4 perspective;
