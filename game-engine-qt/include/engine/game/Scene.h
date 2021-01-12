@@ -25,9 +25,11 @@ public:
     Scene(Camera*, DirectionalLight*);
 
     void update();
-
+    
+    // draws to the camera stored locally
     void draw();
 
+    // draws to the camera passed in
     void draw(Camera *);
 
     GameObject *createGameObject();
