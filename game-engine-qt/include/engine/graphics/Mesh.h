@@ -73,7 +73,7 @@ private:
     Mesh(const Mesh &other) = default;
     // assigns parent
     ModelMeshData* parent = nullptr;
-    // assgins UID
+    // assgins storage UID
     unsigned int id;
     // knows how many vertices to draw
     unsigned int _drawCount;
