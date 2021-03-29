@@ -29,7 +29,7 @@ private:
     EditorFunctions() = default;
 };
 
-
+// template for the dropdowns
 template<typename T>
 void EditorFunctions::dropdownInput(QFormLayout *layout, CallbackListener *listener, std::map<std::string, T*> dictionary) {
     QComboBox* dropdown = new QComboBox;
